@@ -1,0 +1,56 @@
+schema_version = 1
+
+[[sources]]
+id = "fixture_dynamic"
+role = "calibration"
+kind = "dynamic"
+format = "mat-v5"
+source_file = "representative.mat"
+sha256 = "__SHA256__"
+atmosphere = "N2"
+required_columns = [
+    "temperature_C",
+    "time_min",
+    "dsc_mW_per_mg",
+    "mass_percent",
+    "purge_flow_mL_per_min",
+    "protective_flow_mL_per_min",
+    "sensitivity_uV_per_mW",
+]
+optional_columns = ["segment"]
+
+[[sources.experiments]]
+id = "fixture_dynamic_run"
+variable = "dynamic_fixture"
+sample_id = "fixture-dynamic"
+waste_tire_dry_mass_percent = 25.0
+nominal_heating_rate_K_per_min = 10.0
+initial_mass_mg = 10.0
+acquisition_datetime = "2021-01-02T03:04:05"
+
+[[sources]]
+id = "fixture_ramp_hold"
+role = "validation"
+kind = "ramp_hold"
+format = "mat-v5"
+source_file = "representative.mat"
+sha256 = "__SHA256__"
+atmosphere = "N2"
+required_columns = [
+    "temperature_C",
+    "time_min",
+    "dsc_mW_per_mg",
+    "mass_percent",
+    "purge_flow_mL_per_min",
+    "protective_flow_mL_per_min",
+    "sensitivity_uV_per_mW",
+    "segment",
+]
+
+[[sources.experiments]]
+id = "fixture_ramp_hold_run"
+variable = "ramp_hold_fixture"
+sample_id = "fixture-ramp-hold"
+waste_tire_dry_mass_percent = 75.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 120.0

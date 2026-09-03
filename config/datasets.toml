@@ -1,0 +1,391 @@
+schema_version = 1
+
+[[sources]]
+id = "dynamic_2021"
+role = "calibration"
+kind = "dynamic"
+format = "mat-v5"
+source_file = "../code/2021corridas/2021corridas.mat"
+sha256 = "78180b021e8b220fb1b8fede20a41467701f3dfd759991c01ecbaed92aac0c82"
+atmosphere = "N2"
+required_columns = [
+    "temperature_C",
+    "time_min",
+    "dsc_mW_per_mg",
+    "mass_percent",
+    "purge_flow_mL_per_min",
+    "protective_flow_mL_per_min",
+    "sensitivity_uV_per_mW",
+]
+optional_columns = ["segment"]
+notes = [
+    "Canonical MAT snapshot of the 20 retained NETZSCH dynamic exports.",
+    "Every matrix contains one trailing all-NaN row from the historical MATLAB import.",
+]
+
+[[sources.experiments]]
+id = "dynamic_wt000_rate05"
+variable = "ExpDat0wt05hr"
+sample_id = "0wt05hr"
+waste_tire_dry_mass_percent = 0.0
+nominal_heating_rate_K_per_min = 5.0
+initial_mass_mg = 10.4455
+acquisition_datetime = "2021-03-18T09:11:00"
+raw_export_file = "../code/2021corridas/ExpDat_0wt05hr.txt"
+legacy_alias = "St01"
+
+[[sources.experiments]]
+id = "dynamic_wt025_rate05"
+variable = "ExpDat25wt05hr2"
+sample_id = "25wt05hr2"
+waste_tire_dry_mass_percent = 25.0
+nominal_heating_rate_K_per_min = 5.0
+initial_mass_mg = 10.4802
+acquisition_datetime = "2021-03-20T03:50:00"
+raw_export_file = "../code/2021corridas/ExpDat_25wt05hr2.txt"
+legacy_alias = "St02"
+notes = ["Filename suffix 2 is retained provenance; the superseded run is unavailable."]
+
+[[sources.experiments]]
+id = "dynamic_wt050_rate05"
+variable = "ExpDat50wt05hr"
+sample_id = "50wt05hr"
+waste_tire_dry_mass_percent = 50.0
+nominal_heating_rate_K_per_min = 5.0
+initial_mass_mg = 10.2436
+acquisition_datetime = "2021-03-17T08:56:00"
+raw_export_file = "../code/2021corridas/ExpDat_50wt05hr.txt"
+legacy_alias = "St03"
+
+[[sources.experiments]]
+id = "dynamic_wt075_rate05"
+variable = "ExpDat75wt05hr"
+sample_id = "75wt05hr"
+waste_tire_dry_mass_percent = 75.0
+nominal_heating_rate_K_per_min = 5.0
+initial_mass_mg = 10.9100
+acquisition_datetime = "2021-03-17T21:05:00"
+raw_export_file = "../code/2021corridas/ExpDat_75wt05hr.txt"
+legacy_alias = "St04"
+
+[[sources.experiments]]
+id = "dynamic_wt100_rate05"
+variable = "ExpDat100wt05hr2"
+sample_id = "100wt05hr2"
+waste_tire_dry_mass_percent = 100.0
+nominal_heating_rate_K_per_min = 5.0
+initial_mass_mg = 10.0911
+acquisition_datetime = "2021-03-19T15:48:00"
+raw_export_file = "../code/2021corridas/ExpDat_100wt05hr2.txt"
+legacy_alias = "St05"
+notes = ["Filename suffix 2 is retained provenance; the superseded run is unavailable."]
+
+[[sources.experiments]]
+id = "dynamic_wt000_rate10"
+variable = "ExpDat0wt10hr"
+sample_id = "0wt10hr"
+waste_tire_dry_mass_percent = 0.0
+nominal_heating_rate_K_per_min = 10.0
+initial_mass_mg = 10.4280
+acquisition_datetime = "2021-03-18T13:55:00"
+raw_export_file = "../code/2021corridas/ExpDat_0wt10hr.txt"
+legacy_alias = "St06"
+
+[[sources.experiments]]
+id = "dynamic_wt025_rate10"
+variable = "ExpDat25wt10hr"
+sample_id = "25wt10hr"
+waste_tire_dry_mass_percent = 25.0
+nominal_heating_rate_K_per_min = 10.0
+initial_mass_mg = 9.9959
+acquisition_datetime = "2021-03-17T00:51:00"
+raw_export_file = "../code/2021corridas/ExpDat_25wt10hr.txt"
+legacy_alias = "St07"
+
+[[sources.experiments]]
+id = "dynamic_wt050_rate10"
+variable = "ExpDat50wt10hr"
+sample_id = "50wt10hr"
+waste_tire_dry_mass_percent = 50.0
+nominal_heating_rate_K_per_min = 10.0
+initial_mass_mg = 10.4044
+acquisition_datetime = "2021-03-17T13:16:00"
+raw_export_file = "../code/2021corridas/ExpDat_50wt10hr.txt"
+legacy_alias = "St08"
+
+[[sources.experiments]]
+id = "dynamic_wt075_rate10"
+variable = "ExpDat75wt10hr"
+sample_id = "75wt10hr"
+waste_tire_dry_mass_percent = 75.0
+nominal_heating_rate_K_per_min = 10.0
+initial_mass_mg = 10.7570
+acquisition_datetime = "2021-03-18T01:20:00"
+raw_export_file = "../code/2021corridas/ExpDat_75wt10hr.txt"
+legacy_alias = "St09"
+
+[[sources.experiments]]
+id = "dynamic_wt100_rate10"
+variable = "ExpDat100wt10hr2"
+sample_id = "100wt10hr2"
+waste_tire_dry_mass_percent = 100.0
+nominal_heating_rate_K_per_min = 10.0
+initial_mass_mg = 10.0453
+acquisition_datetime = "2021-03-19T20:03:00"
+raw_export_file = "../code/2021corridas/ExpDat_100wt10hr2.txt"
+legacy_alias = "St10"
+notes = ["Filename suffix 2 is retained provenance; the superseded run is unavailable."]
+
+[[sources.experiments]]
+id = "dynamic_wt000_rate15"
+variable = "ExpDat0wt15hr"
+sample_id = "0wt15hr"
+waste_tire_dry_mass_percent = 0.0
+nominal_heating_rate_K_per_min = 15.0
+initial_mass_mg = 10.5555
+acquisition_datetime = "2021-03-18T16:53:00"
+raw_export_file = "../code/2021corridas/ExpDat_0wt15hr.txt"
+legacy_alias = "St11"
+
+[[sources.experiments]]
+id = "dynamic_wt025_rate15"
+variable = "ExpDat25wt15hr"
+sample_id = "25wt15hr"
+waste_tire_dry_mass_percent = 25.0
+nominal_heating_rate_K_per_min = 15.0
+initial_mass_mg = 10.1916
+acquisition_datetime = "2021-03-17T03:54:00"
+raw_export_file = "../code/2021corridas/ExpDat_25wt15hr.txt"
+legacy_alias = "St12"
+
+[[sources.experiments]]
+id = "dynamic_wt050_rate15"
+variable = "ExpDat50wt15hr"
+sample_id = "50wt15hr"
+waste_tire_dry_mass_percent = 50.0
+nominal_heating_rate_K_per_min = 15.0
+initial_mass_mg = 10.3115
+acquisition_datetime = "2021-03-17T16:14:00"
+raw_export_file = "../code/2021corridas/ExpDat_50wt15hr.txt"
+legacy_alias = "St13"
+
+[[sources.experiments]]
+id = "dynamic_wt075_rate15"
+variable = "ExpDat75wt15hr"
+sample_id = "75wt15hr"
+waste_tire_dry_mass_percent = 75.0
+nominal_heating_rate_K_per_min = 15.0
+initial_mass_mg = 10.1680
+acquisition_datetime = "2021-03-18T04:18:00"
+raw_export_file = "../code/2021corridas/ExpDat_75wt15hr.txt"
+legacy_alias = "St14"
+
+[[sources.experiments]]
+id = "dynamic_wt100_rate15"
+variable = "ExpDat100wt15hr"
+sample_id = "100wt15hr"
+waste_tire_dry_mass_percent = 100.0
+nominal_heating_rate_K_per_min = 15.0
+initial_mass_mg = 10.0064
+acquisition_datetime = "2021-03-19T23:00:00"
+raw_export_file = "../code/2021corridas/ExpDat_100wt15hr.txt"
+legacy_alias = "St15"
+
+[[sources.experiments]]
+id = "dynamic_wt000_rate20"
+variable = "ExpDat0wt20hr"
+sample_id = "0wt20hr"
+waste_tire_dry_mass_percent = 0.0
+nominal_heating_rate_K_per_min = 20.0
+initial_mass_mg = 10.8195
+acquisition_datetime = "2021-03-18T19:25:00"
+raw_export_file = "../code/2021corridas/ExpDat_0wt20hr.txt"
+legacy_alias = "St16"
+
+[[sources.experiments]]
+id = "dynamic_wt025_rate20"
+variable = "ExpDat25wt20hr"
+sample_id = "25wt20hr"
+waste_tire_dry_mass_percent = 25.0
+nominal_heating_rate_K_per_min = 20.0
+initial_mass_mg = 10.6245
+acquisition_datetime = "2021-03-17T06:31:00"
+raw_export_file = "../code/2021corridas/ExpDat_25wt20hr.txt"
+legacy_alias = "St17"
+
+[[sources.experiments]]
+id = "dynamic_wt050_rate20"
+variable = "ExpDat50wt20hr"
+sample_id = "50wt20hr"
+waste_tire_dry_mass_percent = 50.0
+nominal_heating_rate_K_per_min = 20.0
+initial_mass_mg = 10.3153
+acquisition_datetime = "2021-03-17T18:46:00"
+raw_export_file = "../code/2021corridas/ExpDat_50wt20hr.txt"
+legacy_alias = "St18"
+
+[[sources.experiments]]
+id = "dynamic_wt075_rate20"
+variable = "ExpDat75wt20hr"
+sample_id = "75wt20hr"
+waste_tire_dry_mass_percent = 75.0
+nominal_heating_rate_K_per_min = 20.0
+initial_mass_mg = 10.3628
+acquisition_datetime = "2021-03-18T06:51:00"
+raw_export_file = "../code/2021corridas/ExpDat_75wt20hr.txt"
+legacy_alias = "St19"
+
+[[sources.experiments]]
+id = "dynamic_wt100_rate20"
+variable = "ExpDat100wt20hr"
+sample_id = "100wt20hr"
+waste_tire_dry_mass_percent = 100.0
+nominal_heating_rate_K_per_min = 20.0
+initial_mass_mg = 10.3815
+acquisition_datetime = "2021-03-20T01:31:00"
+raw_export_file = "../code/2021corridas/ExpDat_100wt20hr.txt"
+legacy_alias = "St20"
+
+[[sources]]
+id = "ramp_hold_2021"
+role = "validation"
+kind = "ramp_hold"
+format = "mat-v5"
+source_file = "../code/isotherm.mat"
+sha256 = "08c0eb9c82691514743061fb44dbbd477e233c36b61e2febddd6a16170032ca8"
+atmosphere = "N2"
+required_columns = [
+    "temperature_C",
+    "time_min",
+    "dsc_mW_per_mg",
+    "mass_percent",
+    "purge_flow_mL_per_min",
+    "protective_flow_mL_per_min",
+    "sensitivity_uV_per_mW",
+    "segment",
+]
+notes = [
+    "Reserved out-of-sample validation set; never use these runs for parameter fitting.",
+    "Temperature, time, mass, and segment meanings are established; auxiliary channel labels remain provisional.",
+    "Legacy simulation scripts assume a nominal 20 K/min ramp; segment-3 measured slopes are audit outputs.",
+]
+
+[[sources.experiments]]
+id = "ramp_hold_wt000_hold450"
+variable = "b0t450"
+sample_id = "b0t450"
+waste_tire_dry_mass_percent = 0.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 450.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt000_hold500"
+variable = "b0t500"
+sample_id = "b0t500"
+waste_tire_dry_mass_percent = 0.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 500.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt000_hold550"
+variable = "b0t550"
+sample_id = "b0t550"
+waste_tire_dry_mass_percent = 0.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 550.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt025_hold450"
+variable = "b25t450"
+sample_id = "b25t450"
+waste_tire_dry_mass_percent = 25.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 450.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt025_hold500"
+variable = "b25t500"
+sample_id = "b25t500"
+waste_tire_dry_mass_percent = 25.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 500.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt025_hold550"
+variable = "b25t550"
+sample_id = "b25t550"
+waste_tire_dry_mass_percent = 25.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 550.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt050_hold450"
+variable = "b50t450"
+sample_id = "b50t450"
+waste_tire_dry_mass_percent = 50.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 450.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt050_hold500"
+variable = "b50t500"
+sample_id = "b50t500"
+waste_tire_dry_mass_percent = 50.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 500.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt050_hold550"
+variable = "b50t550"
+sample_id = "b50t550"
+waste_tire_dry_mass_percent = 50.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 550.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt075_hold450"
+variable = "b75t450"
+sample_id = "b75t450"
+waste_tire_dry_mass_percent = 75.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 450.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt075_hold500"
+variable = "b75t500"
+sample_id = "b75t500"
+waste_tire_dry_mass_percent = 75.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 500.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt075_hold550"
+variable = "b75t550"
+sample_id = "b75t550"
+waste_tire_dry_mass_percent = 75.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 550.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt100_hold450"
+variable = "b100t450"
+sample_id = "b100t450"
+waste_tire_dry_mass_percent = 100.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 450.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt100_hold500"
+variable = "b100t500"
+sample_id = "b100t500"
+waste_tire_dry_mass_percent = 100.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 500.0
+
+[[sources.experiments]]
+id = "ramp_hold_wt100_hold550"
+variable = "b100t550"
+sample_id = "b100t550"
+waste_tire_dry_mass_percent = 100.0
+nominal_heating_rate_K_per_min = 20.0
+nominal_hold_temperature_celsius = 550.0

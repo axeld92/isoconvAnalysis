@@ -1,0 +1,163 @@
+R = 8.314E-3;
+
+c = mean([C]);
+% 
+
+datareal = cleandatami(b0t550);
+
+t0 = datareal(1,2);
+tf = datareal(end,2);
+T0 = datareal(1,1);
+Tf = datareal(end,1);
+b = 20;
+
+tp = (Tf-T0)/b;
+%         
+% dadt = @(t,aT)    [ A_1*exp(-E{1}/R/aT(5))*real(aT(1)^nmp_1(1)*(1-aT(1))^nmp_1(2)) ;          %1
+%                     A_2*exp(-E{2}/R/aT(5))*real(aT(2)^nmp_2(1)*(1-aT(2))^nmp_2(2)) ;          %2
+%                     A_3*exp(-E{3}/R/aT(5))*real(aT(3)^nmp_3(1)*(1-aT(3))^nmp_3(2)) ;          %3
+%                     A_4*exp(-E{4}/R/aT(5))*real(aT(4)^nmp_4(1)*(1-aT(4))^nmp_4(2)) ;          %4
+%                     b - b*heaviside(t-tp)];                
+%                     
+
+dadt = @(t,aT)    [ A_1*exp(-E{1}/R/aT(4))*real(aT(1)^nmp_1(1)*(1-aT(1))^nmp_1(2)) ;          %1
+                    A_2*exp(-E{2}/R/aT(4))*real(aT(2)^nmp_2(1)*(1-aT(2))^nmp_2(2)) ;          %2
+                    A_3*exp(-E{3}/R/aT(4))*real(aT(3)^nmp_3(1)*(1-aT(3))^nmp_3(2)) ;          %3
+                    b - b*heaviside(t-tp)];                
+
+
+  options = odeset('RelTol',1e-8,'AbsTol',1e-8) ;
+  [t,aT] = ode15s(dadt,[0 tf],[1E-3 1E-3 1E-3 T0],options);
+ %[t,aT] = ode15s(dadt,[0 tf],[1E-3 1E-3 1E-3 1E-3 T0],options);
+%  aT(aT~=real(aT)) = 0;
+
+% figure
+% plot(t,aT(:,5),datareal(:,2),datareal(:,1))
+
+ a_calc = c(1)*aT(:,1) + c(2)*aT(:,2) + c(3)*aT(:,3);
+%a_calc = c(1)*aT(:,1) + c(2)*aT(:,2) + c(3)*aT(:,3) + c(4)*(aT(:,4));
+ hfig = figure;
+hold on
+color = '#EDB120';
+plot(t,a_calc,'LineWidth',1.5,'Color','#0072BD')
+plot(datareal(:,2),datareal(:,4),'--','LineWidth',1.5,'Color','#D95319')
+%hold off
+legend('Modelo','Experimental','Location','southeast')
+xlabel('t [min]')
+ylabel('\alpha')
+ylim([-0.01 1.01])
+
+%grid
+dreal = interp1(datareal(:,2),datareal(:,4),t); 
+MSE = sum((a_calc-dreal).^2)./length(a_calc)
+% aa_calc = interp1(t,a_calc,datareal(:,2));
+% MSE = sum((aa_calc-datareal(:,4)).^2)/length(datareal(:,4))
+
+%  '#0072BD'
+%  '#D95319'
+%  '#EDB120'
+%%
+picturewidth = 20; % set this parameter and keep it forever
+set(findall(hfig,'-property','FontSize'),'FontSize',13)
+set(findall(hfig,'-property','Box'),'Box','off') % optional
+%%
+set(hfig,'Units','Inches');
+pos = get(hfig,'Position');
+set(hfig,'PaperPositionMode','Auto','PaperUnits','Inches','PaperSize',[pos(3), pos(4)])
+
+
+%%
+aT = real(aT);
+a_fr = interp1(datareal(:,2),datareal(:,4),t); 
+plot(t,a_fr)
+
+A = -ones(3);
+b = [0;0;0];
+
+Aeq = [1,1,1];
+beq = 1;
+
+aobj =@(cc) sum((cc(1)*aT(:,1) + cc(2)*aT(:,2) + cc(3)*aT(:,3)-a_fr).^2);
+%da_calc = diff_alpha(aT(:,4),a_calc);
+
+ccalc = fmincon(aobj,[0.33 0.33 0.33],A,b,Aeq,beq);
+acalc =@(ccalc) ccalc(1)*aT(:,1) + ccalc(2)*aT(:,2) + ccalc(3)*aT(:,3);
+acalcu = acalc(ccalc)/max(acalc(ccalc));
+hfig = figure;
+hold on
+plot(t(1:11:length(a_fr)),acalcu(1:11:length(a_fr)),'^','LineWidth',1)
+plot(t,a_fr,'LineWidth',1)
+hold off
+xlabel('Time (min)')
+ylabel('\alpha')
+ylim([-0.01,1.01])
+xlim([0,85])
+legend('Model','Exp.','Location','best')
+picturewidth = 20; % set this parameter and keep it forever
+set(findall(hfig,'-property','FontSize'),'FontSize',13)
+set(findall(hfig,'-property','Box'),'Box','off') % optional
+set(hfig,'Units','Inches');
+pos = get(hfig,'Position');
+set(hfig,'PaperPositionMode','Auto','PaperUnits','Inches','PaperSize',[pos(3), pos(4)])
+
+%%
+
+aT = real(aT);
+ 
+a_calc = c(1)*aT(:,1) + c(2)*aT(:,2) + c(3)*aT(:,3);
+%da_calc = diff_alpha(aT(:,4),a_calc);
+
+a_fr = interp1(datareal(:,2),datareal(:,4),aT(:,4));
+%da_fr = interp1(datareal(:,1),datareal(:,3),aT(:,4));
+%resid = a_fr - a_calc;
+% 
+% figure
+% hold on
+% plot(t,da_calc)
+% plot(datareal(:,2),datareal(:,3))
+% hold off
+% ylim([0,0.012])
+
+figure 
+subplot(5,1,1:4);
+hold on
+plot(aT(:,4),a_calc,'-')
+plot(datareal(:,1),datareal(:,4),'--')
+hold off
+legend('Modelo','Datos')
+grid
+ylabel('\alpha')
+subplot(5,1,5);
+plot(aT(:,4),resid)
+xlabel('Temperatura [K]')
+grid 
+ %set(gca, 'xtick', [] );
+ %p = get(gca,'Position');
+ %p_diff = p(4)*0.1;
+ %p(4) = p(4) + p_diff
+ %p(2) = p(2) - p_diff
+ 
+ 
+ 
+ 
+% dadt = @(t,aT)    [ A_1*exp(-E{1}/R/aT(4))*real(aT(1)^nmp_1(1)*(1-aT(1))^nmp_1(2)) ;          %1
+%                     A_2*exp(-E{2}/R/aT(4))*real(aT(2)^nmp_2(1)*(1-aT(2))^nmp_2(2)) ;          %2
+%                     A_3*exp(-E{3}/R/aT(4))*real(aT(3)^nmp_3(1)*(1-aT(3))^nmp_3(2)) ;          %3
+%                     b - b*heaviside(t-tp)];
+%                 
+                
+%         
+
+
+
+% dadt = @(t,aT)    [ A_1*exp(-E{1}/R/aT(4))*aT(1)^nmp_1(1)*(1-aT(1))^nmp_1(2)*(-log(1-aT(1)))^nmp_1(3) ;          %1
+%                     A_2*exp(-E{2}/R/aT(4))*aT(2)^nmp_2(1)*(1-aT(2))^nmp_2(2)*(-log(1-aT(2)))^nmp_1(3) ;          %2
+%                     A_3*exp(-E{3}/R/aT(4))*aT(3)^nmp_3(1)*(1-aT(3))^nmp_3(2)*(-log(1-aT(3)))^nmp_1(3) ;          %3
+%                     10 ];
+
+% dadt = @(t,aT)    [ A_1*exp(-E{1}/R/aT(4))*real(nmp_1(1)*aT(1)^nmp_1(2)*(1-aT(1))^nmp_1(3)*(-log(1-aT(1)))^nmp_1(4)) ;          %1
+%                     A_2*exp(-E{2}/R/aT(4))*real(nmp_2(1)*aT(2)^nmp_2(2)*(1-aT(2))^nmp_2(3)*(-log(1-aT(2)))^nmp_1(4)) ;          %2
+%                     A_3*exp(-E{3}/R/aT(4))*real(nmp_3(1)*aT(3)^nmp_3(2)*(1-aT(3))^nmp_3(3)*(-log(1-aT(3)))^nmp_1(4)) ;          %3
+%                     10 ];
+
+

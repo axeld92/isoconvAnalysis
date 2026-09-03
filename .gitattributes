@@ -1,0 +1,3 @@
+# The legacy thesis archive is immutable evidence. Preserve every file byte-for-byte,
+# including the original MATLAB/text line endings.
+code/** -text

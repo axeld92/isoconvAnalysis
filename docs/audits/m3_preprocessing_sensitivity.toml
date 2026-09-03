@@ -1,0 +1,570 @@
+schema_version = 1
+generated_by = "scripts/audit_preprocessing.jl"
+default_profile = "m3_default_v1"
+highest_common_temperature_celsius = 794.4299900000
+
+[[candidate]]
+profile = "raw_finite_difference"
+smoothing = "none"
+derivative = "finite_difference"
+heating_rate = "global_linear"
+half_window_kelvin = 5.0000000000
+reconstruction_rmse = 0.003157285468265162
+reconstruction_max_error = 0.005401599017383768
+negative_derivative_fraction = 0.02922929864008435
+reversal_fraction = 0.02981037413439151
+derivative_roughness = 0.0002894461970008946
+derivative_peak = 0.009695510152512332
+
+[[candidate]]
+profile = "smoothed_finite_difference_5K"
+smoothing = "local_polynomial"
+derivative = "finite_difference"
+heating_rate = "local_polynomial"
+half_window_kelvin = 5.0000000000
+reconstruction_rmse = 1.361760815429666e-05
+reconstruction_max_error = 0.000107200902907667
+negative_derivative_fraction = 0.008273007443955996
+reversal_fraction = 0.008458947563727339
+derivative_roughness = 9.453308661603837e-06
+derivative_peak = 0.00833307338456264
+
+[[candidate]]
+profile = "local_polynomial_2_5K"
+smoothing = "local_polynomial"
+derivative = "local_polynomial"
+heating_rate = "local_polynomial"
+half_window_kelvin = 2.5000000000
+reconstruction_rmse = 3.275549448221507e-05
+reconstruction_max_error = 0.000178402564288499
+negative_derivative_fraction = 0.01554700724575025
+reversal_fraction = 0.01509348051321326
+derivative_roughness = 1.44074099536049e-05
+derivative_peak = 0.008372497229591474
+
+[[candidate]]
+profile = "m3_default_v1"
+smoothing = "local_polynomial"
+derivative = "local_polynomial"
+heating_rate = "local_polynomial"
+half_window_kelvin = 5.0000000000
+reconstruction_rmse = 4.21939272853707e-05
+reconstruction_max_error = 0.0002078757346935939
+negative_derivative_fraction = 0.01009815801887843
+reversal_fraction = 0.008458947563727339
+derivative_roughness = 6.129104148936739e-06
+derivative_peak = 0.008321942114048008
+
+[[candidate]]
+profile = "local_polynomial_10K"
+smoothing = "local_polynomial"
+derivative = "local_polynomial"
+heating_rate = "local_polynomial"
+half_window_kelvin = 10.0000000000
+reconstruction_rmse = 0.0001001019240428705
+reconstruction_max_error = 0.0002697405653774299
+negative_derivative_fraction = 0.002059607463048219
+reversal_fraction = 0.003194596568090544
+derivative_roughness = 3.938359187350541e-06
+derivative_peak = 0.008315890637896273
+
+[[endpoint]]
+profile = "initial_120_final_700"
+initial_temperature_celsius = 120.0000000000
+final_temperature_celsius = 700.0000000000
+median_absolute_alpha_difference = 0.0002319615356145555
+maximum_absolute_alpha_difference = 0.004990822783556545
+median_temperature_at_alpha_half_shift_kelvin = -0.1359999999999673
+
+[[endpoint]]
+profile = "initial_150_final_650"
+initial_temperature_celsius = 150.0000000000
+final_temperature_celsius = 650.0000000000
+median_absolute_alpha_difference = 0.009255770702181476
+maximum_absolute_alpha_difference = 0.01968031191787256
+median_temperature_at_alpha_half_shift_kelvin = -0.7660050000000069
+
+[[endpoint]]
+profile = "primary_150_final_700"
+initial_temperature_celsius = 150.0000000000
+final_temperature_celsius = 700.0000000000
+median_absolute_alpha_difference = 0
+maximum_absolute_alpha_difference = 0
+median_temperature_at_alpha_half_shift_kelvin = 0
+
+[[endpoint]]
+profile = "initial_150_final_750"
+initial_temperature_celsius = 150.0000000000
+final_temperature_celsius = 750.0000000000
+median_absolute_alpha_difference = 0.007421090880642522
+maximum_absolute_alpha_difference = 0.01537537303944836
+median_temperature_at_alpha_half_shift_kelvin = 0.6819899999999279
+
+[[endpoint]]
+profile = "initial_150_highest_common"
+initial_temperature_celsius = 150.0000000000
+final_temperature_celsius = 794.4299900000
+median_absolute_alpha_difference = 0.01327607867397146
+maximum_absolute_alpha_difference = 0.02772437581044573
+median_temperature_at_alpha_half_shift_kelvin = 1.197994999999992
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt000_rate05"
+initial_mass_difference_percent = -0.0002839047815825779
+final_mass_difference_percent = 0.03566180180711953
+alpha_350_difference = 0.0004176601145234882
+alpha_500_difference = 0.0005143204529234335
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt025_rate05"
+initial_mass_difference_percent = -0.00346627354772977
+final_mass_difference_percent = 0.03534900360943993
+alpha_350_difference = 0.0004021383581760407
+alpha_500_difference = 0.0005508982979768318
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt050_rate05"
+initial_mass_difference_percent = -0.001725476852413976
+final_mass_difference_percent = 0.03410966832985451
+alpha_350_difference = 0.0003790379891375206
+alpha_500_difference = 0.0005723686743094314
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt075_rate05"
+initial_mass_difference_percent = -0.005915469765866987
+final_mass_difference_percent = 0.03066525582509882
+alpha_350_difference = 0.0002913524839353032
+alpha_500_difference = 0.0005605489739359815
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt100_rate05"
+initial_mass_difference_percent = -0.004169776214979493
+final_mass_difference_percent = 0.03357763322908625
+alpha_350_difference = 0.000287811487723888
+alpha_500_difference = 0.0007079274103487521
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt000_rate10"
+initial_mass_difference_percent = 0.01243322974841021
+final_mass_difference_percent = 0.009332927619809084
+alpha_350_difference = 0.000155593337597848
+alpha_500_difference = 0.0001455254973394826
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt025_rate10"
+initial_mass_difference_percent = 0.01255661030525346
+final_mass_difference_percent = 0.001925372940213776
+alpha_350_difference = 9.177284323402812e-05
+alpha_500_difference = 5.057644174666365e-05
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt050_rate10"
+initial_mass_difference_percent = 0.01230635463394947
+final_mass_difference_percent = 1.475281278118246e-05
+alpha_350_difference = 8.689823358520865e-05
+alpha_500_difference = 1.731830744300389e-05
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt075_rate10"
+initial_mass_difference_percent = 0.01107421906888817
+final_mass_difference_percent = 0.006393442801972071
+alpha_350_difference = 0.0001700446710947157
+alpha_500_difference = 0.0001332059080457748
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt100_rate10"
+initial_mass_difference_percent = 0.009645531904197924
+final_mass_difference_percent = 0.005226957412560296
+alpha_350_difference = 0.0001696988759559703
+alpha_500_difference = 0.0001214727840570529
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt000_rate15"
+initial_mass_difference_percent = 0.0006492919832510324
+final_mass_difference_percent = 0.0001294048133679837
+alpha_350_difference = 4.680440824467169e-06
+alpha_500_difference = 2.619111728163759e-06
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt025_rate15"
+initial_mass_difference_percent = -0.0003001283552350742
+final_mass_difference_percent = 0.0005795629557887594
+alpha_350_difference = 4.166216691636748e-06
+alpha_500_difference = 8.220699551753086e-06
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt050_rate15"
+initial_mass_difference_percent = 0.0007251246310033821
+final_mass_difference_percent = -0.006425869131533091
+alpha_350_difference = -5.933251953393892e-05
+alpha_500_difference = -0.000103371836334798
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt075_rate15"
+initial_mass_difference_percent = 0.0002311696885897163
+final_mass_difference_percent = 0.006975704445771669
+alpha_350_difference = 6.994870612236914e-05
+alpha_500_difference = 0.0001257622184501761
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt100_rate15"
+initial_mass_difference_percent = -0.002277915195207925
+final_mass_difference_percent = -0.0005601219826587567
+alpha_350_difference = -3.466596637780039e-05
+alpha_500_difference = -1.548630428682696e-05
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt000_rate20"
+initial_mass_difference_percent = 0.0006966744887648701
+final_mass_difference_percent = 0.001187661895379222
+alpha_350_difference = 1.514711513794786e-05
+alpha_500_difference = 1.741842274982641e-05
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt025_rate20"
+initial_mass_difference_percent = 0.0003552303799807532
+final_mass_difference_percent = 0.005966292585167565
+alpha_350_difference = 6.066292170447962e-05
+alpha_500_difference = 8.89582787574339e-05
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt050_rate20"
+initial_mass_difference_percent = -0.0001698274038801628
+final_mass_difference_percent = 0.006376069821122599
+alpha_350_difference = 6.033928137327838e-05
+alpha_500_difference = 0.0001029005071168099
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt075_rate20"
+initial_mass_difference_percent = 0.0007083049467979663
+final_mass_difference_percent = -0.001960145350707876
+alpha_350_difference = -1.020664859890941e-05
+alpha_500_difference = -3.475091928195617e-05
+
+[[reference_estimator]]
+experiment_id = "dynamic_wt100_rate20"
+initial_mass_difference_percent = -0.001022764899531126
+final_mass_difference_percent = 0.003993795084390683
+alpha_350_difference = 2.175666163445333e-05
+alpha_500_difference = 7.759338550461514e-05
+
+[[experiment]]
+id = "dynamic_wt000_rate05"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 8258
+initial_mass_percent = 92.11459390478159
+final_mass_percent = 27.62026819819288
+fitted_heating_rate_kelvin_per_minute = 4.991142852252894
+alpha_minimum = -0.0004557935120083497
+alpha_maximum = 1.000278291120904
+outside_unit_interval_count = 89
+conversion_reversal_count = 243
+negative_derivative_count = 281
+reconstruction_rmse = 6.220280086966611e-05
+reconstruction_max_abs_error = 0.0003344842901512601
+warnings = ["dropped 1 non-finite core row(s)", "recorded segment is unavailable; used all finite rows before temperature cropping", "89 conversion value(s) lie outside [0, 1]; values were not clipped", "243 analysis-conversion step(s) decrease by more than 1e-8", "281 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt025_rate05"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 8258
+initial_mass_percent = 93.95467478905357
+final_mass_percent = 34.38002099639056
+fitted_heating_rate_kelvin_per_minute = 4.990994061823478
+alpha_minimum = -0.0003943826686464018
+alpha_maximum = 1.000111305663876
+outside_unit_interval_count = 171
+conversion_reversal_count = 247
+negative_derivative_count = 282
+reconstruction_rmse = 6.384930593270165e-05
+reconstruction_max_abs_error = 0.0002621685160890674
+warnings = ["dropped 1 non-finite core row(s)", "171 conversion value(s) lie outside [0, 1]; values were not clipped", "247 analysis-conversion step(s) decrease by more than 1e-8", "282 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt050_rate05"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 8254
+initial_mass_percent = 93.80393423060116
+final_mass_percent = 38.68646867167015
+fitted_heating_rate_kelvin_per_minute = 4.993729435380498
+alpha_minimum = -0.0001771810314535979
+alpha_maximum = 1.000298792252204
+outside_unit_interval_count = 43
+conversion_reversal_count = 117
+negative_derivative_count = 144
+reconstruction_rmse = 6.995529141657824e-05
+reconstruction_max_abs_error = 0.000253332705326792
+warnings = ["dropped 1 non-finite core row(s)", "43 conversion value(s) lie outside [0, 1]; values were not clipped", "117 analysis-conversion step(s) decrease by more than 1e-8", "144 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt075_rate05"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 8258
+initial_mass_percent = 95.23170021555684
+final_mass_percent = 44.6604447441749
+fitted_heating_rate_kelvin_per_minute = 4.991816754005066
+alpha_minimum = 0.0001229990337170323
+alpha_maximum = 0.9999556021339758
+outside_unit_interval_count = 0
+conversion_reversal_count = 198
+negative_derivative_count = 188
+reconstruction_rmse = 7.668325984721614e-05
+reconstruction_max_abs_error = 0.0002708444632731899
+warnings = ["dropped 1 non-finite core row(s)", "198 analysis-conversion step(s) decrease by more than 1e-8", "188 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt100_rate05"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 8256
+initial_mass_percent = 97.64267977621498
+final_mass_percent = 53.2995219449783
+fitted_heating_rate_kelvin_per_minute = 4.991701000269519
+alpha_minimum = 9.403426411012556e-05
+alpha_maximum = 1.000292309921355
+outside_unit_interval_count = 17
+conversion_reversal_count = 245
+negative_derivative_count = 269
+reconstruction_rmse = 0.000121724965467262
+reconstruction_max_abs_error = 0.000382969810493794
+warnings = ["dropped 1 non-finite core row(s)", "17 conversion value(s) lie outside [0, 1]; values were not clipped", "245 analysis-conversion step(s) decrease by more than 1e-8", "269 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt000_rate10"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5482
+initial_mass_percent = 91.92945677025159
+final_mass_percent = 26.09900376868472
+fitted_heating_rate_kelvin_per_minute = 9.980998399098338
+alpha_minimum = -0.000188867449356824
+alpha_maximum = 1.000044261714022
+outside_unit_interval_count = 14
+conversion_reversal_count = 153
+negative_derivative_count = 170
+reconstruction_rmse = 4.3132913666919e-05
+reconstruction_max_abs_error = 0.0002201334284973044
+warnings = ["dropped 1 non-finite core row(s)", "recorded segment is unavailable; used all finite rows before temperature cropping", "14 conversion value(s) lie outside [0, 1]; values were not clipped", "153 analysis-conversion step(s) decrease by more than 1e-8", "170 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt025_rate10"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5479
+initial_mass_percent = 92.35331338969475
+final_mass_percent = 30.57661462705979
+fitted_heating_rate_kelvin_per_minute = 9.986983203409904
+alpha_minimum = -0.0002032580334779592
+alpha_maximum = 0.9999688333468963
+outside_unit_interval_count = 5
+conversion_reversal_count = 89
+negative_derivative_count = 87
+reconstruction_rmse = 5.707501288271719e-05
+reconstruction_max_abs_error = 0.0003108189007893225
+warnings = ["dropped 1 non-finite core row(s)", "5 conversion value(s) lie outside [0, 1]; values were not clipped", "89 analysis-conversion step(s) decrease by more than 1e-8", "87 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt050_rate10"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5479
+initial_mass_percent = 93.27611364536605
+final_mass_percent = 36.62376104232021
+fitted_heating_rate_kelvin_per_minute = 9.98874026901114
+alpha_minimum = -0.0002172258356184811
+alpha_maximum = 1.00043812906578
+outside_unit_interval_count = 32
+conversion_reversal_count = 59
+negative_derivative_count = 78
+reconstruction_rmse = 5.524960034181157e-05
+reconstruction_max_abs_error = 0.0002355613348017094
+warnings = ["dropped 1 non-finite core row(s)", "32 conversion value(s) lie outside [0, 1]; values were not clipped", "59 analysis-conversion step(s) decrease by more than 1e-8", "78 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt075_rate10"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5482
+initial_mass_percent = 94.80811578093112
+final_mass_percent = 44.09387448624331
+fitted_heating_rate_kelvin_per_minute = 9.983169946207983
+alpha_minimum = -0.0002183650743099683
+alpha_maximum = 1.000417525446556
+outside_unit_interval_count = 25
+conversion_reversal_count = 62
+negative_derivative_count = 70
+reconstruction_rmse = 6.15841630628791e-05
+reconstruction_max_abs_error = 0.0003351561316349283
+warnings = ["dropped 1 non-finite core row(s)", "25 conversion value(s) lie outside [0, 1]; values were not clipped", "62 analysis-conversion step(s) decrease by more than 1e-8", "70 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt100_rate10"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5483
+initial_mass_percent = 96.82965707830361
+final_mass_percent = 51.01513852379556
+fitted_heating_rate_kelvin_per_minute = 9.981442550611609
+alpha_minimum = -0.0002109139635483136
+alpha_maximum = 1.000309258380151
+outside_unit_interval_count = 21
+conversion_reversal_count = 61
+negative_derivative_count = 69
+reconstruction_rmse = 4.366165559577705e-05
+reconstruction_max_abs_error = 0.0001524129382802775
+warnings = ["dropped 1 non-finite core row(s)", "21 conversion value(s) lie outside [0, 1]; values were not clipped", "61 analysis-conversion step(s) decrease by more than 1e-8", "69 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt000_rate15"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5431
+initial_mass_percent = 91.5629471300351
+final_mass_percent = 25.99864059518663
+fitted_heating_rate_kelvin_per_minute = 15.04443271155471
+alpha_minimum = 3.921799050195385e-06
+alpha_maximum = 0.9999980262917398
+outside_unit_interval_count = 0
+conversion_reversal_count = 21
+negative_derivative_count = 36
+reconstruction_rmse = 2.58588772031424e-05
+reconstruction_max_abs_error = 0.0002079304143464134
+warnings = ["dropped 1 non-finite core row(s)", "recorded segment is unavailable; used all finite rows before temperature cropping", "21 analysis-conversion step(s) decrease by more than 1e-8", "36 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt025_rate15"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5423
+initial_mass_percent = 92.16051012835524
+final_mass_percent = 31.27817963300381
+fitted_heating_rate_kelvin_per_minute = 15.06870146465031
+alpha_minimum = 4.92964629956125e-06
+alpha_maximum = 0.9999753562817983
+outside_unit_interval_count = 0
+conversion_reversal_count = 0
+negative_derivative_count = 0
+reconstruction_rmse = 3.560360240622063e-05
+reconstruction_max_abs_error = 0.0001600757025718158
+warnings = ["dropped 1 non-finite core row(s)"]
+
+[[experiment]]
+id = "dynamic_wt050_rate15"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5427
+initial_mass_percent = 93.51587538172092
+final_mass_percent = 36.99134586913154
+fitted_heating_rate_kelvin_per_minute = 15.05999491146167
+alpha_minimum = -1.850847410561656e-06
+alpha_maximum = 1.000113682841537
+outside_unit_interval_count = 4
+conversion_reversal_count = 25
+negative_derivative_count = 26
+reconstruction_rmse = 2.747315470465839e-05
+reconstruction_max_abs_error = 0.0001506262587055995
+warnings = ["dropped 1 non-finite core row(s)", "4 conversion value(s) lie outside [0, 1]; values were not clipped", "25 analysis-conversion step(s) decrease by more than 1e-8", "26 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt075_rate15"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5431
+initial_mass_percent = 94.61543816615207
+final_mass_percent = 43.50945950278167
+fitted_heating_rate_kelvin_per_minute = 15.04808007802449
+alpha_minimum = -4.272268821644174e-07
+alpha_maximum = 0.9998540190910447
+outside_unit_interval_count = 1
+conversion_reversal_count = 0
+negative_derivative_count = 0
+reconstruction_rmse = 5.401608139506449e-05
+reconstruction_max_abs_error = 0.0002823727318095048
+warnings = ["dropped 1 non-finite core row(s)", "1 conversion value(s) lie outside [0, 1]; values were not clipped"]
+
+[[experiment]]
+id = "dynamic_wt100_rate15"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5432
+initial_mass_percent = 96.43960378675484
+final_mass_percent = 51.1158786035982
+fitted_heating_rate_kelvin_per_minute = 15.04479907434023
+alpha_minimum = 5.127086852310852e-05
+alpha_maximum = 0.999990923155585
+outside_unit_interval_count = 0
+conversion_reversal_count = 1
+negative_derivative_count = 1
+reconstruction_rmse = 5.013962482458711e-05
+reconstruction_max_abs_error = 0.0002754746044404399
+warnings = ["dropped 1 non-finite core row(s)", "1 analysis-conversion step(s) decrease by more than 1e-8", "1 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt000_rate20"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5374
+initial_mass_percent = 91.54499512878994
+final_mass_percent = 25.72089233810462
+fitted_heating_rate_kelvin_per_minute = 20.23224230131175
+alpha_minimum = -9.684706573733215e-05
+alpha_maximum = 0.9999819570363281
+outside_unit_interval_count = 36
+conversion_reversal_count = 86
+negative_derivative_count = 84
+reconstruction_rmse = 1.894557489294644e-05
+reconstruction_max_abs_error = 0.0001766341932538662
+warnings = ["dropped 1 non-finite core row(s)", "36 conversion value(s) lie outside [0, 1]; values were not clipped", "86 analysis-conversion step(s) decrease by more than 1e-8", "84 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt025_rate20"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5360
+initial_mass_percent = 91.91818145564991
+final_mass_percent = 30.1657589262254
+fitted_heating_rate_kelvin_per_minute = 20.28925418508185
+alpha_minimum = 7.148798894643862e-06
+alpha_maximum = 0.9998720524078091
+outside_unit_interval_count = 0
+conversion_reversal_count = 54
+negative_derivative_count = 54
+reconstruction_rmse = 2.042531144691657e-05
+reconstruction_max_abs_error = 0.000147743200007433
+warnings = ["dropped 1 non-finite core row(s)", "54 analysis-conversion step(s) decrease by more than 1e-8", "54 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt050_rate20"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5369
+initial_mass_percent = 93.41092982740388
+final_mass_percent = 36.7250026143636
+fitted_heating_rate_kelvin_per_minute = 20.25526682277722
+alpha_minimum = 2.995935891493983e-06
+alpha_maximum = 0.9998793812508227
+outside_unit_interval_count = 0
+conversion_reversal_count = 33
+negative_derivative_count = 32
+reconstruction_rmse = 2.913825422892984e-05
+reconstruction_max_abs_error = 0.0001801901345854784
+warnings = ["dropped 1 non-finite core row(s)", "33 analysis-conversion step(s) decrease by more than 1e-8", "32 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt075_rate20"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5375
+initial_mass_percent = 94.94949373001255
+final_mass_percent = 45.22975858837579
+fitted_heating_rate_kelvin_per_minute = 20.2316475018296
+alpha_minimum = 5.103205232742286e-06
+alpha_maximum = 1.000032956498483
+outside_unit_interval_count = 1
+conversion_reversal_count = 2
+negative_derivative_count = 5
+reconstruction_rmse = 4.279000986908914e-05
+reconstruction_max_abs_error = 0.0001983360239273813
+warnings = ["dropped 1 non-finite core row(s)", "1 conversion value(s) lie outside [0, 1]; values were not clipped", "2 analysis-conversion step(s) decrease by more than 1e-8", "5 derivative value(s) are below -1e-10 K^-1"]
+
+[[experiment]]
+id = "dynamic_wt100_rate20"
+config_fingerprint = "658c997bd40a3ccda863548d3c7d7c3d3cc415377fad453f8d5b6770bb05678c"
+retained_rows = 5378
+initial_mass_percent = 96.27939051642595
+final_mass_percent = 50.54160478220699
+fitted_heating_rate_kelvin_per_minute = 20.22343395729241
+alpha_minimum = 3.062055592468371e-05
+alpha_maximum = 0.9999109004135729
+outside_unit_interval_count = 0
+conversion_reversal_count = 5
+negative_derivative_count = 5
+reconstruction_rmse = 4.638705102912969e-05
+reconstruction_max_abs_error = 0.0002183175955565164
+warnings = ["dropped 1 non-finite core row(s)", "5 analysis-conversion step(s) decrease by more than 1e-8", "5 derivative value(s) are below -1e-10 K^-1"]
+

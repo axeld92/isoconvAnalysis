@@ -1,0 +1,178 @@
+function [output, c] = deconvolution(varargin)
+% DECONVOLUTION performs a deconvolution of multiple datasets using a mixture
+% of Fraser-Suzuki distributions. The function fits the data, normalizes it, 
+% and visualizes the results.
+
+n = nargin; % Number of input arguments (datasets)
+
+% Initialize variables
+das = [];
+data = cell(1, n);
+T = cell(1, n);
+t = cell(1, n);
+a = cell(1, n);
+da = cell(1, n);
+Tr = cell(1, n);
+dar = cell(1, n);
+
+% Extract and clean data
+for i = 1:n
+    data{i} = varargin{i};
+    data{i} = cleandata(data{i});
+    T{i} = data{i}(:, 1); % Time
+    t{i} = data{i}(:, 2); % Temperature
+    a{i} = data{i}(:, 4); % Alpha
+    da{i} = data{i}(:, 3); % Derivative of alpha
+    das = [das; da{i}]; % Collect all da values for normalization
+    Tr{i} = T{i}; % Store original time data
+    T{i} = (T{i} - T{i}(1)) / (T{i}(end) - T{i}(1)); % Normalize time data
+end
+
+dmax = max(das(:)); % Maximum value of da across all datasets
+
+% Normalize da values
+for i = 1:n
+    da{i} = da{i} / dmax;
+end
+
+% Initial bounds and parameters for optimization
+lb1 = [0  0   0   0   0   0   0   0  0];
+ub1 = [1  1   1   1   1   1   1   1  1];
+p01 = [0.5 0.24 0.5 0.5 0.34 0.5 0.5 0.457 0.5];
+
+lb = [0.001, -0.2, 0.18, 0.001, 0.001, -0.2, 0.301, 0.001, 0.001, -0.2, 0.3, 0.05];
+ub = [0.999, 0.2, 0.3, 0.999, 0.999, 0.2, 0.38, 0.999, 0.999, 0.2, 0.4, 0.5];
+
+rng default 
+opts = optimoptions(@fmincon, 'OptimalityTolerance', 1E-10, 'StepTolerance', 1E-10, 'MaxFunctionEvaluations', 10000, 'MaxIterations', 1000);
+gs = GlobalSearch; 
+
+fits = {};
+fvals = {};
+p0 = (lb + ub) / 2;
+
+% Optimization loop for each dataset
+for i = 1:n
+    % Objective function for Gaussian fit
+    obj_fun1 = @(parameters) sum((fmgauss(T{i}, parameters) - da{i}).^2);
+    problem = createOptimProblem('fmincon', 'x0', p01, 'objective', obj_fun1, 'lb', lb1, 'ub', ub1, 'options', opts);
+    [fsg, fvalg] = run(gs, problem);
+    
+    % Update bounds and initial guesses
+    idx1 = [1 2 4 5 7 8];
+    idx2 = [1 3 5 7 9 11];
+    lb(idx2) = fsg(idx1) - fsg(idx1) * 0.1;
+    ub(idx2) = fsg(idx1) + fsg(idx1) * 0.1;
+    p0(idx2) = fsg(idx1);
+    p01 = fsg;
+    lb1(idx1) = p01(idx1) - p01(idx1) * 0.1;
+    ub1(idx1) = p01(idx1) + p01(idx1) * 0.1;
+    
+    % Objective function for Fraser-Suzuki mixture fit
+    obj_fun = @(parameters) sum((fsm(T{i}, parameters) - da{i}).^2);
+    problem = createOptimProblem('fmincon', 'x0', p0, 'objective', obj_fun, 'lb', lb, 'ub', ub, 'options', opts);
+    [fsfit, fval] = run(gs, problem);
+    
+    fits{i} = fsfit;
+    fvals{i} = fval;
+    p0 = fsfit;
+    
+    % Update bounds based on the fit
+    lb([1, 3, 4, 5, 7, 8, 9, 11, 12]) = p0([1, 3, 4, 5, 7, 8, 9, 11, 12]) - p0([1, 3, 4, 5, 7, 8, 9, 11, 12]) * 0.1;
+    ub([1, 3, 4, 5, 7, 8, 9, 11, 12]) = p0([1, 3, 4, 5, 7, 8, 9, 11, 12]) + p0([1, 3, 4, 5, 7, 8, 9, 11, 12]) * 0.1;
+    ub(9) = fsfit(9);
+    lb([11, 12]) = fsfit([11, 12]);
+    lb([4, 8, 12]) = fsfit([4, 8, 12]);
+end
+
+% Rescale and adjust fitted parameters
+for i = 1:n
+    fitss{i}{1} = fits{i}(1:4);
+    fitss{i}{2} = fits{i}(5:8);
+    fitss{i}{3} = fits{i}(9:12);
+end
+
+for i = 1:n
+    for j = 1:3
+        fitss{i}{j}(1) = dmax * fitss{i}{j}(1); % Rescale dadt
+        fitss{i}{j}(3) = (T{i}(end) - T{i}(1)) * fitss{i}{j}(3) + T{i}(1); % Rescale temperature
+        fitss{i}{j}(4) = (T{i}(end) - T{i}(1)) * fitss{i}{j}(4); % Rescale width
+        daa{i}{j} = fs(T{i}, fitss{i}{j});
+        aa{i}{j} = cumtrapz(T{i}, daa{i}{j});
+    end
+    
+    % Normalize cumulative areas
+    for j = 1:3
+        c(i, j) = aa{i}{j}(end) / (aa{i}{1}(end) + aa{i}{2}(end) + aa{i}{3}(end));
+    end
+    
+    % Normalize daa and aa
+    for j = 1:3
+        aa{i}{j} = aa{i}{j} / c(i, j);
+        daa{i}{j} = daa{i}{j} / c(i, j);
+    end
+end
+
+% Prepare output
+for i = 1:n
+    output{i} = {[T{i}, t{i}, daa{i}{1}, aa{i}{1}], [T{i}, t{i}, daa{i}{2}, aa{i}{2}], [T{i}, t{i}, daa{i}{3}, aa{i}{3}]};
+end
+
+% Plot results
+for i = 1:n
+    figure;
+    hold on;
+    plot(T{i}, da{i}, 'LineWidth', 1);
+    plot(T{i}, fsm(T{i}, [fitss{i}{1}, fitss{i}{2}, fitss{i}{3}]), 'LineWidth', 1);
+    plot(T{i}, daa{i}{1} * c(i, 1), 'LineWidth', 1);
+    plot(T{i}, daa{i}{2} * c(i, 2), 'LineWidth', 1);
+    plot(T{i}, daa{i}{3} * c(i, 3), 'LineWidth', 1);
+    hold off;
+    grid;
+    ylim([-0.002 0.012]);
+    legend('Real', 'Fitted', 'Peak 1', 'Peak 2', 'Peak 3');
+    ylabel('d\alpha/dt [1/min]');
+    xlabel('Temperature [K]');
+end
+
+% Define Fraser-Suzuki Function
+function y = fs(T, p)
+    in = 2 * p(2) * ((T - p(3)) / p(4));
+    out = -log(2) / p(2)^2;
+    l = length(in);
+    y = zeros(l, 1);
+    for ii = 1:l
+        if p(2) ~= 0
+            if in(ii) > -1
+                y(ii) = p(1) * exp(-log(2) / p(2)^2 * (log(1 + 2 * p(2) * (T(ii) - p(3)) / p(4)))^2);
+            else
+                y(ii) = 0;
+            end
+        else
+            y(ii) = p(1) * exp(-4 * log(2) * ((T(ii) - p(3)) / p(4))^2);
+        end
+    end
+end
+
+% Define Fraser-Suzuki Mixture
+function y = fsm(T, pm)
+    y = fs(T, pm(1:4)) + fs(T, pm(5:8)) + fs(T, pm(9:12));
+end
+
+% Define Integrated Fraser-Suzuki Mixture
+function y = fsmi(T, pm)
+    y = cumtrapz(T, fsm(T, pm));
+end
+
+% Define Multiple Gaussian Function
+function y = fmgauss(T, p)
+    y = fgauss(T, p(1:3)) + fgauss(T, p(4:6)) + fgauss(T, p(7:9));
+end
+
+% Define Single Gaussian Function
+function y = fgauss(T, p)
+    y = normpdf(T, p(2), p(3));
+    y = p(1) * y / max(y);
+end
+
+end
