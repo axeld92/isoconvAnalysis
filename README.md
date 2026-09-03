@@ -4,7 +4,9 @@ A from-scratch Julia implementation of the thermogravimetric and isoconversional
 ideas developed in the original master thesis. The legacy MATLAB directory is retained as
 read-only evidence; undocumented legacy behavior is not treated as a specification.
 
-The scientific scope, decisions, and milestone status live in [`MASTERPLAN.md`](MASTERPLAN.md).
+The concise current snapshot and next actions are in
+[`PROJECT_STATUS.md`](PROJECT_STATUS.md). The complete scientific scope, decisions, and
+milestone history live in [`MASTERPLAN.md`](MASTERPLAN.md).
 M0 documents the source data and methods, M1 establishes the reproducible Julia foundation,
 M2 imports and audits the source data, M3 provides the validated preprocessing pipeline, M4
 implements and audits five isoconversional methods, and M5 provides constrained Fraser–Suzuki
