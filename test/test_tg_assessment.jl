@@ -207,6 +207,15 @@ if !isempty(tg_assessment_results)
                 "retained_fraction",
             )
             @test all(r -> all(k -> r[k] == first(scores)[k], parameters), scores)
+            # Refitting can pick a slightly different optimum on a newer runtime.
+            # The cross-version mass budget is one increment of the source balance.
+            refit_mass_atol = VERSION >= v"1.12" ? 1e-4 : 1e-7
+            config_dir = joinpath(project_root, "config")
+            config = TOML.parsefile(joinpath(config_dir, "tg_assessment_pine.toml"))
+            specs, _ = TGAssessment.read_tg_roster(config, config_dir)
+            runs = TGAssessment.import_tg_runs(config, config_dir, specs)
+            policy = config["prediction"]
+            mass_prediction = TGAssessment.MassPrediction
             for actual in scores
                 prior = only(
                     r for r in expected["hold_scores"] if
@@ -218,23 +227,54 @@ if !isempty(tg_assessment_results)
                 @test isapprox(
                     actual["predicted_final_mass_mg"],
                     prior["predicted_final_mass_mg"];
-                    atol=1e-7,
+                    atol=refit_mass_atol,
                     rtol=0,
                 )
-                for (window, old_window) in (
-                    ("evaluation", "hold"), ("full", "full"), ("final_window", "final_hour")
+                # Replay the archived fit to test prediction independently of optimizer drift.
+                held = TGAssessment.prediction_input(
+                    runs[actual["held_out_run"]], policy, policy["holdout_window"]
                 )
+                fit = (;
+                    parameters=[prior[key] for key in parameters[1:3]],
+                    residue=prior["retained_fraction"],
+                    shape=nothing,
+                )
+                replayed = mass_prediction.predict_pp(
+                    fit, held.program, expected["settings"]; refined=true
+                )
+                @test isapprox(
+                    last(replayed), prior["predicted_final_mass_mg"]; atol=1e-7, rtol=0
+                )
+                time = held.program.history.time_min
+                last_hour =
+                    searchsortedfirst(time, last(time) - policy["final_window_min"]):length(
+                        time
+                    )
+                windows = (
+                    ("evaluation", "hold", held.reaction_rows),
+                    ("full", "full", eachindex(replayed)),
+                    ("final_window", "final_hour", last_hour),
+                )
+                for (window, old_window, rows) in windows
                     @test actual[window]["rows"] == prior[old_window]["rows"]
-                    for (metric, tolerance) in (
-                        ("rmse_percent_first_mass", 1e-5),
-                        ("rmse_mg", 1e-7),
-                        ("mae_mg", 1e-7),
-                        ("bias_mg", 1e-7),
+                    replay_score = mass_prediction.score_pp(replayed, held, rows)
+                    @test replay_score["rows"] == prior[old_window]["rows"]
+                    for (metric, scale) in (
+                        ("rmse_percent_first_mass", 100 / prior["first_mass_mg"]),
+                        ("rmse_mg", 1),
+                        ("mae_mg", 1),
+                        ("bias_mg", 1),
                     )
                         @test isapprox(
                             actual[window][metric],
                             prior[old_window][metric];
-                            atol=tolerance,
+                            atol=refit_mass_atol * scale,
+                            rtol=0,
+                        )
+                        @test isapprox(
+                            replay_score[metric],
+                            prior[old_window][metric];
+                            atol=1e-7 * scale,
                             rtol=0,
                         )
                     end

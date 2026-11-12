@@ -8,6 +8,12 @@ Julia 1.13 uses the version-specific lockfiles. They include the SHA 1 standard
 library and updated RuntimeGeneratedFunctions and PrecompileTools for
 precompilation on this Julia series.
 
+On Julia 1.13.3, both datasets reproduced the archived activation-energy profiles
+exactly. Replaying the archived frozen pine fit also reproduced the hold RMSEs
+exactly. Recalibration on 1.13.3 changed the hold RMSEs by at most 0.0033 percentage
+points. The cross-version refit regression allows 0.0001 mg, one increment of the
+source balance. The archived-fit replay uses a separate, tighter numerical check.
+
 ```sh
 julia --startup-file=no --project=. scripts/assess_tg.jl config/tg_assessment_pine.toml results/tg_assessment/pine
 julia --startup-file=no --project=. scripts/assess_tg.jl config/tg_assessment_polypropylene.toml results/tg_assessment/polypropylene
