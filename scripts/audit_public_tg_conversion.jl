@@ -281,13 +281,15 @@ function material_summary(runs, grid)
 end
 
 function main()
-    length(ARGS) <= 1 || error(
-        "Usage: julia --project=. scripts/audit_public_tg_conversion.jl [report.toml]"
+    picnik_only = "--picnik-only" in ARGS
+    paths = filter(!=("--picnik-only"), ARGS)
+    length(paths) <= 1 || error(
+        "Usage: julia --project=. scripts/audit_public_tg_conversion.jl [--picnik-only] [report.toml]",
     )
-    report_path = isempty(ARGS) ? joinpath(TG_ROOT, TG_REPORT) : abspath(only(ARGS))
+    default_report = picnik_only ? "results/public_tg_conversion.toml" : TG_REPORT
+    report_path = isempty(paths) ? joinpath(TG_ROOT, default_report) : abspath(only(paths))
     manifest = TOML.parsefile(joinpath(TG_ROOT, TG_IMPORT_MANIFEST))
     protocol = TOML.parsefile(joinpath(TG_ROOT, TG_PROTOCOL))
-    mixchar_config = TOML.parsefile(joinpath(TG_ROOT, MIXCHAR_IMPORT_MANIFEST))
     protocol["schema_version"] == 1 || error("Unsupported TG protocol schema")
     groups = ("experimental_tg", "synthetic_tg")
     runs = [
@@ -298,13 +300,18 @@ function main()
         error("Expected thirteen synthetic TG runs")
     count(r -> r["group"] == "experimental_tg", runs) == 5 ||
         error("Expected five experimental TG runs")
-    mixchar = audit_mixchar_losses(mixchar_config, protocol)
-    length(mixchar) == 2 || error("Expected two mixchar runs")
+    mixchar = if picnik_only
+        Dict{String,Any}[]
+    else
+        config = TOML.parsefile(joinpath(TG_ROOT, MIXCHAR_IMPORT_MANIFEST))
+        losses = audit_mixchar_losses(config, protocol)
+        length(losses) == 2 || error("Expected two mixchar runs")
+        losses
+    end
     evidence = Dict{String,Any}(
         "schema_version" => 1,
         "import_manifest" => TG_IMPORT_MANIFEST,
         "protocol" => TG_PROTOCOL,
-        "mixchar_manifest" => MIXCHAR_IMPORT_MANIFEST,
         "alpha_grid" => protocol["alpha_grid"],
         "comparison_case" => protocol["comparison_case"],
         "tg_conversion_runs" => length(runs),
@@ -314,6 +321,8 @@ function main()
         "runs" => runs,
         "mixchar" => mixchar,
     )
+    picnik_only || (evidence["mixchar_manifest"] = MIXCHAR_IMPORT_MANIFEST)
+    mkpath(dirname(report_path))
     open(report_path, "w") do io
         return TOML.print(io, evidence; sorted=true)
     end

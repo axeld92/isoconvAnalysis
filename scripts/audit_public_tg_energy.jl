@@ -3,6 +3,9 @@ using SHA
 using Statistics
 using TOML
 
+include("generate_tg_energy_controls.jl")
+using .TGEnergyControls: generate_tg_energy_controls
+
 module PublicTGEnergyInputs
 include("audit_public_tg_friedman.jl")
 end
@@ -183,10 +186,7 @@ end
 
 function audit_controls(options)
     return mktempdir() do directory
-        generator = joinpath(TG_ROOT, "scripts", "generate_tg_energy_controls.py")
-        python = get(ENV, "TG_ENERGY_PYTHON", "python")
-        run(Cmd([python, "-B", generator, directory]))
-        manifest = TOML.parsefile(joinpath(directory, "manifest.toml"))["runs"]
+        manifest = generate_tg_energy_controls(directory, options.protocol)
         results = map(options.protocol["controls"]) do control
             case = control["id"]
             specs = filter(spec -> spec["material_id"] == case, manifest)
@@ -378,7 +378,7 @@ function audit_public_tg_energy(output)
         FRIEDMAN_PROTOCOL,
         "config/public_tg_vyazovkin.toml",
         "config/analysis_defaults.toml",
-        "scripts/generate_tg_energy_controls.py",
+        "scripts/generate_tg_energy_controls.jl",
     )
     report = Dict(
         "schema_version" => 1,

@@ -81,9 +81,10 @@ Run the audit from the repository root with the pinned raw files available.
 
 ```sh
 julia --startup-file=no --project=. scripts/audit_public_tg_conversion_support.jl
-python scripts/verify_public_tg_conversion_support.py
 julia --startup-file=no --project=docs scripts/plot_public_tg_conversion_support.jl
 ```
+
+For an optional independent check, run `python -B scripts/verify_public_tg_conversion_support.py`.
 
 The [machine-readable evidence](audits/public_tg_conversion_support.toml) records all
 25 group and scenario combinations, 24 omission cases, and the crossing-level

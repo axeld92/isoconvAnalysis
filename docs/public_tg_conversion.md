@@ -79,11 +79,19 @@ time, and reported mass. [Publication record](https://doi.org/10.1016/j.cpc.2022
 
 ## Reproduction
 
-Download the pinned pICNIK and mixchar inputs. The full conversion audit also
-uses the optional `rdata` decoder to prepare the two mixchar CSVs.
+Run the pICNIK conversion audit with Julia alone. The report goes to
+`results/public_tg_conversion.toml`.
 
 ```sh
-python -B scripts/fetch_public_benchmarks.py --sources picnik mixchar
+julia --startup-file=no --project=. scripts/fetch_public_tg.jl
+julia --startup-file=no --project=. scripts/audit_public_tg_conversion.jl --picnik-only
+```
+
+To include the two mixchar examples, acquire them and prepare their CSVs with
+the optional `rdata` decoder.
+
+```sh
+python -B scripts/fetch_public_benchmarks.py --sources mixchar
 python -m pip install --only-binary=:all: rdata==1.0.0
 python -B scripts/prepare_mixchar_examples.py
 julia --startup-file=no --project=. scripts/audit_public_tg_conversion.jl

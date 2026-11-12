@@ -6,4 +6,5 @@ config/analysis_defaults.toml text eol=lf
 config/public_thermal_import.toml text eol=lf
 config/public_tg_*.toml text eol=lf
 scripts/generate_tg_energy_controls.py text eol=lf
+scripts/generate_tg_energy_controls.jl text eol=lf
 docs/audits/public_tg_*.toml text eol=lf

@@ -23,9 +23,14 @@ function public_input_path(root, relative)
         !occursin(r"[\\:]", relative)
     valid || error("Invalid local public input path: $relative")
     source = joinpath(root, components...)
-    isfile(source) || error(
-        "Missing $relative. Restore the pinned files with scripts/fetch_public_benchmarks.py.",
-    )
+    if !isfile(source)
+        fetcher = if startswith(relative, "data/external/picnik/raw/")
+            "julia --project=. scripts/fetch_public_tg.jl"
+        else
+            "scripts/fetch_public_benchmarks.py"
+        end
+        error("Missing $relative. Restore the pinned files with $fetcher.")
+    end
     resolved = realpath(source)
     data_root = realpath(joinpath(root, "data", "external"))
     relative_to_data = relpath(resolved, data_root)

@@ -4,12 +4,10 @@
 
 The [protocol](../config/public_tg_energy.toml) declares the conversion grid, control
 energies, program rates, recovery tolerances, and numerical settings. A standalone
-Python RK4 solver integrates the first-order reaction in the variable
+Julia RK4 solver integrates the first-order reaction in the variable
 `y = −log(1 − α)`, then records time, temperature, and remaining mass on an irregular
-clock. It generates four traces at each of three known truths. The highest difference
-between four and eight RK4 substeps per output interval was 9.05 × 10⁻¹⁴ in conversion.
-An independent SciPy DOP853 solve agreed with the generated conversion values to
-1.06 × 10⁻¹¹ across the 12 traces.
+clock. It generates four traces at each of three known truths. Using eight RK4
+substeps instead of four changed conversion by at most 9.05 × 10⁻¹⁴.
 Julia imports the resulting CSVs through the ordinary TG entry point with their
 known 12 mg initial and 2 mg terminal references. These controls use no pICNIK data or
 Julia simulation routines.
@@ -83,17 +81,28 @@ and protocols. Reaction identities and the kinetic triplet require additional ev
 
 ## Reproduction
 
-Run from the repository root with Julia 1.11 and Python 3.11+. The fetch command
-downloads the pinned pICNIK source files under `data/external/picnik/raw/`.
-The audit generates temporary synthetic controls with the Python standard
-library and verifies the polypropylene source bytes against the import manifest.
-The independent energy check also uses NumPy and SciPy.
+Run from the repository root with Julia 1.11. The fetch command downloads and
+verifies all 18 pinned pICNIK TG files using the sizes and SHA-256 checksums in
+the import manifest. Use `--offline` to verify an existing cache.
 
 ```sh
-python -B scripts/fetch_public_benchmarks.py --sources picnik
 julia --startup-file=no --project=. -e 'using Pkg; Pkg.instantiate()'
+julia --startup-file=no --project=. scripts/fetch_public_tg.jl
 julia --startup-file=no --project=. scripts/audit_public_tg_energy.jl
+```
+
+The optional independent check uses Python 3.11+, NumPy and SciPy. The original
+Python control generator also remains available for comparing synthetic traces.
+
+```sh
 python -B scripts/verify_public_tg_energy.py
+```
+
+To regenerate the figure, instantiate the documentation environment and run the
+Julia plotting script.
+
+```sh
+julia --startup-file=no --project=docs -e 'using Pkg; Pkg.instantiate()'
 julia --startup-file=no --project=docs scripts/plot_public_tg_energy.jl
 ```
 
