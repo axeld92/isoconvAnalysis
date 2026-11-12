@@ -2,6 +2,13 @@ using TOML
 
 include(joinpath(@__DIR__, "..", "scripts", "assess_tg.jl"))
 
+@testset "TG assessment prediction baseline" begin
+    prediction = TGAssessment.MassPrediction
+    settings = TOML.parsefile(joinpath(@__DIR__, "..", prediction.PP_PROTOCOL))
+    control = prediction.check_analytic_prediction(settings)
+    @test control["held_out_max_error_mg"] < 0.001
+end
+
 @testset "TG assessment program roster" begin
     program(id, role, kind, runs; kwargs...) = Dict{String,Any}(
         "id" => id,

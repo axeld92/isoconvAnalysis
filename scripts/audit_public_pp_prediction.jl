@@ -138,10 +138,10 @@ function fit_pp(training, shape, protocol)
             return first(pp_training_objective(pieces, decode(x), shape, protocol; refined))
         end
         initial = (start .- lower) ./ width
-        fit = optimize(
+        fit = Optim.optimize(
             objective,
             initial,
-            NelderMead(;
+            Optim.NelderMead(;
                 initial_simplex=Optim.AffineSimplexer(; a=refined ? 0.005 : 0.06, b=0.0)
             ),
             Optim.Options(;
