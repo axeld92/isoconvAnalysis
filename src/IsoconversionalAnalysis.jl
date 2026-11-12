@@ -2,7 +2,7 @@
     IsoconversionalAnalysis
 
 Reproducible tools for thermogravimetric and isoconversional kinetic analysis. The package
-exposes validated configuration, MAT ingestion, raw-data audit, preprocessing,
+exposes validated configuration, MAT ingestion, segment-aware thermal import and TG conversion,
 isoconversional-analysis, Fraser–Suzuki deconvolution, and kinetic-triplet APIs through M6.
 """
 module IsoconversionalAnalysis
@@ -22,8 +22,11 @@ include("Types.jl")
 include("Configuration.jl")
 include("LoggingSupport.jl")
 include("DataIO.jl")
+include("ThermalObservations.jl")
+include("ThermalDelimitedIO.jl")
 include("DataAudit.jl")
 include("Preprocessing.jl")
+include("ThermalTGConversion.jl")
 include("Isoconversional.jl")
 include("PeakModels.jl")
 include("Deconvolution.jl")
@@ -72,6 +75,15 @@ export AdvancedVyazovkinConfig,
     ProjectConfig,
     ReactionModelConfig,
     ReactionModelSpec,
+    TGConversionResult,
+    TGReferenceEstimate,
+    ThermalColumnMapping,
+    ThermalColumnSpec,
+    ThermalProvenance,
+    ThermalRun,
+    ThermalSegment,
+    ThermalSignal,
+    ThermalSignalSpec,
     UnitConfig,
     ValidationIssue,
     analyze,
@@ -104,7 +116,14 @@ export AdvancedVyazovkinConfig,
     preprocessing_fingerprint,
     reaction_function,
     reaction_model_registry,
+    read_thermal_delimited,
+    select_thermal_segment,
+    signal_values,
     source_sha256,
+    temperature_K,
+    thermal_segment_diagnostics,
+    tg_conversion,
+    time_min,
     trailing_invalid_row_count,
     valid_row_mask,
     validate_experiment,

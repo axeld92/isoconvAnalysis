@@ -15,6 +15,7 @@ makedocs(;
         "Home" => "index.md",
         "Configuration and logging" => "configuration.md",
         "Data ingestion and audit" => "data_ingestion.md",
+        "TG conversion and kinetics" => "thermal_conversion.md",
         "Preprocessing" => "preprocessing.md",
         "Isoconversional analysis" => "isoconversional.md",
         "Fraser–Suzuki deconvolution" => "deconvolution.md",
