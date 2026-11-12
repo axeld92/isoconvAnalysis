@@ -36,6 +36,7 @@ include("ThermalActivationEnergy.jl")
 include("PeakModels.jl")
 include("Deconvolution.jl")
 include("ReactionModels.jl")
+include("TemperaturePrograms.jl")
 
 export AdvancedVyazovkinConfig,
     AdvancedVyazovkinDiagnostics,

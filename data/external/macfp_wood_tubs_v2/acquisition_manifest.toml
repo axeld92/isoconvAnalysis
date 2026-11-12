@@ -1,0 +1,609 @@
+schema_version = 1
+source_id = "macfp_wood_tubs_v2"
+source_doi = "10.24355/dbbs.084-202605201212-0"
+source_url = "https://leopard.tu-braunschweig.de/receive/dbbs_mods_00080005"
+license = "CC-BY-4.0"
+acquisition = "User-provided local ZIP, checked against extracted members and pinned Git files"
+upstream_archive_checksum_status = "Publisher checksum unavailable"
+archive_path = "data/external/data.zip"
+archive_sha256 = "433d525785a9bf84eedb44d52c97bdb3abcd60630cd4a1c53d840231110b175d"
+archive_bytes = 991278
+comparison_revision = "bd7cd7abaff44ee4e22af369702066c2f0f72185"
+
+[[files]]
+member = "data/README.md"
+path = "data/external/macfp_wood_tubs_v2/raw/README.md"
+bytes = 7453
+sha256 = "a9b09775e32be1b749df80f0a93cbefff5eb4afaa6e3ba14908516ba985b02a2"
+zip_crc32 = "8fb9d31f"
+
+[[files]]
+member = "data/TUBS_Wood_Cone_30kW_hor_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_Cone_30kW_hor_R1.csv"
+bytes = 48709
+sha256 = "be2c10799c8d1e7d7f2b4f216f208172394da458a3ae2ed97a1e2dcc61cd09c7"
+zip_crc32 = "46533e51"
+
+[[files]]
+member = "data/TUBS_Wood_Cone_30kW_hor_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_Cone_30kW_hor_R2.csv"
+bytes = 48860
+sha256 = "3c8e1c8b2047b7a4047cd895013b8e4e75fc649ba7decefa8599329bf842f5e9"
+zip_crc32 = "b3f829cf"
+
+[[files]]
+member = "data/TUBS_Wood_Cone_30kW_hor_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_Cone_30kW_hor_R3.csv"
+bytes = 48540
+sha256 = "ce594e24790bdd44eed8a13164e42841474e4f37a311c336798240908dbd6edf"
+zip_crc32 = "bbe42d5f"
+
+[[files]]
+member = "data/TUBS_Wood_Gasification_20kW_hor_parallel_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_Gasification_20kW_hor_parallel_R1.csv"
+bytes = 31062
+sha256 = "cfe4863cb068dfa2eecb38d4aca0ce177a612ff05843d237fba302fa0dc84a10"
+zip_crc32 = "50c42cb9"
+
+[[files]]
+member = "data/TUBS_Wood_Gasification_20kW_hor_parallel_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_Gasification_20kW_hor_parallel_R2.csv"
+bytes = 31063
+sha256 = "5585f41b65f19de6c7ca0a4a1982973d5ce75810e1584db1ef1f0cb3030a10ee"
+zip_crc32 = "2d5e22c1"
+
+[[files]]
+member = "data/TUBS_Wood_Gasification_20kW_hor_parallel_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_Gasification_20kW_hor_parallel_R3.csv"
+bytes = 31048
+sha256 = "cd86b98b0fdb5be95dee8668df55472edd1936ee720947561a86d73bc39127e9"
+zip_crc32 = "dee0439b"
+
+[[files]]
+member = "data/TUBS_Wood_Gasification_20kW_hor_perpendicular_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_Gasification_20kW_hor_perpendicular_R1.csv"
+bytes = 31698
+sha256 = "ff7b9b427d6b07e124dbf2c83617f9bfce045de954f594e93697540ca40e93b3"
+zip_crc32 = "e9c4741e"
+
+[[files]]
+member = "data/TUBS_Wood_Gasification_20kW_hor_perpendicular_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_Gasification_20kW_hor_perpendicular_R2.csv"
+bytes = 31690
+sha256 = "ddc87e1e5b73123d77e8a4943ac90c6df4dce9e3f04b61680c75c1f35df19914"
+zip_crc32 = "e0843a1b"
+
+[[files]]
+member = "data/TUBS_Wood_Gasification_20kW_hor_perpendicular_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_Gasification_20kW_hor_perpendicular_R3.csv"
+bytes = 31694
+sha256 = "e92754d8612e895afeed33565aa6625dd0374b3265aa8c4f2b3aadd8569e575c"
+zip_crc32 = "245eb4c0"
+
+[[files]]
+member = "data/TUBS_Wood_MCC_N2_30K_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_MCC_N2_30K_R1.csv"
+bytes = 14815
+sha256 = "34de426ced1d6e5b641c5592300601b739c39ae450aa8f39ef0f15f4bd2acfa2"
+zip_crc32 = "14fe5e8c"
+
+[[files]]
+member = "data/TUBS_Wood_MCC_N2_30K_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_MCC_N2_30K_R2.csv"
+bytes = 14861
+sha256 = "d1851f6708da7fbc3d5e65004e3219aefe399a8b4cc5e2969f3cf64e6f7c5b5c"
+zip_crc32 = "b65f45b7"
+
+[[files]]
+member = "data/TUBS_Wood_MCC_N2_30K_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_MCC_N2_30K_R3.csv"
+bytes = 14737
+sha256 = "ab8f9f4b9718d118984fcef89f2998ea0e744011fe6b0f410cfb600f6303cefd"
+zip_crc32 = "eb0c11d3"
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_10K_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_10K_R1.csv"
+bytes = 50820
+sha256 = "3f4c611f2f27819f6c66f23d559554ff495af1e850d9d08df68499d6653e9157"
+zip_crc32 = "2a5b8668"
+id = "TUBS_Wood_TGA_N2_10K_R1"
+group = "main_ramp"
+repeat = 1
+sample_mass_mg = 1.04
+rows = 2283
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_10K_R1.csv"
+github_sha256 = "18ed375f5cf14602027a8a3c3bd53d176ca935db1a4df7c48eb4da9f207f9acb"
+nominal_rate_K_per_min = 10
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_10K_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_10K_R2.csv"
+bytes = 50850
+sha256 = "ab5119615c30f12a1dca33d2e2ba665528f75b3b2b4270529b055727f4ede169"
+zip_crc32 = "1d92224a"
+id = "TUBS_Wood_TGA_N2_10K_R2"
+group = "main_ramp"
+repeat = 2
+sample_mass_mg = 1.03
+rows = 2283
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_10K_R2.csv"
+github_sha256 = "d2267a2021c555f4735eadd0e9dd1826ebca49b10fd5cbd61491454159229ae6"
+nominal_rate_K_per_min = 10
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_10K_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_10K_R3.csv"
+bytes = 50863
+sha256 = "21e3527e58ea1fc27672322f4c9d0c5c9028fa0658951a0b4429cb606121e58d"
+zip_crc32 = "98ba5747"
+id = "TUBS_Wood_TGA_N2_10K_R3"
+group = "main_ramp"
+repeat = 3
+sample_mass_mg = 1.03
+rows = 2283
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_10K_R3.csv"
+github_sha256 = "b3f9f17a68fb63b579c067456ddd93701ca5bcce464bd85d484dab32eafef339"
+nominal_rate_K_per_min = 10
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_20K_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_20K_R1.csv"
+bytes = 50755
+sha256 = "e3edd0fbe025dfa7fe28aa5e2c1465d6dc561cb80d78593cc38f688fe1f4d422"
+zip_crc32 = "bcbf1d05"
+id = "TUBS_Wood_TGA_N2_20K_R1"
+group = "main_ramp"
+repeat = 1
+sample_mass_mg = 1.03
+rows = 2279
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_20K_R1.csv"
+github_sha256 = "e8b39c23a8e7fbebb5e171930641b5a18a248c52f9c9f2dc456f672c3720b341"
+nominal_rate_K_per_min = 20
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_20K_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_20K_R2.csv"
+bytes = 50765
+sha256 = "c3d3214a11cb83e6ae665b1df4948f4466ad51359e0ef457bb87e75888459360"
+zip_crc32 = "a1f98a2a"
+id = "TUBS_Wood_TGA_N2_20K_R2"
+group = "main_ramp"
+repeat = 2
+sample_mass_mg = 1.03
+rows = 2279
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_20K_R2.csv"
+github_sha256 = "5b2e3fd7bf811aef3c4f38b9da3692b3091a406ee95b1acbee8f0348d148042a"
+nominal_rate_K_per_min = 20
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_20K_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_20K_R3.csv"
+bytes = 50739
+sha256 = "f7636ee660a975959d57a1392a660dee3d1376f251dba47e157eece950afb663"
+zip_crc32 = "432a2e49"
+id = "TUBS_Wood_TGA_N2_20K_R3"
+group = "main_ramp"
+repeat = 3
+sample_mass_mg = 1.04
+rows = 2279
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_20K_R3.csv"
+github_sha256 = "59874689bf9e216fc9c87dfb9c0925b865292721f8ab3c3dbabce16a8ec76287"
+nominal_rate_K_per_min = 20
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_30K_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_30K_R1.csv"
+bytes = 50644
+sha256 = "453a94c9feaa2913523f248321d251370318e5775014652f196923f7c8e7b199"
+zip_crc32 = "b90ef919"
+id = "TUBS_Wood_TGA_N2_30K_R1"
+group = "main_ramp"
+repeat = 1
+sample_mass_mg = 1.05
+rows = 2275
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_30K_R1.csv"
+github_sha256 = "da091f99f4b55f605c1ba1d1b20b7aee99afff34dc448d04bc531de4ec8db698"
+nominal_rate_K_per_min = 30
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_30K_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_30K_R2.csv"
+bytes = 50654
+sha256 = "e6f79dc9afb3a14e4f4ae333773f5d6c476acf71640cf370fff0c2dc22b4f1b3"
+zip_crc32 = "f5fd0e5e"
+id = "TUBS_Wood_TGA_N2_30K_R2"
+group = "main_ramp"
+repeat = 2
+sample_mass_mg = 1.0
+rows = 2275
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_30K_R2.csv"
+github_sha256 = "798143de37c299092de67ac4109ee08c777809b4081f188ceb4534100881e921"
+nominal_rate_K_per_min = 30
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_30K_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_30K_R3.csv"
+bytes = 50666
+sha256 = "11f79fcb1bbff97a7e55f3c3fc661c303c1923b1acf16ae6aa5047f0fc96e7bd"
+zip_crc32 = "2df6721d"
+id = "TUBS_Wood_TGA_N2_30K_R3"
+group = "main_ramp"
+repeat = 3
+sample_mass_mg = 0.97
+rows = 2275
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_30K_R3.csv"
+github_sha256 = "769b578f351ac21d2ff16896c2d375349ed347f3e9405fdf821b8c05fab2fd82"
+nominal_rate_K_per_min = 30
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_40K_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_40K_R1.csv"
+bytes = 50605
+sha256 = "d2fb19db73e0c4dde19f074f77b612d248c4effa42e6102abc24af5f5953cc27"
+zip_crc32 = "313bcfd7"
+id = "TUBS_Wood_TGA_N2_40K_R1"
+group = "main_ramp"
+repeat = 1
+sample_mass_mg = 0.96
+rows = 2272
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_40K_R1.csv"
+github_sha256 = "8616c77d201c4ce8149863104e090990b5d6a1623d10addc38f07361120623b6"
+nominal_rate_K_per_min = 40
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_40K_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_40K_R2.csv"
+bytes = 50573
+sha256 = "380b9bf8ed5c2f74246f53c17c38328be05b9a75eae319bae97d2fbfd221eb7a"
+zip_crc32 = "e102006b"
+id = "TUBS_Wood_TGA_N2_40K_R2"
+group = "main_ramp"
+repeat = 2
+sample_mass_mg = 0.98
+rows = 2271
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_40K_R2.csv"
+github_sha256 = "44ef1dce6fc9ecd33208d6590b587f481662be88e5e0d54738e43f2f47633e22"
+nominal_rate_K_per_min = 40
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_40K_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_40K_R3.csv"
+bytes = 50558
+sha256 = "941139c839834fd156cc0311f9046e31241c5c51e5a3cbdade6566493e92364a"
+zip_crc32 = "a099a010"
+id = "TUBS_Wood_TGA_N2_40K_R3"
+group = "main_ramp"
+repeat = 3
+sample_mass_mg = 1.02
+rows = 2272
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_40K_R3.csv"
+github_sha256 = "f845a6ce0902c8e475251ea9ec158997520aacc3128cc673b73ee07199b2bb4a"
+nominal_rate_K_per_min = 40
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R1.csv"
+bytes = 50518
+sha256 = "05ce9af8e932688de03862448532e8d93be0d554152eeaa4f45a7a5462993d3f"
+zip_crc32 = "90cd809f"
+id = "TUBS_Wood_TGA_N2_50K_R1"
+group = "mass_series"
+repeat = 1
+sample_mass_mg = 0.51
+rows = 2269
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R1.csv"
+github_sha256 = "9c013e3c8f3d811e2339858c3871e4760afebb481295cbdd0f52a819fe1e90d0"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 0.5
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R10.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R10.csv"
+bytes = 50507
+sha256 = "b2b16ff2a337ccd58c34b4cfb3b8cbb2fb4e8d0b73ba49f9bbc921a368a7afd5"
+zip_crc32 = "7c1bb77e"
+id = "TUBS_Wood_TGA_N2_50K_R10"
+group = "mass_series"
+repeat = 10
+sample_mass_mg = 2.02
+rows = 2269
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R10.csv"
+github_sha256 = "e5bc6fe4fe38bc0cea7d78cfb1d60a2f5057dbfdf15a61850aa86d576670c5c4"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 2.0
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R11.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R11.csv"
+bytes = 50557
+sha256 = "d39b7d4ce1ebc56215b1c37e006a9919fc8caac73bf6b661f1aae5ad7c50a010"
+zip_crc32 = "dcc7c147"
+id = "TUBS_Wood_TGA_N2_50K_R11"
+group = "mass_series"
+repeat = 11
+sample_mass_mg = 1.98
+rows = 2270
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R11.csv"
+github_sha256 = "3332ecd9db36c5d88f693c57380ae7acd66f29ec3f060b1306eac2066baac41a"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 2.0
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R12.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R12.csv"
+bytes = 50547
+sha256 = "f5239c793de50689ed571ae67c7593c5007c7e011518f6c6a2da0674581e6170"
+zip_crc32 = "96ec2385"
+id = "TUBS_Wood_TGA_N2_50K_R12"
+group = "mass_series"
+repeat = 12
+sample_mass_mg = 2.03
+rows = 2268
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R12.csv"
+github_sha256 = "91f12255c0f70d01bf5b32f56ff493f91180f22dd6312e795d6d92486ca6ec7d"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 2.0
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R13.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R13.csv"
+bytes = 50553
+sha256 = "4d3c0778cab80df9cc94b8fcad0f42e353ad9348d46bb57f0b78472444189b1d"
+zip_crc32 = "1ecdc0fa"
+id = "TUBS_Wood_TGA_N2_50K_R13"
+group = "mass_series"
+repeat = 13
+sample_mass_mg = 4.0
+rows = 2269
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R13.csv"
+github_sha256 = "622e37d6617cd6d07591ced1debd0d66209f35d24b41f6a0a5a50e619194d505"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 4.0
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R14.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R14.csv"
+bytes = 50523
+sha256 = "34f9b0f2680d04de1b1cbdb60b9bae2fc7066c0a18f28abe447a46622df66edb"
+zip_crc32 = "ce5dedd6"
+id = "TUBS_Wood_TGA_N2_50K_R14"
+group = "mass_series"
+repeat = 14
+sample_mass_mg = 4.01
+rows = 2269
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R14.csv"
+github_sha256 = "5a3521c6d3d3d2a2aa9fbf547168451a592e6010382c8947e820f6e15e868f3e"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 4.0
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R15.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R15.csv"
+bytes = 50523
+sha256 = "ba59c5df351313e3f642f44141b509e1939905005d94c9343cf84874fa1c6af7"
+zip_crc32 = "1f3f5e33"
+id = "TUBS_Wood_TGA_N2_50K_R15"
+group = "mass_series"
+repeat = 15
+sample_mass_mg = 4.02
+rows = 2268
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R15.csv"
+github_sha256 = "b99a6b360ef68b04f81931af56c4be61266a4f1ce0aaa043b5a35d7ce12469d9"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 4.0
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R2.csv"
+bytes = 50505
+sha256 = "3b857b20dbfbea6d17f18d59e4a3b23f5ac8a9b183071e0080fa5e63ac8414ea"
+zip_crc32 = "a47dc027"
+id = "TUBS_Wood_TGA_N2_50K_R2"
+group = "mass_series"
+repeat = 2
+sample_mass_mg = 0.47
+rows = 2267
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R2.csv"
+github_sha256 = "f7a2b2e7b578c89abed7a7a82674cea603ce6d7b49e660abf96f4e4738e6e72d"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 0.5
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R3.csv"
+bytes = 50529
+sha256 = "95ba34aa696a9fbe21a42d539992bcafcd3dc4847034850ffa8628e89ff593d3"
+zip_crc32 = "a50e4a2a"
+id = "TUBS_Wood_TGA_N2_50K_R3"
+group = "mass_series"
+repeat = 3
+sample_mass_mg = 0.5
+rows = 2267
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R3.csv"
+github_sha256 = "aa0e9dda015466b37f452b817a02b8cbe2983beaa9f71b6d833351b1114b006f"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 0.5
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R4.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R4.csv"
+bytes = 50473
+sha256 = "88499483b9eb2ab021faa103e658781c911a2e9e59561b06fef73e7b1ee9e7bd"
+zip_crc32 = "ed3cef4f"
+id = "TUBS_Wood_TGA_N2_50K_R4"
+group = "mass_series"
+repeat = 4
+sample_mass_mg = 0.99
+rows = 2268
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R4.csv"
+github_sha256 = "490135c4ae087ab2f141c0bff56d313062f58688dab6318e5a82cbc16f735ffb"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 1.0
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R5.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R5.csv"
+bytes = 50508
+sha256 = "b8d0ec03ebd56ff245f2c0efb95b1693e6c6aab1e4e33f647abe85efe507f3f4"
+zip_crc32 = "db84515f"
+id = "TUBS_Wood_TGA_N2_50K_R5"
+group = "mass_series"
+repeat = 5
+sample_mass_mg = 1.02
+rows = 2268
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R5.csv"
+github_sha256 = "867197b1a709c6010930589c1e799ce5d119a9bda00863e4b0c3f0f7ef78843e"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 1.0
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R6.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R6.csv"
+bytes = 50504
+sha256 = "6ea71fd7e8d01e2b4ff0a40d866df8b8dcc0ccc9b0c45b68ea3cd4c7b41c3210"
+zip_crc32 = "6f7c3721"
+id = "TUBS_Wood_TGA_N2_50K_R6"
+group = "mass_series"
+repeat = 6
+sample_mass_mg = 0.97
+rows = 2268
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R6.csv"
+github_sha256 = "5f7caa53dcaa54d871a416b46357d61503b463976651d5c7b232a8158a95b45a"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 1.0
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R7.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R7.csv"
+bytes = 50577
+sha256 = "1c420bb9d3457503614c6359cf7c4ea73928b3dd479219a6e97d973b2b3367cc"
+zip_crc32 = "320dae13"
+id = "TUBS_Wood_TGA_N2_50K_R7"
+group = "main_ramp"
+repeat = 7
+sample_mass_mg = 1.02
+rows = 2270
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R7.csv"
+github_sha256 = "0c3a157e2ccc325b568ba364fde39f9d12e20225fb6d0048ff8c7c7c24bdfb9f"
+nominal_rate_K_per_min = 50
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R8.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R8.csv"
+bytes = 50552
+sha256 = "e6bb0b5d16f4f3b3f133677e191e1a8f96032e20d46b6c186092d7be2a1d5499"
+zip_crc32 = "3a11f2b4"
+id = "TUBS_Wood_TGA_N2_50K_R8"
+group = "main_ramp"
+repeat = 8
+sample_mass_mg = 1.0
+rows = 2269
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R8.csv"
+github_sha256 = "4c3be411c5824de25f770fc6ce09a58d67bef6adaa557637eb7ba4cd340de074"
+nominal_rate_K_per_min = 50
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_50K_R9.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_50K_R9.csv"
+bytes = 50416
+sha256 = "4e76bfcf782bac0e56d876bb8632c463b4cb0ffb5ad1927ad888abd8abbe3788"
+zip_crc32 = "433c123f"
+id = "TUBS_Wood_TGA_N2_50K_R9"
+group = "main_ramp"
+repeat = 9
+sample_mass_mg = 1.03
+rows = 2267
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R9.csv"
+github_sha256 = "9aaf2f15d38d186f581685921ccb6b4016710d7c605bc7afc3d229c1fbce298b"
+nominal_rate_K_per_min = 50
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_593Kiso_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_593Kiso_R1.csv"
+bytes = 536638
+sha256 = "e683d424435c6d3c94e81797d2ce41bbd3d75a9678f40353bb2d00b853462a5f"
+zip_crc32 = "bb1fd695"
+id = "TUBS_Wood_TGA_N2_593Kiso_R1"
+group = "hold"
+repeat = 1
+sample_mass_mg = 1.02
+rows = 22068
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_593Kiso_R1.csv"
+github_sha256 = "8e0771858f65f3b9f50e8a9488a9bd7bfd36f575a6f7e6ccbb021810915a5a9e"
+nominal_hold_K = 593
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_593Kiso_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_593Kiso_R2.csv"
+bytes = 536752
+sha256 = "5a807b3f5e6ac8eb18619498ac931baa19cf0e59efb0883702d85f270617d1a3"
+zip_crc32 = "d93c09ba"
+id = "TUBS_Wood_TGA_N2_593Kiso_R2"
+group = "hold"
+repeat = 2
+sample_mass_mg = 0.99
+rows = 22068
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_593Kiso_R2.csv"
+github_sha256 = "e02686dc6bc625a3ddac0c69c5e0b776d773e5f255fde1ecab828a00553d73af"
+nominal_hold_K = 593
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_593Kiso_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_593Kiso_R3.csv"
+bytes = 536809
+sha256 = "155a98c0388b99e91fa363bbb148c32bd26a3d6380463c9c2a0891f24c936c4c"
+zip_crc32 = "cf25f94a"
+id = "TUBS_Wood_TGA_N2_593Kiso_R3"
+group = "hold"
+repeat = 3
+sample_mass_mg = 0.96
+rows = 22068
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_593Kiso_R3.csv"
+github_sha256 = "a5b54c76e037a7751be2064caeb3d3a6053f4b4b536c4d84749879b9aeace9dd"
+nominal_hold_K = 593
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_5K_R1.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_5K_R1.csv"
+bytes = 51043
+sha256 = "a013d30f6c1a09a2a94321cc21ac50393ef43d9dfa533c0803b310c20d145e6c"
+zip_crc32 = "dc88997d"
+id = "TUBS_Wood_TGA_N2_5K_R1"
+group = "main_ramp"
+repeat = 1
+sample_mass_mg = 0.98
+rows = 2285
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_5K_R1.csv"
+github_sha256 = "c48c02e7e9c740c60e1040994c5f91975de8149abff2cc643ab56276992b3620"
+nominal_rate_K_per_min = 5
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_5K_R2.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_5K_R2.csv"
+bytes = 51066
+sha256 = "3b0e167ea50751d5fc58ffac762abc1d476f5c2fbb13d5eca0140e32fcf11b79"
+zip_crc32 = "5a762639"
+id = "TUBS_Wood_TGA_N2_5K_R2"
+group = "main_ramp"
+repeat = 2
+sample_mass_mg = 1.05
+rows = 2285
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_5K_R2.csv"
+github_sha256 = "1132b17ce60c1b1d61864dd4d5e42639cca5a199c36702c5261e243b3c164bab"
+nominal_rate_K_per_min = 5
+
+[[files]]
+member = "data/TUBS_Wood_TGA_N2_5K_R3.csv"
+path = "data/external/macfp_wood_tubs_v2/raw/TUBS_Wood_TGA_N2_5K_R3.csv"
+bytes = 51053
+sha256 = "b35341c0e7f29aec88665558ad197d3d6886ff3a9fe22e53b92d5d01060e1bd8"
+zip_crc32 = "2ce80897"
+id = "TUBS_Wood_TGA_N2_5K_R3"
+group = "main_ramp"
+repeat = 3
+sample_mass_mg = 0.95
+rows = 2285
+github_path = "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_5K_R3.csv"
+github_sha256 = "4a8fc9373512161238c301e555c724212a7e29f4e39116f4a38f3d8bb393000e"
+nominal_rate_K_per_min = 5

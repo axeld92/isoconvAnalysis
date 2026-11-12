@@ -60,6 +60,20 @@ using SHA: sha256
         @test_throws DataImportError read_thermal_delimited(path, mapping)
     end
 
+    @testset "separate metadata separator" begin
+        mktempdir() do directory
+            path = joinpath(directory, "instrument.txt")
+            write(path, "#DATE/TIME:19.03.2021 15:48:02\n##temp;mass\n25;10\n")
+            mapping = ThermalColumnMapping(ThermalColumnSpec("temp", :C), [mass])
+            run = read_thermal_delimited(
+                path, mapping; delimiter=(';'), header_prefix="##", metadata_delimiter=(':')
+            )
+            @test run.metadata["DATE/TIME"] == "19.03.2021 15:48:02"
+            @test run.provenance.source_lines == [3]
+            @test only(run.signals).values == [10.0]
+        end
+    end
+
     @testset "declared column unit labels" begin
         mktempdir() do directory
             path = joinpath(directory, "units.csv")

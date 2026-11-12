@@ -1,0 +1,338 @@
+{
+  "source_id": "macfp_wood",
+  "source_url": "https://github.com/MaCFP/matl-db",
+  "source_doi": "10.18434/mds2-2586",
+  "revision": "bd7cd7abaff44ee4e22af369702066c2f0f72185",
+  "tree_url": "https://api.github.com/repos/MaCFP/matl-db/git/trees/16e527e04ecc94875ff7d2c25dca945fe40785c6?recursive=1",
+  "files": [
+    {
+      "path": "data/external/macfp_wood/raw/LICENSE",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/LICENSE",
+      "bytes": 1062,
+      "sha256": "fc5693f68e489dabdc231c86e066a9b4fe9bde0f2d1817fca0a3649cde1ac7e7",
+      "upstream_git_blob_sha1": "ce0d732f78242a2a802888a6cd652f87d9e2268d"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_10K_R1.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_10K_R1.csv",
+      "bytes": 32586,
+      "sha256": "7e73797c63e74400da3a5b5f5d19056ada084682c8d46ba82207a94d0be58a12",
+      "upstream_git_blob_sha1": "692df41d2295ab619e954f5e08e20876c29ba0a3"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_10K_R2.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_10K_R2.csv",
+      "bytes": 32785,
+      "sha256": "6f3ac5749c424b8086cba2e4b474c31b9ae631f418af1ec1fc4132cc9415cc65",
+      "upstream_git_blob_sha1": "225ffbd60a12ac8e1ccea263a5d6e1260b239883"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_10K_R3.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_10K_R3.csv",
+      "bytes": 32859,
+      "sha256": "94e1b4dde77664b8c47ce3a71d29d4bd27d420fabb27da4720240f1e8fa85511",
+      "upstream_git_blob_sha1": "ade8f6a56507234dede35510c7f3c323e183fa5f"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_20K_R1.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_20K_R1.csv",
+      "bytes": 38830,
+      "sha256": "ace8d89b64e0c87c8231c0eac21a7cd42da69d7a1c3f27dd34bef792684c2447",
+      "upstream_git_blob_sha1": "00f50bcc43eab7c53469480ee0381376b555165f"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_20K_R2.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_20K_R2.csv",
+      "bytes": 37531,
+      "sha256": "dd2a828ba270280b416f4b7821c60e3c79aea6fdb480872607ce89ccb29ea38b",
+      "upstream_git_blob_sha1": "e911d7cdb3ab6dcc52d6b420b422c3dd57b815ad"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_20K_R3.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_20K_R3.csv",
+      "bytes": 37318,
+      "sha256": "61b42e20ac3c935a981c7cdc06fa4f3a915cee28c687f0f3735f3a33910a114b",
+      "upstream_git_blob_sha1": "8d4c8ae34069983db6e2af7adf97467f3c5c5ec1"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_5K_R1.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_5K_R1.csv",
+      "bytes": 32883,
+      "sha256": "bc30420fef38d714fedf255b4be43c8d14fc8f783a99b498e2844294b311e3cc",
+      "upstream_git_blob_sha1": "21df5df87e5fbfecf20ccfa2bec0f17164d9367d"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_5K_R2.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_5K_R2.csv",
+      "bytes": 37965,
+      "sha256": "6fa6cbb2224cec714f0b447e106c4f8ab43f3a16188ff39c132e27e97a53a114",
+      "upstream_git_blob_sha1": "88d9d326e8268056cc63c6be88376530bc21b70e"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_5K_R3.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/Aalto/Aalto_Wood_TGA_N2_5K_R3.csv",
+      "bytes": 38181,
+      "sha256": "297349175a73da0cbaf4a01c3aa13b81816a5da3deba211f5d04cef65a0fc6a9",
+      "upstream_git_blob_sha1": "6a7adebb14140c8476ab6d05fe2c54a7947c3d0c"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/Aalto/README.md",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/Aalto/README.md",
+      "bytes": 10423,
+      "sha256": "5c204203ac541b7f720d981d74f72bd5cfe107e369de970dd2a65072e78e080d",
+      "upstream_git_blob_sha1": "0ff72deb88a522240d8577f52cfa5ac945f9c2a1"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/README.md",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/README.md",
+      "bytes": 3183,
+      "sha256": "5d4374dc110151a048d45006ff144404409e43a04d6cd7b1bbe17fa5685be3c9",
+      "upstream_git_blob_sha1": "f5a40433a01a804b78b8ccb1e0d8be6b838596df"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/README.md",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/README.md",
+      "bytes": 8389,
+      "sha256": "a36f4ae867069a8318f08d6fc6450f3e867933e019e1da56952d865076e8403e",
+      "upstream_git_blob_sha1": "d0cb776a9a5995d73bb41d3fa1449d09efd9dae7"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_10K_R1.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_10K_R1.csv",
+      "bytes": 48536,
+      "sha256": "18ed375f5cf14602027a8a3c3bd53d176ca935db1a4df7c48eb4da9f207f9acb",
+      "upstream_git_blob_sha1": "545095751cf3fe2207c7651425cadc456916c3bf"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_10K_R2.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_10K_R2.csv",
+      "bytes": 48566,
+      "sha256": "d2267a2021c555f4735eadd0e9dd1826ebca49b10fd5cbd61491454159229ae6",
+      "upstream_git_blob_sha1": "61ede3af0f393bbd4acefda64ef0bd0d51307b0f"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_10K_R3.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_10K_R3.csv",
+      "bytes": 48579,
+      "sha256": "b3f9f17a68fb63b579c067456ddd93701ca5bcce464bd85d484dab32eafef339",
+      "upstream_git_blob_sha1": "2d59bc605abbf8620b43e4f0ba1352c19f313889"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_20K_R1.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_20K_R1.csv",
+      "bytes": 48475,
+      "sha256": "e8b39c23a8e7fbebb5e171930641b5a18a248c52f9c9f2dc456f672c3720b341",
+      "upstream_git_blob_sha1": "c6416d9a3fb1e3cedfa481a36eed2cfb6ec0df17"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_20K_R2.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_20K_R2.csv",
+      "bytes": 48485,
+      "sha256": "5b2e3fd7bf811aef3c4f38b9da3692b3091a406ee95b1acbee8f0348d148042a",
+      "upstream_git_blob_sha1": "dec9c2c841ec6d66fd468250b0b7f5e27a00103d"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_20K_R3.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_20K_R3.csv",
+      "bytes": 48459,
+      "sha256": "59874689bf9e216fc9c87dfb9c0925b865292721f8ab3c3dbabce16a8ec76287",
+      "upstream_git_blob_sha1": "82777d4fcae3b397eb8ed92f4b1b9b1674d363cf"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_30K_R1.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_30K_R1.csv",
+      "bytes": 48368,
+      "sha256": "da091f99f4b55f605c1ba1d1b20b7aee99afff34dc448d04bc531de4ec8db698",
+      "upstream_git_blob_sha1": "1f1ffd1cff2a78c08478494e6f1a9644a13510a5"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_30K_R2.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_30K_R2.csv",
+      "bytes": 48378,
+      "sha256": "798143de37c299092de67ac4109ee08c777809b4081f188ceb4534100881e921",
+      "upstream_git_blob_sha1": "b909e0974da594d0aba4606e6289d202b9a19edc"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_30K_R3.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_30K_R3.csv",
+      "bytes": 48390,
+      "sha256": "769b578f351ac21d2ff16896c2d375349ed347f3e9405fdf821b8c05fab2fd82",
+      "upstream_git_blob_sha1": "b4864655409d45dfcd31aaa55bacc730b21fe33c"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_40K_R1.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_40K_R1.csv",
+      "bytes": 48332,
+      "sha256": "8616c77d201c4ce8149863104e090990b5d6a1623d10addc38f07361120623b6",
+      "upstream_git_blob_sha1": "e055d200a406a72f4dc6b344cd3a2df418e8a3fd"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_40K_R2.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_40K_R2.csv",
+      "bytes": 48301,
+      "sha256": "44ef1dce6fc9ecd33208d6590b587f481662be88e5e0d54738e43f2f47633e22",
+      "upstream_git_blob_sha1": "523e502ea4874d775d56ad47b68d33d82ac65818"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_40K_R3.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_40K_R3.csv",
+      "bytes": 48285,
+      "sha256": "f845a6ce0902c8e475251ea9ec158997520aacc3128cc673b73ee07199b2bb4a",
+      "upstream_git_blob_sha1": "ea2fec7ef00a50744a36a5a6741d565b60055a38"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R1.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R1.csv",
+      "bytes": 48248,
+      "sha256": "9c013e3c8f3d811e2339858c3871e4760afebb481295cbdd0f52a819fe1e90d0",
+      "upstream_git_blob_sha1": "c411d67fc44a6521ce55bce6b61b985666f54b3c"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R10.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R10.csv",
+      "bytes": 48237,
+      "sha256": "e5bc6fe4fe38bc0cea7d78cfb1d60a2f5057dbfdf15a61850aa86d576670c5c4",
+      "upstream_git_blob_sha1": "134845eaca905a163f1915710714b9ba6e278f58"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R11.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R11.csv",
+      "bytes": 48286,
+      "sha256": "3332ecd9db36c5d88f693c57380ae7acd66f29ec3f060b1306eac2066baac41a",
+      "upstream_git_blob_sha1": "8fa4f16b6a18367fe1cf000484aa4fc2163d9ac5"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R12.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R12.csv",
+      "bytes": 48278,
+      "sha256": "91f12255c0f70d01bf5b32f56ff493f91180f22dd6312e795d6d92486ca6ec7d",
+      "upstream_git_blob_sha1": "5cc1af3fa8fc17a0d8dc5b42431ad745d7c760db"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R13.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R13.csv",
+      "bytes": 48283,
+      "sha256": "622e37d6617cd6d07591ced1debd0d66209f35d24b41f6a0a5a50e619194d505",
+      "upstream_git_blob_sha1": "3005f3047cbfe4bb18e093c493597b4a9da1ac27"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R14.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R14.csv",
+      "bytes": 48253,
+      "sha256": "5a3521c6d3d3d2a2aa9fbf547168451a592e6010382c8947e820f6e15e868f3e",
+      "upstream_git_blob_sha1": "0a52ec148c29f19a8f5d3e86fa33646dfdcec4c9"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R15.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R15.csv",
+      "bytes": 48254,
+      "sha256": "b99a6b360ef68b04f81931af56c4be61266a4f1ce0aaa043b5a35d7ce12469d9",
+      "upstream_git_blob_sha1": "37a96ef9bd0101dd2c8ca40d6174f48de4843006"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R2.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R2.csv",
+      "bytes": 48237,
+      "sha256": "f7a2b2e7b578c89abed7a7a82674cea603ce6d7b49e660abf96f4e4738e6e72d",
+      "upstream_git_blob_sha1": "29d702efdd1fcc94849a753c430dbca39b0db7d6"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R3.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R3.csv",
+      "bytes": 48261,
+      "sha256": "aa0e9dda015466b37f452b817a02b8cbe2983beaa9f71b6d833351b1114b006f",
+      "upstream_git_blob_sha1": "78d1093f8731e9995b5c8de3d908702f3f757722"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R4.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R4.csv",
+      "bytes": 48204,
+      "sha256": "490135c4ae087ab2f141c0bff56d313062f58688dab6318e5a82cbc16f735ffb",
+      "upstream_git_blob_sha1": "9c7b4dbd4dc2fd527b45503d3c66b7637abf8492"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R5.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R5.csv",
+      "bytes": 48239,
+      "sha256": "867197b1a709c6010930589c1e799ce5d119a9bda00863e4b0c3f0f7ef78843e",
+      "upstream_git_blob_sha1": "ed4cb26bfefbd41f4c9a53b52ee812b683cfb394"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R6.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R6.csv",
+      "bytes": 48235,
+      "sha256": "5f7caa53dcaa54d871a416b46357d61503b463976651d5c7b232a8158a95b45a",
+      "upstream_git_blob_sha1": "a14282b514d3a4a5d4451109712a78604ef2a643"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R7.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R7.csv",
+      "bytes": 48306,
+      "sha256": "0c3a157e2ccc325b568ba364fde39f9d12e20225fb6d0048ff8c7c7c24bdfb9f",
+      "upstream_git_blob_sha1": "cf6942a3701319b520e8c59ab18d723406966400"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R8.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R8.csv",
+      "bytes": 48282,
+      "sha256": "4c3be411c5824de25f770fc6ce09a58d67bef6adaa557637eb7ba4cd340de074",
+      "upstream_git_blob_sha1": "a198a974fd3c6b863926a521ede83488f6ccc710"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R9.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_50K_R9.csv",
+      "bytes": 48148,
+      "sha256": "9aaf2f15d38d186f581685921ccb6b4016710d7c605bc7afc3d229c1fbce298b",
+      "upstream_git_blob_sha1": "3abb020730c9e11da561f57950e491cd60d3df93"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_593Kiso_R1.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_593Kiso_R1.csv",
+      "bytes": 514569,
+      "sha256": "8e0771858f65f3b9f50e8a9488a9bd7bfd36f575a6f7e6ccbb021810915a5a9e",
+      "upstream_git_blob_sha1": "7cf560f53390999cbe9e3c11f36d1071a9fb1728"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_593Kiso_R2.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_593Kiso_R2.csv",
+      "bytes": 514683,
+      "sha256": "e02686dc6bc625a3ddac0c69c5e0b776d773e5f255fde1ecab828a00553d73af",
+      "upstream_git_blob_sha1": "0395a7dc02ee8cf937d48be443aafaeeca02fc14"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_593Kiso_R3.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_593Kiso_R3.csv",
+      "bytes": 514740,
+      "sha256": "a5b54c76e037a7751be2064caeb3d3a6053f4b4b536c4d84749879b9aeace9dd",
+      "upstream_git_blob_sha1": "86904da11d623724383daeaea1cd37c3dfb4ccb2"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_5K_R1.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_5K_R1.csv",
+      "bytes": 48757,
+      "sha256": "c48c02e7e9c740c60e1040994c5f91975de8149abff2cc643ab56276992b3620",
+      "upstream_git_blob_sha1": "62114409a002d6710418d7b09a0a160fcc270d34"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_5K_R2.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_5K_R2.csv",
+      "bytes": 48780,
+      "sha256": "1132b17ce60c1b1d61864dd4d5e42639cca5a199c36702c5261e243b3c164bab",
+      "upstream_git_blob_sha1": "51dc4c5e6da5dd5e9ce398c811b6e2b229b50a83"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_5K_R3.csv",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/Calibration_Data/TUBS/TUBS_Wood_TGA_N2_5K_R3.csv",
+      "bytes": 48767,
+      "sha256": "4a8fc9373512161238c301e555c724212a7e29f4e39116f4a38f3d8bb393000e",
+      "upstream_git_blob_sha1": "9e2a9a5c244702ed729947a685be61821caf292d"
+    },
+    {
+      "path": "data/external/macfp_wood/raw/Wood/README.md",
+      "url": "https://raw.githubusercontent.com/MaCFP/matl-db/bd7cd7abaff44ee4e22af369702066c2f0f72185/Wood/README.md",
+      "bytes": 1441,
+      "sha256": "e9fedb94f7d6ed3e7f0aa3cc8ddd92d46426a02470f335f4bba91da0828183be",
+      "upstream_git_blob_sha1": "b321d08cee60922e4a7301e8aca99f37aef31572"
+    }
+  ]
+}

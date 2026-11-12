@@ -84,9 +84,14 @@ function _thermal_delimited_fields(line, delimiter, fail)
     return fields
 end
 
-function _thermal_metadata!(metadata, line, delimiter, fail)
+function _thermal_metadata!(metadata, line, delimiter, fail; split_once=false)
     startswith(line, '#') || fail("expected a #key$(delimiter)value record or the header")
-    fields = _thermal_delimited_fields(chop(line; head=1, tail=0), delimiter, fail)
+    record = chop(line; head=1, tail=0)
+    fields = if split_once
+        strip.(split(record, delimiter; limit=2))
+    else
+        _thermal_delimited_fields(record, delimiter, fail)
+    end
     length(fields) == 2 || fail("expected exactly two metadata fields")
     key = strip(endswith(fields[1], ':') ? chop(fields[1]; tail=1) : fields[1])
     isempty(key) && fail("empty metadata key")
@@ -105,7 +110,8 @@ end
 
 """
     read_thermal_delimited(path, mapping; id, material_id, delimiter=',',
-                           encoding=:utf8, header_prefix=nothing, unit_labels=nothing,
+                           metadata_delimiter=delimiter, encoding=:utf8,
+                           header_prefix=nothing, unit_labels=nothing,
                            expected_sha256=nothing)
 
 Import thermal observations from a delimited file with an explicit `ThermalColumnMapping`.
@@ -114,6 +120,8 @@ with that prefix gives the column names and preceding `#key<delimiter>value` rec
 metadata. Without a prefix, the first nonblank line is the header. The prefix is removed
 before parsing header fields. Column names are trimmed. Records may use LF or CRLF line
 endings, single-line quoted fields, and doubled quotes.
+Set a different `metadata_delimiter` for exports such as NETZSCH `#key:value`
+records followed by semicolon-delimited data. Metadata then splits at the first separator.
 Choose `encoding=:cp1252` explicitly for Windows-1252 exports. An initial UTF-8 BOM is
 accepted with `encoding=:utf8`. `expected_sha256` optionally verifies the exact source bytes.
 Pass `unit_labels` to check a row of literal unit labels after the column names. The
@@ -130,6 +138,7 @@ function read_thermal_delimited(
     id=splitext(basename(path))[1],
     material_id=nothing,
     delimiter::Char=(','),
+    metadata_delimiter::Char=delimiter,
     encoding::Symbol=:utf8,
     header_prefix::Union{Nothing,AbstractString}=nothing,
     unit_labels::Union{Nothing,AbstractVector{<:AbstractString}}=nothing,
@@ -165,6 +174,7 @@ function read_thermal_delimited(
         id,
         material_id,
         delimiter,
+        metadata_delimiter,
         header_prefix,
         unit_labels,
         sha256,
@@ -179,6 +189,7 @@ function _parse_thermal_export(
     id,
     material_id,
     delimiter,
+    metadata_delimiter,
     header_prefix,
     unit_labels,
     sha256,
@@ -204,7 +215,13 @@ function _parse_thermal_export(
         fail_line(message) = fail("line $line_number: $message")
         if isempty(header)
             if !isnothing(header_prefix) && !startswith(line, header_prefix)
-                _thermal_metadata!(metadata, line, delimiter, fail_line)
+                _thermal_metadata!(
+                    metadata,
+                    line,
+                    metadata_delimiter,
+                    fail_line;
+                    split_once=(metadata_delimiter != delimiter),
+                )
                 continue
             end
             header_line = if isnothing(header_prefix)

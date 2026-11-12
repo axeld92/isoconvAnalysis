@@ -1,0 +1,68 @@
+schema_version = 1
+id = "polypropylene"
+label = "Polypropylene"
+data_root = ".."
+manifest = "public_thermal_import.toml"
+omit_run = "picnik_PP_10_B3"
+repeatability_alpha = [0.10, 0.50, 0.90]
+
+[columns]
+time = "Time (min)"
+time_unit = "min"
+temperature = "Temperature (C)"
+temperature_unit = "C"
+mass = "Weight (mg)"
+mass_unit = "mg"
+delimiter = "\t"
+
+[conversion]
+initial = { temperature_C = [30.0, 60.0] }
+terminal = { temperature_C = [570.0, 590.0] }
+
+[conversion.variants.earlier_terminal]
+terminal = { temperature_C = [520.0, 550.0] }
+
+[conversion.variants.later_initial]
+initial = { temperature_C = [130.0, 170.0] }
+
+[conversion.variants.reaction_window]
+reaction = { temperature_C = [300.0, 500.0] }
+
+# Program labels use nominal rates. The assessment uses each run's measured rate.
+[[programs]]
+id = "ramp_1K_per_min"
+role = "calibration"
+kind = "ramp"
+runs = ["picnik_PP_1_B3"]
+
+[[programs]]
+id = "ramp_2_3K_per_min"
+role = "calibration"
+kind = "ramp"
+runs = ["picnik_PP_2_3_B3"]
+
+[[programs]]
+id = "ramp_5K_per_min"
+role = "calibration"
+kind = "ramp"
+runs = ["picnik_PP_5_B3"]
+
+[[programs]]
+id = "ramp_10K_per_min"
+role = "calibration"
+kind = "ramp"
+runs = ["picnik_PP_10_B3"]
+
+[[programs]]
+id = "ramp_20K_per_min"
+role = "calibration"
+kind = "ramp"
+runs = ["picnik_PP_20_B3"]
+
+[evidence]
+source = "[pICNIK](https://github.com/ErickErock/pICNIK), including the pinned polypropylene exports."
+metadata = { status = "partial", note = "Pinned files provide time, temperature and mass. The symposium description gives instrument and purge information for four rates. Its file-level linkage and the 10 K/min acquisition remain unresolved." }
+calibration = { status = "missing", note = "Calibration records and blank correction are unavailable. The 10 K/min file has a negative apparent terminal mass." }
+repeatability = { status = "missing", note = "One retained file per program. No repeatability or controlled sample-mass study accompanies these files." }
+prediction = { status = "partial", note = "The separate measured-mass benchmark omitted one ramp per fold. An independent isothermal or other-program validation is unavailable for this cohort." }
+components = { status = "missing", note = "Component assignments require separate evidence." }

@@ -54,10 +54,23 @@ julia --startup-file=no --project=. -e 'using Pkg; Pkg.test()'
 ## Public TG benchmark
 
 Reproduce known-energy recovery and the polypropylene activation-energy profiles
-using the [public benchmark instructions](docs/public_tg_energy.md). The
+with Julia alone. The [public benchmark instructions](docs/public_tg_energy.md)
+also describe the optional independent Python check. The
 [TG workflow guide](docs/src/thermal_conversion.md) explains how to check common
 conversion crossings, temperature coverage, local rates, recorded-time intervals,
 and ramp assumptions.
+
+Use the [configurable TG assessment](docs/tg_assessment.md) to generate an
+opt-in ICTAC-aligned report for a declared dataset. With the pinned polypropylene
+data in place, run
+
+```sh
+julia --startup-file=no --project=. scripts/assess_tg.jl config/tg_assessment_polypropylene.toml results/tg_assessment/polypropylene
+```
+
+The guide also gives the white-pine example, including a grouped 593 K holdout.
+The [earlier assessment report](docs/ictac_tg_assessment.md) covers known-truth
+controls, polypropylene, and the current waste-tire ramps.
 
 ## Research direction
 

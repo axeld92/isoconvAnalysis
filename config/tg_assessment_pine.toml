@@ -1,0 +1,146 @@
+schema_version = 1
+id = "pine"
+label = "TUBS white-pine TG"
+material_id = "white_pine"
+data_root = ".."
+manifest = "../data/external/macfp_wood_tubs_v2/acquisition_manifest.toml"
+manifest_table = "files"
+measured_ramp_window_K = [450.0, 850.0]
+repeatability_alpha = [0.10, 0.50, 0.90]
+
+[columns]
+time = "Time (s)"
+time_unit = "s"
+temperature = "Temperature (K)"
+temperature_unit = "K"
+mass = "Mass (mg)"
+mass_unit = "mg"
+
+[conversion]
+reaction = { start_K = 410.0 }
+initial = { temperature_K = [400.0, 420.0] }
+terminal = { last_seconds = 60.0 }
+
+[conversion.variants.earlier_initial]
+initial = { temperature_K = [385.0, 400.0] }
+
+[conversion.variants.longer_terminal_window]
+terminal = { last_seconds = 120.0 }
+
+[[programs]]
+id = "ramp_5K_per_min"
+role = "calibration"
+kind = "ramp"
+nominal_rate_K_per_min = 5
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_5K_R1", "TUBS_Wood_TGA_N2_5K_R2", "TUBS_Wood_TGA_N2_5K_R3"]
+
+[[programs]]
+id = "ramp_10K_per_min"
+role = "calibration"
+kind = "ramp"
+nominal_rate_K_per_min = 10
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_10K_R1", "TUBS_Wood_TGA_N2_10K_R2", "TUBS_Wood_TGA_N2_10K_R3"]
+
+[[programs]]
+id = "ramp_20K_per_min"
+role = "calibration"
+kind = "ramp"
+nominal_rate_K_per_min = 20
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_20K_R1", "TUBS_Wood_TGA_N2_20K_R2", "TUBS_Wood_TGA_N2_20K_R3"]
+
+[[programs]]
+id = "ramp_30K_per_min"
+role = "calibration"
+kind = "ramp"
+nominal_rate_K_per_min = 30
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_30K_R1", "TUBS_Wood_TGA_N2_30K_R2", "TUBS_Wood_TGA_N2_30K_R3"]
+
+[[programs]]
+id = "ramp_40K_per_min"
+role = "calibration"
+kind = "ramp"
+nominal_rate_K_per_min = 40
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_40K_R1", "TUBS_Wood_TGA_N2_40K_R2", "TUBS_Wood_TGA_N2_40K_R3"]
+
+[[programs]]
+id = "ramp_50K_per_min"
+role = "calibration"
+kind = "ramp"
+nominal_rate_K_per_min = 50
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_50K_R7", "TUBS_Wood_TGA_N2_50K_R8", "TUBS_Wood_TGA_N2_50K_R9"]
+
+[[programs]]
+id = "mass_0_5mg"
+role = "mass_series"
+kind = "ramp"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 0.5
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_50K_R1", "TUBS_Wood_TGA_N2_50K_R2", "TUBS_Wood_TGA_N2_50K_R3"]
+
+[[programs]]
+id = "mass_1mg"
+role = "mass_series"
+kind = "ramp"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 1.0
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_50K_R4", "TUBS_Wood_TGA_N2_50K_R5", "TUBS_Wood_TGA_N2_50K_R6"]
+
+[[programs]]
+id = "mass_2mg"
+role = "mass_series"
+kind = "ramp"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 2.0
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_50K_R10", "TUBS_Wood_TGA_N2_50K_R11", "TUBS_Wood_TGA_N2_50K_R12"]
+
+[[programs]]
+id = "mass_4mg"
+role = "mass_series"
+kind = "ramp"
+nominal_rate_K_per_min = 50
+nominal_mass_mg = 4.0
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_50K_R13", "TUBS_Wood_TGA_N2_50K_R14", "TUBS_Wood_TGA_N2_50K_R15"]
+
+[[programs]]
+id = "hold_593K"
+role = "holdout"
+kind = "hold"
+expected_repeats = 3
+runs = ["TUBS_Wood_TGA_N2_593Kiso_R1", "TUBS_Wood_TGA_N2_593Kiso_R2", "TUBS_Wood_TGA_N2_593Kiso_R3"]
+
+[evidence]
+source = "[TUBS deposit](https://doi.org/10.24355/dbbs.084-202605201212-0), including its experimental README."
+metadata = { status = "met", note = "The source README reports instrument, geometry, mass, purge gas, crucible and thermal programs." }
+calibration = { status = "partial", note = "The README documents baseline correction and temperature and heat-flow calibration. Blank traces and independent thermal-lag measurements are unavailable." }
+repeatability = { status = "partial", note = "The controlled mass series covers 50 K/min. Mass independence across the full rate range remains unestablished." }
+components = { status = "missing", note = "Component assignments require separate evidence." }
+
+[prediction]
+settings_file = "public_pp_prediction.toml"
+start_K = 410.0
+training_window = { end_K = 760.0 }
+holdout_window = { tail_temperature_K = [590.0, 596.0] }
+final_window_min = 60.0
+checkpoints_min = [0.0, 10.0, 60.0, 180.0, 300.0]
+
+[prediction.settings]
+reference_temperature_K = 630.0
+max_retained_fraction = 0.40
+energy_bounds_kJ_per_mol = [45.0, 300.0]
+log_reference_rate_bounds_min_inv = [-7.0, 3.0]
+reaction_order_bounds = [0.20, 6.0]
+starts = [
+    [95.0, -1.5, 0.7], [95.0, -1.5, 2.0],
+    [145.0, -1.5, 0.7], [145.0, -1.5, 2.0],
+    [195.0, -1.5, 0.7], [195.0, -1.5, 2.0],
+]
