@@ -15,5 +15,5 @@
     @test result == 42
     @test !occursin("debug_event", output)
     @test occursin("configuration_loaded", output)
-    @test occursin(config.source_path, output)
+    @test occursin(repr(config.source_path), output)
 end
