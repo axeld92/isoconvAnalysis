@@ -27,7 +27,12 @@ include("ThermalDelimitedIO.jl")
 include("DataAudit.jl")
 include("Preprocessing.jl")
 include("ThermalTGConversion.jl")
+include("ThermalConversionSupport.jl")
 include("Isoconversional.jl")
+include("ThermalFriedmanSupport.jl")
+include("ThermalVyazovkinSupport.jl")
+include("ThermalRampSupport.jl")
+include("ThermalActivationEnergy.jl")
 include("PeakModels.jl")
 include("Deconvolution.jl")
 include("ReactionModels.jl")
@@ -75,7 +80,17 @@ export AdvancedVyazovkinConfig,
     ProjectConfig,
     ReactionModelConfig,
     ReactionModelSpec,
+    TGActivationEnergyPoint,
+    TGCrossingDiagnostic,
+    TGConversionCrossing,
+    TGConversionGroupSupport,
     TGConversionResult,
+    TGConversionSupportPoint,
+    TGFriedmanRateDiagnostic,
+    TGRampDiagnostic,
+    TGRampIntegralProbe,
+    TGRecordedTimeInterval,
+    TGRecordedTimeQuadrature,
     TGReferenceEstimate,
     ThermalColumnMapping,
     ThermalColumnSpec,
@@ -122,7 +137,14 @@ export AdvancedVyazovkinConfig,
     source_sha256,
     temperature_K,
     thermal_segment_diagnostics,
+    tg_activation_energy,
     tg_conversion,
+    tg_conversion_crossings,
+    tg_conversion_support,
+    tg_friedman_rate,
+    tg_ramp_diagnostic,
+    tg_recorded_time_interval,
+    tg_recorded_time_quadrature,
     time_min,
     trailing_invalid_row_count,
     valid_row_mask,

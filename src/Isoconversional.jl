@@ -241,6 +241,17 @@ function _linear_regression(x::Vector{Float64}, y::Vector{Float64})
     )
 end
 
+function _ramp_method_response(method, temperatures, heating_rates)
+    if method == :kas
+        return log.(heating_rates ./ temperatures .^ 2), 1.0
+    elseif method == :fwo
+        return log.(heating_rates), 1.052
+    elseif method == :starink
+        return log.(heating_rates ./ temperatures .^ 1.92), 1.0008
+    end
+    return _isoconversional_error(method, "method is not a supported ramp approximation")
+end
+
 function _linear_method_variables(
     method::Symbol,
     samples::Vector{ConversionSample},
@@ -262,14 +273,9 @@ function _linear_method_variables(
             "dalpha/dt must exceed $(configuration.friedman_minimum_rate_per_min) min^-1 in every experiment",
         )
         return x, log.(rates), 1.0
-    elseif method == :kas
-        return x, log.(global_rates ./ temperatures .^ 2), 1.0
-    elseif method == :fwo
-        return x, log.(global_rates), 1.052
-    elseif method == :starink
-        return x, log.(global_rates ./ temperatures .^ 1.92), 1.0008
     end
-    return _isoconversional_error(method, "method is not a supported linear method")
+    response, coefficient = _ramp_method_response(method, temperatures, global_rates)
+    return x, response, coefficient
 end
 
 function _linear_point(
