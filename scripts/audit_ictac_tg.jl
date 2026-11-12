@@ -266,7 +266,11 @@ function experiment_checks(cohort, config)
 end
 
 function assess_cohort(
-    cohort, config, options; truth=nothing, experiment_evidence=experiment_checks(cohort, config)
+    cohort,
+    config,
+    options;
+    truth=nothing,
+    experiment_evidence=experiment_checks(cohort, config),
 )
     checks = program_checks(cohort.rates)
     length(unique(cohort.rates)) >= 3 || error("$(cohort.id) needs three distinct programs")
@@ -494,7 +498,8 @@ function assess_controls(config, options)
 end
 
 function render_report(
-    io, report;
+    io,
+    report;
     generator="scripts/audit_ictac_tg.jl",
     evidence_link="audits/ictac_tg_assessment.toml",
 )

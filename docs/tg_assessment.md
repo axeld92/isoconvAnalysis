@@ -4,6 +4,10 @@ Run the assessment from the repository root with the Julia project instantiated.
 Pass a dataset config and an output directory. Each directory receives
 `tg_assessment.md` and `tg_assessment.toml`.
 
+Julia 1.13 uses the version-specific lockfiles. They include the SHA 1 standard
+library and updated RuntimeGeneratedFunctions and PrecompileTools for
+precompilation on this Julia series.
+
 ```sh
 julia --startup-file=no --project=. scripts/assess_tg.jl config/tg_assessment_pine.toml results/tg_assessment/pine
 julia --startup-file=no --project=. scripts/assess_tg.jl config/tg_assessment_polypropylene.toml results/tg_assessment/polypropylene

@@ -1,5 +1,6 @@
 using IsoconversionalAnalysis
-using IsoconversionalAnalysis: Optim, SampledTemperatureProgram, _integrate_program_dose, temperature
+using IsoconversionalAnalysis:
+    Optim, SampledTemperatureProgram, _integrate_program_dose, temperature
 using SHA
 using Statistics
 using TOML

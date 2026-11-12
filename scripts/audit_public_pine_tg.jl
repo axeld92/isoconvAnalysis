@@ -35,7 +35,7 @@ function verify_pine_sources(manifest)
         haskey(file, "github_path") || continue
         snapshot = verified_pine_file(file["github_path"], file["github_sha256"])
         replace(read(path, String), "\r\n" => "\n") ==
-            replace(read(snapshot, String), "\r\n" => "\n") ||
+        replace(read(snapshot, String), "\r\n" => "\n") ||
             error("TG values differ from the pinned snapshot in $path")
     end
     return archive_present
@@ -53,7 +53,11 @@ function pine_conversion(run, protocol; alternate_initial=false, alternate_termi
     T = temperature_K(run)
     t = run.time
     initial = protocol[alternate_initial ? "alternate_initial_K" : "initial_reference_K"]
-    tail = protocol[alternate_terminal ? "alternate_terminal_window_s" : "terminal_window_s"]
+    tail = protocol[if alternate_terminal
+        "alternate_terminal_window_s"
+    else
+        "terminal_window_s"
+    end]
     start = findfirst(>=(protocol["conversion_start_K"]), T)
     stop = searchsortedfirst(t, last(t) - tail)
     return tg_conversion(
@@ -121,7 +125,7 @@ function pine_hold_predictions(main, holds, protocol)
         record["final_hour"] = MassPrediction.score_pp(predicted, held, last_hour)
         record["checkpoints"] = map(protocol["hold_checkpoints_min"]) do elapsed
             row = searchsortedfirst(t, t[start] + elapsed)
-            Dict(
+            return Dict(
                 "elapsed_hold_min" => t[row] - t[start],
                 "measured_mg" => held.mass_mg[row],
                 "predicted_mg" => predicted[row],
@@ -176,7 +180,8 @@ function pine_group_summary(group, runs)
         crossings = [r["crossings"][index] for r in runs]
         temperatures = [r["temperature_K"] for r in crossings if haskey(r, "temperature_K")]
         record = Dict{String,Any}(
-            "alpha" => first(crossings)["alpha"], "supported_repeats" => length(temperatures)
+            "alpha" => first(crossings)["alpha"],
+            "supported_repeats" => length(temperatures),
         )
         isempty(temperatures) || (record["temperature_mean_K"] = mean(temperatures))
         length(temperatures) < 2 || (record["temperature_sd_K"] = std(temperatures))
@@ -193,12 +198,18 @@ end
 
 function pine_assessment(main, protocol)
     config = load_pine_toml(ICTACTGAudit.ASSESSMENT_PROTOCOL)
-    config["evidence"]["pine"] = Dict("source" => "TUBS deposit README, main ramps and mass series.")
+    config["evidence"]["pine"] = Dict(
+        "source" => "TUBS deposit README, main ramps and mass series."
+    )
     runs = last.(main)
     rates = [s["nominal_rate_K_per_min"] for (s, _) in main]
     convert(; kwargs...) = [pine_conversion(r, protocol; kwargs...) for r in runs]
     cohort = (;
-        id="pine", label="TUBS white-pine TG", synthetic=false, rates, curves=convert(),
+        id="pine",
+        label="TUBS white-pine TG",
+        synthetic=false,
+        rates,
+        curves=convert(),
         omit="",
         metadata=[
             Dict(
@@ -212,19 +223,42 @@ function pine_assessment(main, protocol)
         ),
     )
     evidence = [
-        ICTACTGAudit.check("metadata", "2014 — sample and acquisition metadata", "met",
-            "Source README reports instrument, geometry, mass, purge gas, crucible and thermal programs."),
-        ICTACTGAudit.check("calibration", "2014 — calibration, blank and thermal lag", "partial",
-            "README documents baseline correction and temperature/heat-flow calibration. Blank traces and independent thermal-lag measurements are unavailable."),
-        ICTACTGAudit.check("repeatability", "2014 — repeatability and sample-mass sensitivity", "partial",
-            "Each main rate has three repeats. The controlled mass series covers 50 K/min and cannot establish mass independence over the full range."),
-        ICTACTGAudit.check("prediction", "2011 §§8–9, 2020 §2.8 — prediction on excluded programs", "met",
-            "All three 593 K programs were scored together using the frozen ramp-only baseline. The status records that the test was performed."),
-        ICTACTGAudit.check("components", "2020 §§2, 5 — justify a multistep model", "missing",
-            "The benchmark evaluates apparent energy and a predictive baseline. Component assignments require separate evidence."),
+        ICTACTGAudit.check(
+            "metadata",
+            "2014 — sample and acquisition metadata",
+            "met",
+            "Source README reports instrument, geometry, mass, purge gas, crucible and thermal programs.",
+        ),
+        ICTACTGAudit.check(
+            "calibration",
+            "2014 — calibration, blank and thermal lag",
+            "partial",
+            "README documents baseline correction and temperature/heat-flow calibration. Blank traces and independent thermal-lag measurements are unavailable.",
+        ),
+        ICTACTGAudit.check(
+            "repeatability",
+            "2014 — repeatability and sample-mass sensitivity",
+            "partial",
+            "Each main rate has three repeats. The controlled mass series covers 50 K/min and cannot establish mass independence over the full range.",
+        ),
+        ICTACTGAudit.check(
+            "prediction",
+            "2011 §§8–9, 2020 §2.8 — prediction on excluded programs",
+            "met",
+            "All three 593 K programs were scored together using the frozen ramp-only baseline. The status records that the test was performed.",
+        ),
+        ICTACTGAudit.check(
+            "components",
+            "2020 §§2, 5 — justify a multistep model",
+            "missing",
+            "The benchmark evaluates apparent energy and a predictive baseline. Component assignments require separate evidence.",
+        ),
     ]
     return ICTACTGAudit.assess_cohort(
-        cohort, config, ICTACTGAudit.assessment_options(config); experiment_evidence=evidence
+        cohort,
+        config,
+        ICTACTGAudit.assessment_options(config);
+        experiment_evidence=evidence,
     )
 end
 
@@ -239,25 +273,37 @@ function audit_public_pine_tg(output)
     )
     entries = map(filter(s -> haskey(s, "group"), manifest["files"])) do spec
         run = read_thermal_delimited(
-            joinpath(PINE_ROOT, spec["path"]), mapping;
-            id=spec["id"], material_id="white_pine", expected_sha256=spec["sha256"],
+            joinpath(PINE_ROOT, spec["path"]),
+            mapping;
+            id=spec["id"],
+            material_id="white_pine",
+            expected_sha256=spec["sha256"],
         )
         length(run.time) == spec["rows"] || error("Row count changed for $(run.id)")
         return spec, run
     end
-    main = sort(filter(e -> first(e)["group"] == "main_ramp", entries);
-        by=e -> (first(e)["nominal_rate_K_per_min"], first(e)["repeat"]))
-    mass_series = sort(filter(e -> first(e)["group"] == "mass_series", entries);
-        by=e -> (first(e)["nominal_mass_mg"], first(e)["repeat"]))
-    holds = sort(filter(e -> first(e)["group"] == "hold", entries); by=e -> first(e)["repeat"])
+    main = sort(
+        filter(e -> first(e)["group"] == "main_ramp", entries);
+        by=e -> (first(e)["nominal_rate_K_per_min"], first(e)["repeat"]),
+    )
+    mass_series = sort(
+        filter(e -> first(e)["group"] == "mass_series", entries);
+        by=e -> (first(e)["nominal_mass_mg"], first(e)["repeat"]),
+    )
+    holds = sort(
+        filter(e -> first(e)["group"] == "hold", entries); by=e -> first(e)["repeat"]
+    )
     n = protocol["repeats_per_group"]
-    [s["nominal_rate_K_per_min"] for (s, _) in main] ==
-        repeat(protocol["main_rates_K_per_min"]; inner=n) || error("Invalid main ramp roster")
-    [s["nominal_mass_mg"] for (s, _) in mass_series] ==
-        repeat(protocol["mass_groups_mg"]; inner=n) || error("Invalid mass series roster")
-    all(e -> first(e)["nominal_rate_K_per_min"] == protocol["mass_series_rate_K_per_min"], mass_series) ||
-        error("Unexpected rate in the sample-mass series")
-    length(holds) == n && all(e -> first(e)["nominal_hold_K"] == protocol["hold_temperature_K"], holds) ||
+    [s["nominal_rate_K_per_min"] for (s, _) in main] == repeat(protocol["main_rates_K_per_min"]; inner=n) ||
+        error("Invalid main ramp roster")
+    [s["nominal_mass_mg"] for (s, _) in mass_series] == repeat(protocol["mass_groups_mg"]; inner=n) ||
+        error("Invalid mass series roster")
+    all(
+        e -> first(e)["nominal_rate_K_per_min"] == protocol["mass_series_rate_K_per_min"],
+        mass_series,
+    ) || error("Unexpected rate in the sample-mass series")
+    length(holds) == n &&
+    all(e -> first(e)["nominal_hold_K"] == protocol["hold_temperature_K"], holds) ||
         error("Invalid holdout roster")
     println("Verified and imported $(length(entries)) TG files.")
     main_repeatability = pine_repeatability(
@@ -269,10 +315,18 @@ function audit_public_pine_tg(output)
     predictions = pine_hold_predictions(main, holds, protocol)
     println("Evaluating apparent energy and ICTAC evidence on the main ramps.")
     assessment = pine_assessment(main, protocol)
-    inputs = [PINE_PROTOCOL, protocol["manifest"], ICTACTGAudit.ASSESSMENT_PROTOCOL,
-        ICTACTGAudit.PublicTGEnergy.ENERGY_PROTOCOL, ICTACTGAudit.PublicTGEnergy.FRIEDMAN_PROTOCOL,
-        MassPrediction.PP_PROTOCOL, "config/analysis_defaults.toml", "scripts/audit_public_pine_tg.jl",
-        "scripts/audit_ictac_tg.jl", "scripts/audit_public_pp_prediction.jl"]
+    inputs = [
+        PINE_PROTOCOL,
+        protocol["manifest"],
+        ICTACTGAudit.ASSESSMENT_PROTOCOL,
+        ICTACTGAudit.PublicTGEnergy.ENERGY_PROTOCOL,
+        ICTACTGAudit.PublicTGEnergy.FRIEDMAN_PROTOCOL,
+        MassPrediction.PP_PROTOCOL,
+        "config/analysis_defaults.toml",
+        "scripts/audit_public_pine_tg.jl",
+        "scripts/audit_ictac_tg.jl",
+        "scripts/audit_public_pp_prediction.jl",
+    ]
     report = Dict(
         "schema_version" => 1,
         "source_doi" => manifest["source_doi"],
@@ -282,14 +336,15 @@ function audit_public_pine_tg(output)
         "files_verified" => length(manifest["files"]),
         "tg_files_imported" => length(entries),
         "tg_rows_imported" => sum(length(run.time) for (_, run) in entries),
-        "input_sha256" => Dict(path => digest(joinpath(PINE_ROOT, path)) for path in inputs),
+        "input_sha256" =>
+            Dict(path => digest(joinpath(PINE_ROOT, path)) for path in inputs),
         "assessment" => assessment,
         "main_repeatability" => main_repeatability,
         "mass_sensitivity" => mass_sensitivity,
         "prediction" => predictions,
     )
     open(output, "w") do io
-        TOML.print(io, report; sorted=true)
+        return TOML.print(io, report; sorted=true)
     end
     println("Wrote $output")
     return report
@@ -297,5 +352,7 @@ end
 
 if abspath(PROGRAM_FILE) == abspath(@__FILE__)
     length(ARGS) <= 1 || error("Expected at most one output path")
-    audit_public_pine_tg(isempty(ARGS) ? joinpath(PINE_ROOT, PINE_REPORT) : abspath(only(ARGS)))
+    audit_public_pine_tg(
+        isempty(ARGS) ? joinpath(PINE_ROOT, PINE_REPORT) : abspath(only(ARGS))
+    )
 end
