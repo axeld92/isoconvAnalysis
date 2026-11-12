@@ -1,0 +1,706 @@
+# Raw hashes and byte counts are from the pinned acquisition manifests under data/external.
+# Reference counts, ranges and slopes are from the independent CSV inventories generated
+# by scripts/fetch_public_benchmarks.py. All ranges retain the reported source units.
+# Numeric digests use Python csv and float parsing and SHA-256 of struct.pack("<d", value)
+# for each value in acquisition order, with no header, delimiter or unit conversion.
+schema_version = 1
+temperature_unit = "C"
+time_unit = "min"
+
+[profiles.picnik_synthetic]
+delimiter = ","
+encoding = "utf8"
+temperature_column = "T (C)"
+time_column = "t (min)"
+signals = [
+    { id = "mass", column = "m (mg)", unit = "mg", quantity = "mass" },
+]
+
+[profiles.picnik_pp]
+delimiter = "\t"
+encoding = "utf8"
+temperature_column = "Temperature (C)"
+time_column = "Time (min)"
+signals = [
+    { id = "mass", column = "Weight (mg)", unit = "mg", quantity = "mass" },
+]
+
+[profiles.netzsch_dsc]
+delimiter = ";"
+encoding = "cp1252"
+header_prefix = "##"
+temperature_column = "Temp./›C"
+time_column = "Time/min"
+segment_column = "Segment"
+signals = [
+    { id = "heat_flow", column = "DSC/(mW/mg)", unit = "mW_per_mg", quantity = "specific_heat_flow" },
+    { id = "sensitivity", column = "Sensit./(uV/mW)", unit = "uV_per_mW", quantity = "auxiliary" },
+]
+
+[profiles.netzsch_dsc_with_gas_flow]
+delimiter = ";"
+encoding = "cp1252"
+header_prefix = "##"
+temperature_column = "Temp./›C"
+time_column = "Time/min"
+segment_column = "Segment"
+signals = [
+    { id = "heat_flow", column = "DSC/(mW/mg)", unit = "mW_per_mg", quantity = "specific_heat_flow" },
+    { id = "purge_flow", column = "Gas Flow(purge1)/(ml/min)", unit = "mL_per_min", quantity = "auxiliary" },
+    { id = "protective_flow", column = "Gas Flow(protective)/(ml/min)", unit = "mL_per_min", quantity = "auxiliary" },
+    { id = "sensitivity", column = "Sensit./(uV/mW)", unit = "uV_per_mW", quantity = "auxiliary" },
+]
+
+[profiles.netzsch_dsc_modulated]
+delimiter = ";"
+encoding = "cp1252"
+header_prefix = "##"
+temperature_column = "Temp./›C"
+time_column = "Time/min"
+segment_column = "Segment"
+signals = [
+    { id = "heat_flow_raw", column = "DSC(raw)/(mW/mg)", unit = "mW_per_mg", quantity = "specific_heat_flow" },
+    { id = "heat_flow_average", column = "DSC(avg)/(mW/mg)", unit = "mW_per_mg", quantity = "specific_heat_flow" },
+    { id = "purge_flow", column = "Gas Flow(purge1)/(ml/min)", unit = "mL_per_min", quantity = "auxiliary" },
+    { id = "protective_flow", column = "Gas Flow(protective)/(ml/min)", unit = "mL_per_min", quantity = "auxiliary" },
+    { id = "sensitivity", column = "Sensit./(uV/mW)", unit = "uV_per_mW", quantity = "auxiliary" },
+]
+
+[[runs]]
+id = "picnik_E_cnt_10"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "e59a559d00842fcf8db657f1558c25c27b8bc673db4f77ac995fa80e729e3447", mass = "ea25b7755035175023ac14876fb7f4ac8cac4d53685ef00fdce1b28f8978fbdc" }
+material = "Constant_E"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Constant_E/E_cnt_10.csv"
+sha256 = "9467b814233e83ad69296fd07728cc32dd475271f576365f5f2ddda7424a32f2"
+bytes = 97779
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,97], temperature_range = [30,1000], signal_range = [3,19.99982998398593], temperature_decrease_steps = 0, slope = 9.999999999999998 },
+]
+
+[[runs]]
+id = "picnik_E_cnt_15"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "f6f8fc4295d3ae8dc117d16e33f00f35430b3613df16f70d37f6e53cd110e96e", mass = "f82ea26664fdc6e566eae94949d4011e9c6c5757c32e2782fd87bbe3c30ec7ea" }
+material = "Constant_E"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Constant_E/E_cnt_15.csv"
+sha256 = "67bbf9f0eab1e4a830bcc70470eb08f5b1fb427bcadc83b0905d771ddb8e35b1"
+bytes = 99190
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,64.66666666666667], temperature_range = [30,1000], signal_range = [3,19.999829989323953], temperature_decrease_steps = 0, slope = 15.000000000000002 },
+]
+
+[[runs]]
+id = "picnik_E_cnt_2.5"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "9ba5482d7f7eb6016988e1091a319fbbfcb14b5dfc875882d4d64da6ab7dd51c", mass = "0e5d95d3da83f4d6c933a278df066ce726b4eee804ad9c8ae01014323b26081f" }
+material = "Constant_E"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Constant_E/E_cnt_2.5.csv"
+sha256 = "9806a09de716dba805bcee2a1a4ded3402ef4fbcd7bebe1b91d225652af7be95"
+bytes = 95420
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,388], temperature_range = [30,1000], signal_range = [3,19.99982993594372], temperature_decrease_steps = 0, slope = 2.4999999999999996 },
+]
+
+[[runs]]
+id = "picnik_E_cnt_20"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "c2f648f984e7dcf1a056898c9717e417268fde7401a2076f06c034c6c313c9cb", mass = "0deb22f465fa5b2c9318915c8760397f82471da7fdae18a7c2ba43fc8aa172bd" }
+material = "Constant_E"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Constant_E/E_cnt_20.csv"
+sha256 = "c7a8c502913c4a5b9d7d852770a9c3016d34fcc66c378dc8546ed24b63115728"
+bytes = 100102
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,48.5], temperature_range = [30,1000], signal_range = [3,19.999829991992964], temperature_decrease_steps = 0, slope = 19.999999999999996 },
+]
+
+[[runs]]
+id = "picnik_E_cnt_5"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "2bb37b44ca5e1030133f925adb7b7b057c985afbf4250f6457c11824e5fa5b3d", mass = "16a4bafd3359d59f8c828649c89cefb54cd723c398fcbc41e9b1447663e1bfdb" }
+material = "Constant_E"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Constant_E/E_cnt_5.csv"
+sha256 = "249aba707362bd3cdcc2cb9f5756200e9a33f1083f3be7cefe04732a7e387a8c"
+bytes = 96605
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,194], temperature_range = [30,1000], signal_range = [3,19.99982996797186], temperature_decrease_steps = 0, slope = 4.999999999999999 },
+]
+
+[[runs]]
+id = "picnik_PP_2_3_B3"
+source_data_line_range = [2, 19000]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "b31c978d826888d82a7bdce21e701bbc19aa9a051bc219760a517b50d45a8658", time = "c045539bf70758a46bba7ae6e1ff1574d122e2e44f6b37d16e0bd2848d070338", mass = "5ce53b16aa15a6ce0860027922e77117ba731af1a466da4ed89b2ca13dd0a67f" }
+material = "polypropylene"
+profile = "picnik_pp"
+group = "experimental_tg"
+path = "data/external/picnik/raw/examples/PolyProp/PP_ 2_3_B3.csv"
+sha256 = "7af9703657e177fcc708293f32ad3b593ac2dce9d46ab6f314b84808717be5bd"
+bytes = 510578
+rows = 18999
+source_lines = 19000
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 18999, time_range = [0.000833,251.6792], temperature_range = [20.21111,601.305], signal_range = [0.0794135,10.57708], temperature_decrease_steps = 12, slope = 2.3135445698836974 },
+]
+
+[[runs]]
+id = "picnik_PP_5_B3"
+source_data_line_range = [2, 13912]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "44581c93f21e36737e5024dfa6e4814dc7ad23847109ad78b2778d7ca8f0aa24", time = "861ef64614c8de31192a6840a1d4a49ee438fc6f35976355e39308094dbc7cf6", mass = "5c466195d14bcf88b50195bc4fa0c4ef59ed16fd2eb04fbd8e6380a2a2e06911" }
+material = "polypropylene"
+profile = "picnik_pp"
+group = "experimental_tg"
+path = "data/external/picnik/raw/examples/PolyProp/PP_ 5_B3.csv"
+sha256 = "0dd1bf4e6e734fa0f13eb478b70b77453620cbc3e5bf089509b61bcfb2c42a39"
+bytes = 371291
+rows = 13911
+source_lines = 13912
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 13911, time_range = [0.000778,115.9125], temperature_range = [20.17974,600.037], signal_range = [0.1419507,11.016], temperature_decrease_steps = 16, slope = 5.021999919222191 },
+]
+
+[[runs]]
+id = "picnik_PP_1_B3"
+source_data_line_range = [2, 18971]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "1b3a5377d6c9fee6445c6980f9c5eeb3ba3080cdda8923ac947fb4d2d38dec2b", time = "b043f8d7ebe7d59a3d708bd58e96566b7cec2325a8039b7804e27cb0ce2bcaa8", mass = "ae1f56e351e3a21ec55135b49700e0ac865144aa6801f426e0c35466bc10720b" }
+material = "polypropylene"
+profile = "picnik_pp"
+group = "experimental_tg"
+path = "data/external/picnik/raw/examples/PolyProp/PP_1_B3.csv"
+sha256 = "b637036f8aede93a5b495d0d0ba45f9d4d7781e374fbb3644cda554722c3631c"
+bytes = 505202
+rows = 18970
+source_lines = 18971
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 18970, time_range = [0.000556,579.5958], temperature_range = [19.96906,599.1835], signal_range = [0.1993538,10.96039], temperature_decrease_steps = 1, slope = 1.0028075502486282 },
+]
+
+[[runs]]
+id = "picnik_PP_10_B3"
+source_data_line_range = [2, 6874]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "ec4712d297c29eed6a7fa0df1167ecf384faa83ce01d247f68e3fdce4d9814ef", time = "ae3faa030461e9377d71c2eb8f3ab18e2fd4e576b883560f5df527c2231355d5", mass = "9ebc1f5c9501ce1f9b586f6714e382d1b23a46ee047c1084a1a50cbd3226b0d7" }
+material = "polypropylene"
+profile = "picnik_pp"
+group = "experimental_tg"
+path = "data/external/picnik/raw/examples/PolyProp/PP_10_B3.csv"
+sha256 = "9bfb5063df1165415b2a964b202de2a5afa704edf653395f6b50655ab5080ff0"
+bytes = 184443
+rows = 6873
+source_lines = 6874
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 6873, time_range = [0.000889,57.2625], temperature_range = [27.3752,597.1445], signal_range = [-0.125876,10.64326], temperature_decrease_steps = 0, slope = 10.044251872300213 },
+]
+
+[[runs]]
+id = "picnik_PP_20_B3"
+source_data_line_range = [2, 3483]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "ef57d664356d2116a0cbb1034d9da09fff864e5b3c11182eeeb4aab738fa7afe", time = "01f449d6e120de7bea311208d7107b9b8635648352559e5db12e682f05a4ca52", mass = "634e81fa9038dd079297030065c82268e3f99d31dc2c738d4795850f537e24ac" }
+material = "polypropylene"
+profile = "picnik_pp"
+group = "experimental_tg"
+path = "data/external/picnik/raw/examples/PolyProp/PP_20_B3.csv"
+sha256 = "27ef3766108a76dab35fbcd47146f3c0882ac98bdec8c4306a33932ed925ad56"
+bytes = 92284
+rows = 3482
+source_lines = 3483
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 3482, time_range = [0.002055556,29.00417], temperature_range = [19.73969,592.4925], signal_range = [0.2150527,11.08532], temperature_decrease_steps = 10, slope = 20.100929551234216 },
+]
+
+[[runs]]
+id = "picnik_E_2S_10"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "e59a559d00842fcf8db657f1558c25c27b8bc673db4f77ac995fa80e729e3447", mass = "97e55439d0b82477496b3d552a195db239f8066c825c9fc0476d291b6d1c4288" }
+material = "Two_Steps"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Two_Steps/E_2S_10.csv"
+sha256 = "5aadc5e2b67fff46f0019f9d87d6494b6670ff0f2ec9dfa54de39982f363cae0"
+bytes = 109434
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,97], temperature_range = [30,1000], signal_range = [3.000000000000046,19.99982998879015], temperature_decrease_steps = 0, slope = 9.999999999999998 },
+]
+
+[[runs]]
+id = "picnik_E_2S_2.5"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "9ba5482d7f7eb6016988e1091a319fbbfcb14b5dfc875882d4d64da6ab7dd51c", mass = "e5a9c4d8dc63ae68f5d9dff6698c601937ac4603a3794b857ee92577185c0876" }
+material = "Two_Steps"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Two_Steps/E_2S_2.5.csv"
+sha256 = "650d85266e021d315f1a1fcbc6b3553cc2638eb0091e5ab87770be1e1f75da3b"
+bytes = 107270
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,388], temperature_range = [30,1000], signal_range = [3,19.9998299551606], temperature_decrease_steps = 0, slope = 2.4999999999999996 },
+]
+
+[[runs]]
+id = "picnik_E_2S_20"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "c2f648f984e7dcf1a056898c9717e417268fde7401a2076f06c034c6c313c9cb", mass = "74f708e69dc8524bb4d3028837e1d43b3fe65c887f924c796cfab3c5f8308693" }
+material = "Two_Steps"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Two_Steps/E_2S_20.csv"
+sha256 = "f672685597e713f75d6db9457ec487ab9090154663bf2d6d3bd7c1b3a11277cc"
+bytes = 109854
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,48.5], temperature_range = [30,1000], signal_range = [3.0000006608728143,19.999829994395075], temperature_decrease_steps = 0, slope = 19.999999999999996 },
+]
+
+[[runs]]
+id = "picnik_E_2S_5"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "2bb37b44ca5e1030133f925adb7b7b057c985afbf4250f6457c11824e5fa5b3d", mass = "0b5573d25b69c9190650c90147825d20341213bc4f15d3dc91018dfe1b53f970" }
+material = "Two_Steps"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Two_Steps/E_2S_5.csv"
+sha256 = "b1c2d01069edb1f46450a6bc2dbfccce99b05833704ea24918a696bf802556f3"
+bytes = 109411
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,194], temperature_range = [30,1000], signal_range = [3,19.9998299775803], temperature_decrease_steps = 0, slope = 4.999999999999999 },
+]
+
+[[runs]]
+id = "picnik_E_var_10"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "e59a559d00842fcf8db657f1558c25c27b8bc673db4f77ac995fa80e729e3447", mass = "68a1f53a047dfd8f581a7e8e5cb435679bb8dc246f66bf40ca9bfb847baf071e" }
+material = "Variable_E"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Variable_E/E_var_10.csv"
+sha256 = "b53cd9762ecc1c0353d60b5ddc5399bdc6dfe0b9e44c2875fde02f2672ef1f40"
+bytes = 96802
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,97], temperature_range = [30,1000], signal_range = [3,19.999965720149515], temperature_decrease_steps = 0, slope = 9.999999999999998 },
+]
+
+[[runs]]
+id = "picnik_E_var_2.5"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "9ba5482d7f7eb6016988e1091a319fbbfcb14b5dfc875882d4d64da6ab7dd51c", mass = "372b4b8430e05de97c1436b7b057155649889ffa060505ba7b203599e3ea7d34" }
+material = "Variable_E"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Variable_E/E_var_2.5.csv"
+sha256 = "cad20d7d601b8ed41c65b553fd83ca43246a95d41da605b5e9cb945704d824d9"
+bytes = 95471
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,388], temperature_range = [30,1000], signal_range = [3,19.999913880808833], temperature_decrease_steps = 0, slope = 2.4999999999999996 },
+]
+
+[[runs]]
+id = "picnik_E_var_20"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "c2f648f984e7dcf1a056898c9717e417268fde7401a2076f06c034c6c313c9cb", mass = "e434dba8ab2947e1fc658e1d893d50ecce0376de6a4f41678eed394550e08c4e" }
+material = "Variable_E"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Variable_E/E_var_20.csv"
+sha256 = "6842a43e96a7dcda042b34e91f819c1a8117275fcc9681c61fe2da26c859360e"
+bytes = 98392
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,48.5], temperature_range = [30,1000], signal_range = [3,19.999974360070368], temperature_decrease_steps = 0, slope = 19.999999999999996 },
+]
+
+[[runs]]
+id = "picnik_E_var_5"
+source_data_line_range = [2, 2001]
+source_metadata_count = 0
+numeric_column_sha256 = { temperature = "a1cd2c85714b697bc744f3ae56ad70194abaab460920b1f016308e9e1eb222ad", time = "2bb37b44ca5e1030133f925adb7b7b057c985afbf4250f6457c11824e5fa5b3d", mass = "cfbe07034a482af742e5498de7565b308dd5c316ba936d8ded43afcd572852b6" }
+material = "Variable_E"
+profile = "picnik_synthetic"
+group = "synthetic_tg"
+path = "data/external/picnik/raw/examples/Variable_E/E_var_5.csv"
+sha256 = "505c1b5ff877bc6420b784fbff1ef8ca18896f59ad8f92f92a5172739cdce784"
+bytes = 96342
+rows = 2000
+source_lines = 2001
+selected_segment = 1
+selected_role = "ramp"
+segments = [
+    { rows = 2000, time_range = [0,194], temperature_range = [30,1000], signal_range = [3,19.999948440334162], temperature_decrease_steps = 0, slope = 4.999999999999999 },
+]
+
+[[runs]]
+id = "turbo_Dynamic_1_D10_enthalpy_2kmin"
+source_data_line_range = [41, 69309]
+source_metadata_count = 38
+numeric_column_sha256 = { temperature = "d0f37b21e29bc79f4cf60893529142cf39e58c86cf32b1c1d0f958de500257ae", time = "076798dde9d8d8dfab88921321fe382de3e462ee7fbeaef8afc764ef38682bca", heat_flow = "09dd2e5795849741580104f0805d05298aa32783e3a074b23e31d4f10d38163c", sensitivity = "17c9a96036f1476cd9d790e14ee78d8dfadb39fbe27e546d79a485bc05f62fc5" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc"
+group = "experimental_dsc_dynamic"
+path = "data/external/zenodo_8113838/raw/Dynamic_1_D10_enthalpy_2kmin.csv"
+sha256 = "f4c0eed582fb315472c10825868a4c926f5413d8915d8b9426f8df1265f5f743"
+bytes = 3189247
+rows = 69269
+source_lines = 69310
+selected_segment = 3
+selected_role = "first_heating"
+nominal_rate_K_per_min = 2
+metadata = { MTYPE = "TMDSC", EXO = "-1", "SAMPLE MASS /mg" = "19.2", "CORR. CODE" = "000", TAU-R = "---", "SEG. 1" = "25›C/5.0(K/min)/-40›C", "SEG. 3" = "-40›C/2.0(K/min)/280›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 2600, time_range = [0,12.995], temperature_range = [-40.01,25.059], signal_range = [-0.16982,0.01377704], temperature_decrease_steps = 2594, slope = -5.0048805648548855, label = "1" },
+    { rows = 250, time_range = [13.015,17.99667], temperature_range = [-40.434,-39.887], signal_range = [-0.12679,0.02909511], temperature_decrease_steps = 90, slope = 0.014891195319888594, label = "2" },
+    { rows = 24000, time_range = [18.00333,177.99667], temperature_range = [-40.001,279.99799], signal_range = [-0.26502,0.07967635], temperature_decrease_steps = 3, slope = 1.99999779746306, label = "3" },
+    { rows = 3119, time_range = [177.99833,183.19667], temperature_range = [19.922,280.069], signal_range = [-2.63005,0.06016537], temperature_decrease_steps = 3095, slope = -50.16711151217198, label = "4" },
+    { rows = 300, time_range = [183.2,184.19833], temperature_range = [15.269,21.625], signal_range = [-1.12338,0.28416], temperature_decrease_steps = 142, slope = 3.8035904079096983, label = "5" },
+    { rows = 39000, time_range = [184.20167,314.19917], temperature_range = [20.002,279.98401], signal_range = [-0.06009816,0.17849], temperature_decrease_steps = 13996, slope = 1.9999744620446214, label = "6" },
+]
+
+[[runs]]
+id = "turbo_Dynamic_2_D11_enthalpy_5kmin"
+source_data_line_range = [40, 25867]
+source_metadata_count = 37
+numeric_column_sha256 = { temperature = "0f26d1fcabc9f657d3e230cb50d470ff62f09d1ee9889832211d40f16877cfab", time = "578e9cdd97eecba3e99277ad5cc4004fae6650fc4b81efc72476aaf2f66c425b", heat_flow = "a0923d2f547ec40fa1bf67272b7f3e952379bf7ed79906cde25f4e2c14353f2d", purge_flow = "02f9ab570e23e368f4e9c727bcfcf60e5b01e08c04d78f1a78e3bfe9e9c006a8", protective_flow = "2d2e433bf4aa8bc977a2cf3d9d7e84270982315cca11aecd7b474730d2821768", sensitivity = "7bdf63efc121a67f3d947867084529a17895b55e77bf4b77d11d970ae45a26ff" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc_with_gas_flow"
+group = "experimental_dsc_dynamic"
+path = "data/external/zenodo_8113838/raw/Dynamic_2_D11_enthalpy_5kmin.csv"
+sha256 = "fd8e53e67dd22d9b83fdcf38754500718c59bad20a9d613a74f4b721f5a3f3f4"
+bytes = 1655514
+rows = 25828
+source_lines = 25868
+selected_segment = 3
+selected_role = "first_heating"
+nominal_rate_K_per_min = 5
+metadata = { MTYPE = "DSC", EXO = "-1", "SAMPLE MASS /mg" = "19.0", "CORR. CODE" = "050", TAU-R = "applied", "SEG. 1" = "25›C/5.0(K/min)/-40›C", "SEG. 3" = "-40›C/5.0(K/min)/275›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 2601, time_range = [0,12.9975], temperature_range = [-28.47099,24.85924], signal_range = [-0.16876,0.01872849], temperature_decrease_steps = 2600, slope = -3.8917330008125663, label = "1" },
+    { rows = 250, time_range = [13.0175,17.99917], temperature_range = [-42.91435,-28.39423], signal_range = [-0.12089,0.26931], temperature_decrease_steps = 219, slope = -2.81630330243439, label = "2" },
+    { rows = 9450, time_range = [18.00583,81.00083], temperature_range = [-40.19276,275.00899], signal_range = [-0.56265,0.19414], temperature_decrease_steps = 1, slope = 4.998959057695458, label = "3" },
+    { rows = 3779, time_range = [81.0025,87.30083], temperature_range = [-14.11678,273.73439], signal_range = [-2.7353,0.25775], temperature_decrease_steps = 3752, slope = -48.90232808456935, label = "4" },
+    { rows = 300, time_range = [87.30417,88.3025], temperature_range = [-23.08099,-12.74712], signal_range = [-0.3032,-0.14169], temperature_decrease_steps = 299, slope = -10.049070328411556, label = "5" },
+    { rows = 9448, time_range = [88.30917,151.28917], temperature_range = [-34.08568,274.73207], signal_range = [-0.14086,0.54285], temperature_decrease_steps = 326, slope = 4.981465229125925, label = "6" },
+]
+
+[[runs]]
+id = "turbo_Dynamic_3_E1_enthalpy_10kmin"
+source_data_line_range = [39, 10973]
+source_metadata_count = 36
+numeric_column_sha256 = { temperature = "f9c9daaa5db4455161e2d3bb8070f5961f78cb4474e9786dbc5a315371d5e37b", time = "267b4c6a599fd200caf8bdfd3650b38378f2ed117807d8f8fa26ed835875a35b", heat_flow = "cf515d30591c2740dcd645265ef7ff9b158e5ded0af545bb6b0d168829ade274", purge_flow = "65278c269b32b8542065ec75577e24675bb5b59e6ee72b6c7e23cc77411c7ac5", protective_flow = "255e2a4aabecec66a2af11909e80898f38b241f2057a4838052ec8778cc71bc6", sensitivity = "3ad4a7092644486a0712bedb1a31417cbf5d1f6c41ae41b2e6b009cc561080d6" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc_with_gas_flow"
+group = "experimental_dsc_dynamic"
+path = "data/external/zenodo_8113838/raw/Dynamic_3_E1_enthalpy_10kmin.csv"
+sha256 = "73967f7db523c8a295a1f8b1a8ecbfc04ca3ef3a8503c769d13d1bb0ee7522ff"
+bytes = 691362
+rows = 10935
+source_lines = 10974
+selected_segment = 3
+selected_role = "first_heating"
+nominal_rate_K_per_min = 10
+metadata = { MTYPE = "DSC", EXO = "-1", "SAMPLE MASS /mg" = "19.2", "CORR. CODE" = "050", TAU-R = "applied", "SEG. 1" = "25›C/5.0(K/min)/-40›C", "SEG. 3" = "-40›C/10.0(K/min)/275›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 2600, time_range = [0,12.99583], temperature_range = [-40.013,24.84816], signal_range = [-0.18663,0.01759902], temperature_decrease_steps = 2598, slope = -5.002948153852745, label = "1" },
+    { rows = 250, time_range = [13.01583,17.9975], temperature_range = [-40.09515,-39.91237], signal_range = [-0.13983,0.02729418], temperature_decrease_steps = 129, slope = -0.000049646096663813705, label = "2" },
+    { rows = 4725, time_range = [18.00417,49.49917], temperature_range = [-39.71896,275.01399], signal_range = [-0.8807,0.42778], temperature_decrease_steps = 2, slope = 9.999317529417509, label = "3" },
+    { rows = 3059, time_range = [49.50083,54.59917], temperature_range = [19.93501,273.63161], signal_range = [-2.8826,0.46031], temperature_decrease_steps = 3026, slope = -50.355030999057554, label = "4" },
+    { rows = 301, time_range = [54.6025,55.6025], temperature_range = [17.02946,21.433], signal_range = [-1.16383,0.07882942], temperature_decrease_steps = 146, slope = 1.882145767431042, label = "5" },
+]
+
+[[runs]]
+id = "turbo_Dynamic_4_D12_enthalpy_15kmin"
+source_data_line_range = [41, 14705]
+source_metadata_count = 38
+numeric_column_sha256 = { temperature = "7cabe8e77d9970a309e5f8f2c8f007d01513b4774c23914ae4543dd0b0cd8bb4", time = "39e9813861921f2be7016eaea6483ef9bf8ceac78e50e23fa3926555d9ae1c0c", heat_flow = "ede5065d1a7ce98da44cf3602e599f7efe1aba24a0925c8dc33e4cdc4a359a44", sensitivity = "0a3bda57058684fa27ad78a9db31745dfc689d01116a9ebf62b9f4bca71ecc80" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc"
+group = "experimental_dsc_dynamic"
+path = "data/external/zenodo_8113838/raw/Dynamic_4_D12_enthalpy_15kmin.csv"
+sha256 = "055ae35e658f488c2c77d34607aeb9f1723d62e5b306fdcd056f2b7a935fe617"
+bytes = 662836
+rows = 14665
+source_lines = 14706
+selected_segment = 3
+selected_role = "first_heating"
+nominal_rate_K_per_min = 15
+metadata = { MTYPE = "TMDSC", EXO = "-1", "SAMPLE MASS /mg" = "19.5", "CORR. CODE" = "000", TAU-R = "---", "SEG. 1" = "25›C/5.0(K/min)/-40›C", "SEG. 3" = "-40›C/15.0(K/min)/280›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 2600, time_range = [0,12.995], temperature_range = [-24.961,24.982], signal_range = [-0.13413,0.01597966], temperature_decrease_steps = 2592, slope = -3.7285634839249577, label = "1" },
+    { rows = 250, time_range = [13.015,17.99667], temperature_range = [-42.844,-25.067], signal_range = [-0.134,-0.03695979], temperature_decrease_steps = 248, slope = -3.6635258384986766, label = "2" },
+    { rows = 3200, time_range = [18.00333,39.33167], temperature_range = [-42.836,280.02301], signal_range = [-1.29446,0.64666], temperature_decrease_steps = 0, slope = 15.014464454340594, label = "3" },
+    { rows = 3119, time_range = [39.33333,44.53167], temperature_range = [19.934,280.79001], signal_range = [-2.74563,0.61676], temperature_decrease_steps = 3080, slope = -50.20750914228132, label = "4" },
+    { rows = 300, time_range = [44.535,45.53333], temperature_range = [15.259,21.619], signal_range = [-1.08659,0.27987], temperature_decrease_steps = 141, slope = 3.8177184966176516, label = "5" },
+    { rows = 5196, time_range = [45.53667,62.85333], temperature_range = [20.017,280.17099], signal_range = [-0.0007301839,0.71305], temperature_decrease_steps = 0, slope = 15.002089015618676, label = "6" },
+]
+
+[[runs]]
+id = "turbo_Dynamic_5_D9_enthalpy_20kmin"
+source_data_line_range = [41, 10270]
+source_metadata_count = 38
+numeric_column_sha256 = { temperature = "a14e45f10cfb15af8c650e7b28fce185416a8d784be58d1d11ee5b361fa31e0f", time = "b790aff9b2b4352ad973269ff0adc64878a0548beee397c04d453102025e7e1f", heat_flow = "0efccfe824128c9e504c3131a2172ce4664ed7213a7c2f50f93c2cc6fb8d3643", sensitivity = "dfffcfd79cebbb6d01d41cdb94e268879d2f67dd7bf7fa1310b9d4f81f1aeb82" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc"
+group = "experimental_dsc_dynamic"
+path = "data/external/zenodo_8113838/raw/Dynamic_5_D9_enthalpy_20kmin.csv"
+sha256 = "ea2961c15fd46a54b4a59318f847a1a77a1003959b48070453317310e78b9b65"
+bytes = 463261
+rows = 10230
+source_lines = 10271
+selected_segment = 3
+selected_role = "first_heating"
+nominal_rate_K_per_min = 20
+metadata = { MTYPE = "TMDSC", EXO = "-1", "SAMPLE MASS /mg" = "19.1", "CORR. CODE" = "000", TAU-R = "---", "SEG. 1" = "25›C/5.0(K/min)/-40›C", "SEG. 3" = "-40›C/20.0(K/min)/280›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 2600, time_range = [0,12.99583], temperature_range = [-40.019,24.933], signal_range = [-0.17075,0.009740548], temperature_decrease_steps = 2599, slope = -5.000788965399329, label = "1" },
+    { rows = 250, time_range = [13.01583,17.9975], temperature_range = [-40.426,-39.891], signal_range = [-0.1314,0.02760133], temperature_decrease_steps = 94, slope = 0.014664090249304287, label = "2" },
+    { rows = 2400, time_range = [18.00417,33.99917], temperature_range = [-40,280.03101], signal_range = [-1.87081,0.7938], temperature_decrease_steps = 2, slope = 20.00550905467933, label = "3" },
+    { rows = 3119, time_range = [34.00083,39.19917], temperature_range = [19.941,281.134], signal_range = [-2.77744,0.82427], temperature_decrease_steps = 3076, slope = -50.223743657393086, label = "4" },
+    { rows = 300, time_range = [39.2025,40.20083], temperature_range = [15.241,21.634], signal_range = [-1.11925,0.27166], temperature_decrease_steps = 142, slope = 3.818552618419713, label = "5" },
+    { rows = 1561, time_range = [40.20917,53.20417], temperature_range = [20.027,279.68799], signal_range = [-0.005806415,1.00248], temperature_decrease_steps = 0, slope = 19.994467750708427, label = "6" },
+]
+
+[[runs]]
+id = "turbo_Isotherm_1_SW2519_D4_ISO40_250K_mod"
+source_data_line_range = [38, 20448]
+source_metadata_count = 35
+numeric_column_sha256 = { temperature = "db6ef7ab14b4a9f6c4f0df5d02ed95534d0ea6dc6a339842d9751d2e5c4ad0e9", time = "1b7dc03e067c2857316abb8aa2fbd998314b68718d567ca77b6fe065ab1d31dd", heat_flow_raw = "cf8e6dc5749ae029182c3dd07f1f694f6c3c6e6665157acbe07db057f8e9bb7f", heat_flow_average = "bf3abffffdb780f6f9b938ac57c445265b67281539b9516a4445d07f8ac5258e", purge_flow = "20860599c72e11d0cced3ec3196148536adc798780e09746dff6ef0d5c8339bc", protective_flow = "abd1c8341603354499432c6f7486eeff2c67f59929e4893a14805c338b7adc36", sensitivity = "729295ad58ac5ea7c2a30603e99e5ead0e0e27a8938b5a95d10f5db39a387ef6" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc_modulated"
+group = "experimental_dsc_isothermal"
+path = "data/external/zenodo_8113838/raw/Isotherm_1_SW2519_D4_ISO40_250K_mod.csv"
+sha256 = "052afd4474f30e0cfee6b41fc8c1475e2ec9d124202bfdce083db9471c0470ba"
+bytes = 1635574
+rows = 20411
+source_lines = 20449
+selected_segment = 1
+selected_role = "isothermal_hold"
+nominal_temperature_C = 40
+metadata = { MTYPE = "TMDSC", EXO = "-1", "SAMPLE MASS /mg" = "25.8", "CORR. CODE" = "000", TAU-R = "---", "SEG. 1" = "40›C/18:00/40›C", "SEG. 3" = "-40›C/00:05/-40›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 10800, time_range = [0,1079.9], temperature_range = [39.94,40.226], signal_range = [-0.007536344,1.46518], temperature_decrease_steps = 4115, slope = -6.983339108799845e-8, label = "1" },
+    { rows = 2400, time_range = [1079.90667,1095.90167], temperature_range = [-40.016,40.001], signal_range = [-0.12757,0.008983649], temperature_decrease_steps = 2396, slope = -5.001758623171086, label = "2" },
+    { rows = 250, time_range = [1095.92167,1100.90333], temperature_range = [-40.369,-39.93], signal_range = [-0.07131331,0.01463783], temperature_decrease_steps = 98, slope = 0.013847463202929431, label = "3" },
+    { rows = 6961, time_range = [1100.91167,1158.90667], temperature_range = [-39.99642,249.69987], signal_range = [-0.004653749,0.36074], temperature_decrease_steps = 1, slope = 4.999318572648699, label = "4" },
+]
+
+[[runs]]
+id = "turbo_Isotherm_2_SW2519_A7_ISO50_250K_mod"
+source_data_line_range = [38, 15708]
+source_metadata_count = 35
+numeric_column_sha256 = { temperature = "0ee0fa13353e85e2422c7606147fadba13ba91220a48e719f5850e160e850c9d", time = "3ca2338033a21fde449c58f964225b7c7ea82ceb1ef828cf02405676894819e2", heat_flow_raw = "1f0970aa544df5918fc1b17a6c1278731e702dc5cc6b1f9879baa20bb86799cd", heat_flow_average = "90db25e2b6c13dda43e186180f036096bc8fd74473f657ec8c7a4f02434e4c29", purge_flow = "296ac7abeabcf319c77a86e9ac4929633c94cce624fb2f83f1281e2e1260d1a3", protective_flow = "7386d8956b9d1c2dbb240d309d63eb8451b721496aa120f9cc99fe94bef549d0", sensitivity = "5139df543beda064bd85b97a043b4db3b41f3d4b799ee5a5f85550c8a6e1a86f" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc_modulated"
+group = "experimental_dsc_isothermal"
+path = "data/external/zenodo_8113838/raw/Isotherm_2_SW2519_A7_ISO50_250K_mod.csv"
+sha256 = "1384ee659d4bf9bb8133f408c7a3ac4590e4541b514430297574f9dba4292157"
+bytes = 1240668
+rows = 15671
+source_lines = 15709
+selected_segment = 1
+selected_role = "isothermal_hold"
+nominal_temperature_C = 50
+metadata = { MTYPE = "TMDSC", EXO = "-1", "SAMPLE MASS /mg" = "19.6", "CORR. CODE" = "000", TAU-R = "---", "SEG. 1" = "50›C/15:00/50›C", "SEG. 3" = "20›C/00:05/20›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 9000, time_range = [0,899.90083], temperature_range = [49.93,50.376], signal_range = [-0.01915298,0.8576], temperature_decrease_steps = 3326, slope = -2.650731698736902e-7, label = "1" },
+    { rows = 900, time_range = [899.9075,905.9025], temperature_range = [19.989,50], signal_range = [-0.14263,0.01118924], temperature_decrease_steps = 896, slope = -5.0115032893253115, label = "2" },
+    { rows = 250, time_range = [905.9225,910.90417], temperature_range = [19.548,20.118], signal_range = [-0.10722,0.0279401], temperature_decrease_steps = 91, slope = 0.016546814596301796, label = "3" },
+    { rows = 5521, time_range = [910.9125,956.90667], temperature_range = [20.00187,249.70412], signal_range = [-0.007845227,0.43414], temperature_decrease_steps = 1, slope = 4.998985428899665, label = "4" },
+]
+
+[[runs]]
+id = "turbo_Isotherm_3_SW2519_A9_ISO60_250K_mod"
+source_data_line_range = [38, 14148]
+source_metadata_count = 35
+numeric_column_sha256 = { temperature = "e535cd91ae74d5e7c125887340f594b63a8c9c6d869a3d57daee22a5d71c85a2", time = "718b156e98cd284261d41eacef5024a043570b28297e6ee85f14ac8349d1c02f", heat_flow_raw = "dc2c9efa9db86e87b2abd2b17712ef78aedb0bc64ac396263a52e8a4f3ccc2b2", heat_flow_average = "3989b5d887d0aacbc90bae8db0b428509059323dce2e2be44e1634346b89a390", purge_flow = "3587061a524b0e9b58e0dd526bf05e0420373a1d7a121aeaa4e9b870519a43f9", protective_flow = "dd9b48d4cabc6f67c5f79f3e8d2e6928b7b7a6dd3c3bb35b26c578f69f4dcd0a", sensitivity = "1c9cbca50a8c791804d548d221423025e65bcf2355b5e59417f532f770d80eef" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc_modulated"
+group = "experimental_dsc_isothermal"
+path = "data/external/zenodo_8113838/raw/Isotherm_3_SW2519_A9_ISO60_250K_mod.csv"
+sha256 = "0ca33f2596b3a664c9f5b5708080e1dea0f7c1247d3abf496b908d3229c77439"
+bytes = 1117428
+rows = 14111
+source_lines = 14149
+selected_segment = 1
+selected_role = "isothermal_hold"
+nominal_temperature_C = 60
+metadata = { MTYPE = "TMDSC", EXO = "-1", "SAMPLE MASS /mg" = "23.8", "CORR. CODE" = "000", TAU-R = "---", "SEG. 1" = "60›C/11:00/60›C", "SEG. 3" = "10›C/00:05/10›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 6600, time_range = [0,659.90083], temperature_range = [59.382,60.602], signal_range = [-0.05145697,10.18843], temperature_decrease_steps = 2413, slope = -1.8698200604517771e-7, label = "1" },
+    { rows = 1500, time_range = [659.9075,669.9025], temperature_range = [9.991,60.001], signal_range = [-0.14887,0.009788698], temperature_decrease_steps = 1495, slope = -5.004162620080355, label = "2" },
+    { rows = 250, time_range = [669.9225,674.90417], temperature_range = [9.547,10.125], signal_range = [-0.10347,0.02610859], temperature_decrease_steps = 84, slope = 0.016210311462651728, label = "3" },
+    { rows = 5761, time_range = [674.9125,722.9075], temperature_range = [10.00158,249.702], signal_range = [-0.01096353,0.42257], temperature_decrease_steps = 1, slope = 4.999059696487975, label = "4" },
+]
+
+[[runs]]
+id = "turbo_Isotherm_4_SW2519_A10_ISO70_250K_mod"
+source_data_line_range = [38, 13248]
+source_metadata_count = 35
+numeric_column_sha256 = { temperature = "9b2e3c319588a7971d639fb93d3e0b3281dbe5fcdf09cc624f4c514fee0d4aed", time = "2e72c941b4b630f6cd65b1bb3f9f9ea91f4f211012c4c26169453ce90cbdc9e9", heat_flow_raw = "ba80d0bc1edd5a24115f523af8f8681a55a012c5ac12a70bbf8684e2d601e303", heat_flow_average = "bcb947387bdcf33609d7dafee1a0df9e4f07e450d3ac6db5322ea77085d9967f", purge_flow = "34004def76f954cb81685f3f38d3a41e7dd8067a0a280f31fe8dc43f6ab30fe9", protective_flow = "3bf1e2ddf70ef8966598425774f27103c949c4101adbe0bab335676a10eb7444", sensitivity = "7145a9fac6e590f4fdf6fbb415ada881f83da733f94403548a72ebbd371f1a64" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc_modulated"
+group = "experimental_dsc_isothermal"
+path = "data/external/zenodo_8113838/raw/Isotherm_4_SW2519_A10_ISO70_250K_mod.csv"
+sha256 = "2f00c497f0c06921752679e92e49af35a41503398fb5936f647d719a745b2a4b"
+bytes = 1046328
+rows = 13211
+source_lines = 13249
+selected_segment = 1
+selected_role = "isothermal_hold"
+nominal_temperature_C = 70
+metadata = { MTYPE = "TMDSC", EXO = "-1", "SAMPLE MASS /mg" = "21.3", "CORR. CODE" = "000", TAU-R = "---", "SEG. 1" = "70›C/09:00/70›C", "SEG. 3" = "10›C/00:05/10›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 5400, time_range = [0,539.9], temperature_range = [69.811,70.753], signal_range = [-0.10438,3.59955], temperature_decrease_steps = 2022, slope = -0.0000030371106818091894, label = "1" },
+    { rows = 1800, time_range = [539.90667,551.90167], temperature_range = [9.991,70.001], signal_range = [-0.15072,0.009158004], temperature_decrease_steps = 1795, slope = -5.002962381610949, label = "2" },
+    { rows = 250, time_range = [551.92167,556.90333], temperature_range = [9.561,10.104], signal_range = [-0.0984282,0.02518962], temperature_decrease_steps = 95, slope = 0.01605653969338879, label = "3" },
+    { rows = 5761, time_range = [556.91167,604.90583], temperature_range = [10.00121,249.69675], signal_range = [-0.004457148,0.40326], temperature_decrease_steps = 1, slope = 4.999058530814084, label = "4" },
+]
+
+[[runs]]
+id = "turbo_Isotherm_5_SW2519_A8_ISO80_250K_mod"
+source_data_line_range = [38, 11256]
+source_metadata_count = 35
+numeric_column_sha256 = { temperature = "9579d826b5ab7f48be57514d70c104f333da7511db83c8541d5ac6b5bbc2aa90", time = "270ec7c9416383ad37e89a4b1a3146c09ef0912b15123160f364cb143138c735", heat_flow_raw = "e89c8fe2f78633750ce92f63fc74b9b526efa50297b4a1ed5f8c645715cad6ac", heat_flow_average = "713a669cdb3a88181eb6a38a0b809ef73b36d88c9fd65980d59d370596df7e20", purge_flow = "c608341ca020b29aaad50baae262916639db3209657a8eff07daa19cd37ca487", protective_flow = "c339187855ca4328c5b7b6396f6dea08183676b5eacee3645a8d77e686c48df1", sensitivity = "ea9d12a48611afd18a0e5434bc6ff35437fda1bf8078d8821529f20aebeb4aab" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc_modulated"
+group = "experimental_dsc_isothermal"
+path = "data/external/zenodo_8113838/raw/Isotherm_5_SW2519_A8_ISO80_250K_mod.csv"
+sha256 = "e275937487182359411035241654ec1de97033c7f2be7cf589b4588072bf97bb"
+bytes = 1001150
+rows = 11219
+source_lines = 11257
+selected_segment = 1
+selected_role = "isothermal_hold"
+nominal_temperature_C = 80
+metadata = { MTYPE = "TMDSC", EXO = "-1", "SAMPLE MASS /mg" = "23.4", "CORR. CODE" = "000", TAU-R = "---", "SEG. 1" = "80›C/07:00/80›C", "SEG. 3" = "20›C/00:05/20›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 3650, time_range = [0,364.88083], temperature_range = [79.848,80.543], signal_range = [-0.18498,4.40216], temperature_decrease_steps = 1370, slope = -0.0000033846480885656843, label = "1" },
+    { rows = 1800, time_range = [364.8875,376.88083], temperature_range = [19.996,80.003], signal_range = [-0.16817,0.009755608], temperature_decrease_steps = 1794, slope = -5.002920426513612, label = "2" },
+    { rows = 250, time_range = [376.90083,381.8825], temperature_range = [19.538,20.131], signal_range = [-0.10711,0.02637765], temperature_decrease_steps = 79, slope = 0.01663528789085801, label = "3" },
+    { rows = 5519, time_range = [381.89083,427.87417], temperature_range = [20.00179,249.5705], signal_range = [-0.00837585,0.4042], temperature_decrease_steps = 1, slope = 4.998962141047877, label = "4" },
+]
+
+[[runs]]
+id = "turbo_Isotherm_6_SW2519_A6_ISO90_250K_mod"
+source_data_line_range = [38, 10170]
+source_metadata_count = 35
+numeric_column_sha256 = { temperature = "25593748c93763ed2be45460805bf5397b2e13be58931503134b894f44af0d9e", time = "44a877dd3a79caf2720e74fbe24a69028369077bd1549c9b2d0c98b202f43642", heat_flow_raw = "5f523d6a5d8e87b5e426f214a421abb26a2b592d67aef61d4411e56b3feb3ab5", heat_flow_average = "8a29fc27fd71055b83cda8dc0e79ff967ba1d7684602d3343176caae5437745d", purge_flow = "67dba3c1a43e0f54372c53c0428780ee8c3f2545c5295406348a2d767d2077c8", protective_flow = "e60bdcc6e73ff5d5776255e5ff59a161d27073778462dfe6c670756864518165", sensitivity = "956f394420bee025c2a2b2b7edac09eb19022f146b1b88560ec1c4c6b99db1c5" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc_modulated"
+group = "experimental_dsc_isothermal"
+path = "data/external/zenodo_8113838/raw/Isotherm_6_SW2519_A6_ISO90_250K_mod.csv"
+sha256 = "846ba3d5e60727588b19c2354ac952515f765e7ecdcfa485ddfc489522687f45"
+bytes = 803166
+rows = 10133
+source_lines = 10171
+selected_segment = 1
+selected_role = "isothermal_hold"
+nominal_temperature_C = 90
+metadata = { MTYPE = "TMDSC", EXO = "-1", "SAMPLE MASS /mg" = "19.1", "CORR. CODE" = "000", TAU-R = "---", "SEG. 1" = "90›C/06:50/90›C", "SEG. 3" = "20›C/00:05/20›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 2262, time_range = [0,226.0075], temperature_range = [89.747,91.09], signal_range = [-0.31198,4.35649], temperature_decrease_steps = 882, slope = -0.000021133160510845967, label = "1" },
+    { rows = 2100, time_range = [226.01417,240.00833], temperature_range = [19.993,90.003], signal_range = [-0.2017,0.01031295], temperature_decrease_steps = 2095, slope = -5.002190423698782, label = "2" },
+    { rows = 250, time_range = [240.02833,245.01], temperature_range = [19.545,20.121], signal_range = [-0.1063,0.03403034], temperature_decrease_steps = 96, slope = 0.01658565292681454, label = "3" },
+    { rows = 5521, time_range = [245.01833,291.0125], temperature_range = [20.00167,249.70813], signal_range = [-0.01679747,0.43142], temperature_decrease_steps = 1, slope = 4.998988135778353, label = "4" },
+]
+
+[[runs]]
+id = "turbo_Isotherm_7_SW2519_A4_ISO100_250K_mod"
+source_data_line_range = [38, 14348]
+source_metadata_count = 35
+numeric_column_sha256 = { temperature = "9268c2f137a853b966d2c2d7e5c73e456817f3d0e432d4f037dec8afddf1280b", time = "33160d835858ccb745b0fa21de7ab16a2b3628203607c53fb744210820deef67", heat_flow_raw = "5e0874c8be2bd1d69be1d69e19f08d06b1bf29a8d40125005e876af69b7c0049", heat_flow_average = "d204c680b08126c38e7e8ee013f0cd57fa780dd1311676da09af95ae7977796f", purge_flow = "1dd99292992c7515b70d757db15ee7eac86ea9647a6f1fbd23c1ed5243113ba8", protective_flow = "61e36e01b210c2418e286fee315b696d1684ac2cb132b49dee4ae03e39bc35f4", sensitivity = "7e61ddd51f337314f5199acbbade2faf82f4c3babf120b3f27cd0e29f741fe9c" }
+material = "turbo_epoxy"
+profile = "netzsch_dsc_modulated"
+group = "experimental_dsc_isothermal"
+path = "data/external/zenodo_8113838/raw/Isotherm_7_SW2519_A4_ISO100_250K_mod.csv"
+sha256 = "123d22e39fc7b823e0888b69d1717f201164a0fcd30944afa617bde4f290247e"
+bytes = 1133263
+rows = 14311
+source_lines = 14349
+selected_segment = 1
+selected_role = "isothermal_hold"
+nominal_temperature_C = 100
+metadata = { MTYPE = "TMDSC", EXO = "-1", "SAMPLE MASS /mg" = "19.2", "CORR. CODE" = "000", TAU-R = "---", "SEG. 1" = "100›C/04:50/100›C", "SEG. 3" = "-40›C/00:05/-40›C", INSTRUMENT = "NETZSCH DSC 214" }
+segments = [
+    { rows = 2900, time_range = [0,289.90083], temperature_range = [99.674,101.407], signal_range = [-0.52212,4.32551], temperature_decrease_steps = 1078, slope = -0.00001576895094788616, label = "1" },
+    { rows = 4200, time_range = [289.9075,317.9025], temperature_range = [-39.965,99.998], signal_range = [-0.2105,0.01272508], temperature_decrease_steps = 4196, slope = -5.000588242583746, label = "2" },
+    { rows = 250, time_range = [317.9225,322.90417], temperature_range = [-40.257,-39.996], signal_range = [-0.08127383,0.01561879], temperature_decrease_steps = 81, slope = 0.013295497231462094, label = "3" },
+    { rows = 6961, time_range = [322.9125,380.90667], temperature_range = [-39.9965,249.69463], signal_range = [-0.008916443,0.45885], temperature_decrease_steps = 1, slope = 4.999316051002287, label = "4" },
+]

@@ -1,0 +1,3 @@
+# Upstream raw payloads are acquired locally, with source and checksums in manifests.
+# A repository software license is not automatically a separate data license.
+*/raw/

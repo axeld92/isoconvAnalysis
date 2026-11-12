@@ -1,0 +1,41 @@
+schema_version = 1
+alpha_grid = [0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90]
+primary_derivative = "reference_quadratic"
+primary_delta_alpha = 0.02
+time_subdivisions = 8
+refinement_subdivisions = 16
+maximum_pp_refinement_shift_kJ_per_mol = 0.02
+control_rates_K_per_min = [2.0, 5.0, 10.0, 20.0]
+control_temperature_K = [300.0, 875.0]
+control_rows = 1601
+control_mass_mg = [12.0, 2.0]
+control_prefactor_min_inv = 2.0e12
+control_refinement_tolerance_alpha = 2.0e-8
+
+# Clean-control error bounds were declared before evaluating the experimental data.
+[recovery_limit_kJ_per_mol]
+constant_friedman = 1.0
+constant_advanced_vyazovkin = 0.15
+constant_kas = 1.5
+constant_fwo = 5.0
+constant_starink = 0.5
+variable_friedman = 2.0
+variable_increment_midpoint = 2.0
+
+[[controls]]
+id = "constant_affine"
+energy_intercept_kJ_per_mol = 160.0
+energy_slope_kJ_per_mol = 0.0
+curved = false
+
+[[controls]]
+id = "constant_curved"
+energy_intercept_kJ_per_mol = 160.0
+energy_slope_kJ_per_mol = 0.0
+curved = true
+
+[[controls]]
+id = "variable_affine"
+energy_intercept_kJ_per_mol = 125.0
+energy_slope_kJ_per_mol = 65.0
+curved = false

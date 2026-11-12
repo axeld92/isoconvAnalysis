@@ -1,0 +1,7 @@
+schema_version = 1
+delta_alpha_grid = [0.01, 0.02, 0.05]
+probe_energies_kJ_per_mol = [60.0, 120.0, 240.0]
+legacy_alpha_nodes = 41
+subdivisions_per_step = 8
+central_alpha_bounds = [0.10, 0.90]
+polypropylene_omitted_run = "picnik_PP_10_B3"

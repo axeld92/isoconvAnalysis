@@ -6,7 +6,7 @@ candidate kinetic models, and records the assumptions behind the results.
 
 ## Capabilities
 
-- Load cataloged experiments with explicit units and source checksum verification.
+- Import segment-aware TG data from declared columns and units with source checksum verification.
 - Preprocess mass-loss curves with configurable reference masses, conversion
   windows, smoothing, and derivative settings.
 - Estimate apparent activation energy with Friedman, KAS, Flynn–Wall–Ozawa,
@@ -51,8 +51,16 @@ julia --startup-file=no --project=. -e 'using Pkg; Pkg.test()'
 - [Peak fitting](docs/src/deconvolution.md) and [reaction-model comparison](docs/src/reaction_models.md)
 - [Development guide](docs/src/development.md) and [data-sharing status](DATA_SHARING.md)
 
+## Public TG benchmark
+
+Reproduce known-energy recovery and the polypropylene activation-energy profiles
+using the [public benchmark instructions](docs/public_tg_energy.md). The
+[TG workflow guide](docs/src/thermal_conversion.md) explains how to check common
+conversion crossings, temperature coverage, local rates, recorded-time intervals,
+and ramp assumptions.
+
 ## Research direction
 
-The project is developing workflows for segment-aware TG and DSC measurements,
-model fitting across multiple experiments, uncertainty assessment, and prediction
+The project is developing DSC reaction-progress workflows, model fitting across
+multiple experiments, uncertainty assessment, and prediction
 on thermal programs excluded from fitting.

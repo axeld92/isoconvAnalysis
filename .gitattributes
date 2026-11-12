@@ -1,2 +1,9 @@
 # Preserve retained thesis data and outputs byte-for-byte, including instrument line endings.
 code/** -text
+
+# Use canonical line endings for hashed TG benchmark inputs and reports.
+config/analysis_defaults.toml text eol=lf
+config/public_thermal_import.toml text eol=lf
+config/public_tg_*.toml text eol=lf
+scripts/generate_tg_energy_controls.py text eol=lf
+docs/audits/public_tg_*.toml text eol=lf

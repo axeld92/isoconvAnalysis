@@ -1,0 +1,40 @@
+# Source hashes and byte counts come from the pinned mixchar acquisition manifest.
+# CSV and column hashes come from the decoded R data.frames in acquisition order.
+schema_version = 1
+source_repository = "https://github.com/smwindecker/mixchar"
+source_revision = "8e26d64d6603e583e6cbcddb1ea6123cd130963f"
+units_reference = "vignettes/mixchar.Rmd"
+decoder = "rdata"
+decoder_version = "1.0.0"
+decoder_reference = "https://pypi.org/project/rdata/1.0.0/"
+temperature_column = "temp_C"
+temperature_unit = "C"
+signal_column = "mass_loss"
+signal_unit = "mg"
+signal_quantity = "mass_loss"
+
+[[runs]]
+id = "juncus"
+material_id = "Juncus amabilis"
+rda_path = "data/external/mixchar/raw/data/juncus.rda"
+rda_bytes = 280677
+rda_sha256 = "539bdc6ad380d002a73a59eec6047690a0e27c60b81154a457be18d52db85902"
+csv_path = "data/processed/mixchar_g1a/juncus.csv"
+csv_sha256 = "6a49c4161dbcf28ac76311b42cc2c7020be7c891657313001c4dc63168fc27db"
+rows = 46080
+temperature_sha256_ieee754_le = "2132d141a249bb3a9ae01e97fd8f90f23e7d8768cbc68387a751612db4f9015c"
+signal_sha256_ieee754_le = "3a0041c178c06b91e74bb7d8a8a8c3ad22e864cd74bf59bfcb0013792e786874"
+vignette_initial_mass_mg = 18.96
+
+[[runs]]
+id = "marsilea"
+material_id = "Marsilea drumondii"
+rda_path = "data/external/mixchar/raw/data/marsilea.rda"
+rda_bytes = 266124
+rda_sha256 = "efc7cd0d91a9413ee8ee1594bc12f92b6ee372614db0578c90cbe8e34f31adfa"
+csv_path = "data/processed/mixchar_g1a/marsilea.csv"
+csv_sha256 = "445296742c1f6053ee7a5c409554d22716993de5ea94c87018da66a034d75293"
+rows = 46080
+temperature_sha256_ieee754_le = "f8841fc09a23a34300ddcf713a2d204ff0cacf87d6484d28e379384d4657eb7f"
+signal_sha256_ieee754_le = "f341bfa23cc24ae631b7424877004eaef7a4809fd769b83769518af7b446d0a5"
+vignette_initial_mass_mg = 15.29
