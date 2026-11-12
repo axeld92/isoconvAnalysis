@@ -1,0 +1,637 @@
+schema_version = 1
+generated_on = "2026-11-12"
+generator = "scripts/audit_legacy_comparison.jl"
+generator_sha256 = "b5e894dee8cf7b1a0f0184ffc129b03d2122b8764beb07b9aca54a0c691ff07f"
+report = "docs/legacy_comparison_audit.md"
+report_sha256 = "f9885352d529fbc78d208765f68c1f062a580b6e3471372939058c0c173f4177"
+analysis_fingerprint = "5d473166fe1937720ef07ad0ddfebe78a0b28a368874c17d952ecd7b06d44f4d"
+comparison_scope = "corrected_julia_versus_legacy"
+numerical_parity_scope = "raw_dynamic_import_only"
+legacy_result_workspaces_are_numerical_oracles = false
+dynamic_experiment_count = 20
+exact_raw_alias_count = 20
+exact_corrected_contiguous_subset_count = 20
+method_comparison_count = 8
+intentional_deviation_count = 13
+artifact_count = 18
+
+[[experiment]]
+id = "dynamic_wt000_rate05"
+canonical_variable = "ExpDat0wt05hr"
+legacy_alias = "St01"
+canonical_rows = 11626
+canonical_columns = 7
+alias_rows = 11626
+alias_columns = 7
+alias_exact_including_nan = true
+corrected_rows = 10321
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1305
+corrected_end_row_1_based = 11625
+corrected_start_temperature_celsius = 110.015
+corrected_end_temperature_celsius = 798.68402
+
+[[experiment]]
+id = "dynamic_wt000_rate10"
+canonical_variable = "ExpDat0wt10hr"
+legacy_alias = "St06"
+canonical_rows = 7750
+canonical_columns = 7
+alias_rows = 7750
+alias_columns = 7
+alias_exact_including_nan = true
+corrected_rows = 6813
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 937
+corrected_end_row_1_based = 7749
+corrected_start_temperature_celsius = 110.055
+corrected_end_temperature_celsius = 797.16199
+
+[[experiment]]
+id = "dynamic_wt000_rate15"
+canonical_variable = "ExpDat0wt15hr"
+legacy_alias = "St11"
+canonical_rows = 7749
+canonical_columns = 7
+alias_rows = 7749
+alias_columns = 7
+alias_exact_including_nan = true
+corrected_rows = 6735
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1014
+corrected_end_row_1_based = 7748
+corrected_start_temperature_celsius = 110.011
+corrected_end_temperature_celsius = 795.71002
+
+[[experiment]]
+id = "dynamic_wt000_rate20"
+canonical_variable = "ExpDat0wt20hr"
+legacy_alias = "St16"
+canonical_rows = 8352
+canonical_columns = 8
+alias_rows = 8352
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6667
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1685
+corrected_end_row_1_based = 8351
+corrected_start_temperature_celsius = 110.078
+corrected_end_temperature_celsius = 794.685
+
+[[experiment]]
+id = "dynamic_wt025_rate05"
+canonical_variable = "ExpDat25wt05hr2"
+legacy_alias = "St02"
+canonical_rows = 12226
+canonical_columns = 8
+alias_rows = 12226
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 10320
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1906
+corrected_end_row_1_based = 12225
+corrected_start_temperature_celsius = 110.035
+corrected_end_temperature_celsius = 798.56598
+
+[[experiment]]
+id = "dynamic_wt025_rate10"
+canonical_variable = "ExpDat25wt10hr"
+legacy_alias = "St07"
+canonical_rows = 8351
+canonical_columns = 8
+alias_rows = 8351
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6811
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1540
+corrected_end_row_1_based = 8350
+corrected_start_temperature_celsius = 110.08
+corrected_end_temperature_celsius = 797.33197
+
+[[experiment]]
+id = "dynamic_wt025_rate15"
+canonical_variable = "ExpDat25wt15hr"
+legacy_alias = "St12"
+canonical_rows = 8350
+canonical_columns = 8
+alias_rows = 8350
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6727
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1623
+corrected_end_row_1_based = 8349
+corrected_start_temperature_celsius = 110.06
+corrected_end_temperature_celsius = 796.04102
+
+[[experiment]]
+id = "dynamic_wt025_rate20"
+canonical_variable = "ExpDat25wt20hr"
+legacy_alias = "St17"
+canonical_rows = 8352
+canonical_columns = 8
+alias_rows = 8352
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6655
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1697
+corrected_end_row_1_based = 8351
+corrected_start_temperature_celsius = 110.042
+corrected_end_temperature_celsius = 795.08698
+
+[[experiment]]
+id = "dynamic_wt050_rate05"
+canonical_variable = "ExpDat50wt05hr"
+legacy_alias = "St03"
+canonical_rows = 12227
+canonical_columns = 8
+alias_rows = 12227
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 10317
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1910
+corrected_end_row_1_based = 12226
+corrected_start_temperature_celsius = 110.006
+corrected_end_temperature_celsius = 798.73901
+
+[[experiment]]
+id = "dynamic_wt050_rate10"
+canonical_variable = "ExpDat50wt10hr"
+legacy_alias = "St08"
+canonical_rows = 8349
+canonical_columns = 8
+alias_rows = 8349
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6809
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1540
+corrected_end_row_1_based = 8348
+corrected_start_temperature_celsius = 110.029
+corrected_end_temperature_celsius = 797.052
+
+[[experiment]]
+id = "dynamic_wt050_rate15"
+canonical_variable = "ExpDat50wt15hr"
+legacy_alias = "St13"
+canonical_rows = 8350
+canonical_columns = 8
+alias_rows = 8350
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6732
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1618
+corrected_end_row_1_based = 8349
+corrected_start_temperature_celsius = 110.061
+corrected_end_temperature_celsius = 795.90198
+
+[[experiment]]
+id = "dynamic_wt050_rate20"
+canonical_variable = "ExpDat50wt20hr"
+legacy_alias = "St18"
+canonical_rows = 8351
+canonical_columns = 8
+alias_rows = 8351
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6663
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1688
+corrected_end_row_1_based = 8350
+corrected_start_temperature_celsius = 110.105
+corrected_end_temperature_celsius = 794.776
+
+[[experiment]]
+id = "dynamic_wt075_rate05"
+canonical_variable = "ExpDat75wt05hr"
+legacy_alias = "St04"
+canonical_rows = 12227
+canonical_columns = 8
+alias_rows = 12227
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 10320
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1907
+corrected_end_row_1_based = 12226
+corrected_start_temperature_celsius = 110.047
+corrected_end_temperature_celsius = 798.685
+
+[[experiment]]
+id = "dynamic_wt075_rate10"
+canonical_variable = "ExpDat75wt10hr"
+legacy_alias = "St09"
+canonical_rows = 8351
+canonical_columns = 8
+alias_rows = 8351
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6813
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1538
+corrected_end_row_1_based = 8350
+corrected_start_temperature_celsius = 110.01
+corrected_end_temperature_celsius = 797.16602
+
+[[experiment]]
+id = "dynamic_wt075_rate15"
+canonical_variable = "ExpDat75wt15hr"
+legacy_alias = "St14"
+canonical_rows = 8350
+canonical_columns = 8
+alias_rows = 8350
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6734
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1616
+corrected_end_row_1_based = 8349
+corrected_start_temperature_celsius = 110.069
+corrected_end_temperature_celsius = 795.73798
+
+[[experiment]]
+id = "dynamic_wt075_rate20"
+canonical_variable = "ExpDat75wt20hr"
+legacy_alias = "St19"
+canonical_rows = 8352
+canonical_columns = 8
+alias_rows = 8352
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6668
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1684
+corrected_end_row_1_based = 8351
+corrected_start_temperature_celsius = 110.012
+corrected_end_temperature_celsius = 794.66602
+
+[[experiment]]
+id = "dynamic_wt100_rate05"
+canonical_variable = "ExpDat100wt05hr2"
+legacy_alias = "St05"
+canonical_rows = 12227
+canonical_columns = 8
+alias_rows = 12227
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 10320
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1907
+corrected_end_row_1_based = 12226
+corrected_start_temperature_celsius = 110.07
+corrected_end_temperature_celsius = 798.70001
+
+[[experiment]]
+id = "dynamic_wt100_rate10"
+canonical_variable = "ExpDat100wt10hr2"
+legacy_alias = "St10"
+canonical_rows = 8351
+canonical_columns = 8
+alias_rows = 8351
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6813
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1538
+corrected_end_row_1_based = 8350
+corrected_start_temperature_celsius = 110.069
+corrected_end_temperature_celsius = 797.12299
+
+[[experiment]]
+id = "dynamic_wt100_rate15"
+canonical_variable = "ExpDat100wt15hr"
+legacy_alias = "St15"
+canonical_rows = 8350
+canonical_columns = 8
+alias_rows = 8350
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6735
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1615
+corrected_end_row_1_based = 8349
+corrected_start_temperature_celsius = 110.033
+corrected_end_temperature_celsius = 795.64801
+
+[[experiment]]
+id = "dynamic_wt100_rate20"
+canonical_variable = "ExpDat100wt20hr"
+legacy_alias = "St20"
+canonical_rows = 8352
+canonical_columns = 8
+alias_rows = 8352
+alias_columns = 8
+alias_exact_including_nan = true
+corrected_rows = 6669
+corrected_columns = 4
+corrected_exact_contiguous_subset = true
+corrected_start_row_1_based = 1683
+corrected_end_row_1_based = 8351
+corrected_start_temperature_celsius = 110.097
+corrected_end_temperature_celsius = 794.42999
+
+[[method_comparison]]
+milestone = "M2"
+area = "Raw data ingestion"
+legacy = "Direct MAT variables and St01-St20 aliases"
+julia = "Checksum-verified, explicitly named MAT variables with preserved invalid rows"
+status = "exact"
+conclusion = "All 20 configured dynamic arrays are exactly equal to their aliases, including NaNs."
+
+[[method_comparison]]
+milestone = "M3"
+area = "Preprocessing"
+legacy = "Row endpoints, Savitzky-Golay smoothing, diff_alpha, and two low-pass calls"
+julia = "Explicit 150-700 C references, local-polynomial smoothing, diagnostics, and eight sensitivity profiles"
+status = "intentional_deviation"
+conclusion = "The scientific conversion-and-derivative objective is preserved; numerical parity is neither available nor accepted."
+
+[[method_comparison]]
+milestone = "M4"
+area = "Linear isoconversional methods"
+legacy = "Four-run Friedman, KAS, FWO, and Starink scripts"
+julia = "Named multi-experiment methods with unit checks, first-crossing interpolation, and two-sided slope intervals"
+status = "corrected_equations"
+conclusion = "Method families are preserved, while known Friedman and temperature-handling defects are corrected."
+
+[[method_comparison]]
+milestone = "M4"
+area = "Advanced Vyazovkin method"
+legacy = "Optimization of distance from a hard-coded objective value of 12"
+julia = "Bounded minimization of the true pairwise objective with Fisher intervals"
+status = "corrected_equations"
+conclusion = "The method concept is preserved; the corrected objective is expected to produce different values."
+
+[[method_comparison]]
+milestone = "M5"
+area = "Fraser-Suzuki deconvolution"
+legacy = "Global/workspace fits, complex-to-zero masking, and sequentially tightened bounds"
+julia = "Stable real-valued peak definition, independent deterministic multistart fits, and structural model selection"
+status = "intentional_deviation"
+conclusion = "Curve decomposition is preserved, but order dependence and invalid-domain masking are removed."
+
+[[method_comparison]]
+milestone = "M6"
+area = "Kinetic triplets and reaction models"
+legacy = "Normal-equation regressions with duplicated or confounded intercept terms"
+julia = "Single-intercept QR fits, a named model registry, diagnostics, and held-out-rate gates"
+status = "intentional_deviation"
+conclusion = "The candidate equations are preserved as empirical models; legacy coefficients are not valid parameter oracles."
+
+[[method_comparison]]
+milestone = "M7"
+area = "Dynamic and ramp-and-hold prediction"
+legacy = "Workspace-dependent simulations with hard-coded runs and no frozen predictive gate"
+julia = "Bounded integration, calibration-only parameters, and 15 held-out ramp-and-hold programs"
+status = "not_numerically_comparable"
+conclusion = "Both evaluated Julia formulations are rejected; matching legacy plots would not establish prediction quality."
+
+[[method_comparison]]
+milestone = "M8"
+area = "Mixture additivity"
+legacy = "Observed-minus-additive conversion/rate curves after legacy preprocessing"
+julia = "Matched-rate measured curves, three channels, signed integrals, and preprocessing envelopes"
+status = "concept_preserved"
+conclusion = "The sign convention and additive concept agree, but corrected preprocessing and expanded diagnostics preclude pointwise parity."
+
+[[intentional_deviation]]
+id = "LD01"
+area = "Data schema"
+legacy_evidence = "Raw arrays use mass in column 4; derived five-column workspaces use column 3."
+julia_treatment = "Select schemas by catalog source and named columns, never by column count alone."
+reason = "Prevents silent interpretation of DSC or derivative values as mass."
+
+[[intentional_deviation]]
+id = "LD02"
+area = "Corrected workspace"
+legacy_evidence = "Every 2021marcorrected array is an exact contiguous copy of raw columns 1-4 beginning near 110 C."
+julia_treatment = "Classify it as a cropped raw reference, not processed ground truth."
+reason = "The artifact contains no normalized conversion or smoothed derivative to reproduce."
+
+[[intentional_deviation]]
+id = "LD03"
+area = "Preprocessing"
+legacy_evidence = "cleandata.m normalizes with retained endpoint rows and applies undocumented smoothing and low-pass choices."
+julia_treatment = "Estimate exact-temperature reference masses robustly and expose smoothing and endpoint sensitivity."
+reason = "Makes the conversion coordinate and derivative bias explicit and testable."
+
+[[intentional_deviation]]
+id = "LD04"
+area = "Friedman regression"
+legacy_evidence = "friedman.m has incorrect heating-rate parentheses and interpolates Temp_4 instead of da_4."
+julia_treatment = "Use measured heating rate and the conversion derivative for every experiment."
+reason = "Never preserve known algebraic or variable-selection defects for parity."
+
+[[intentional_deviation]]
+id = "LD05"
+area = "Isoconversional generality"
+legacy_evidence = "Several scripts accept exactly four runs and mix Celsius-to-kelvin conversion conventions."
+julia_treatment = "Accept arbitrary valid experiment groups and enforce kelvin at the typed boundary."
+reason = "Removes fixed-design and double-conversion failure modes."
+
+[[intentional_deviation]]
+id = "LD06"
+area = "Advanced Vyazovkin objective"
+legacy_evidence = "Vyazovkin.m minimizes abs(phiofe2(...)-12), where 12 assumes four equal pair terms."
+julia_treatment = "Minimize the true pairwise objective with bounded search and method-specific intervals."
+reason = "The optimum must not depend on a hard-coded experiment-count target."
+
+[[intentional_deviation]]
+id = "LD07"
+area = "Fraser-Suzuki domain"
+legacy_evidence = "deconvolve.m replaces complex-valued evaluations with zero."
+julia_treatment = "Use a stable Gaussian limit and a continuous real-valued zero outside the logarithm domain."
+reason = "Avoids silently accepting invalid intermediate arithmetic."
+
+[[intentional_deviation]]
+id = "LD08"
+area = "Deconvolution reproducibility"
+legacy_evidence = "deconvolve.m hard-codes St05; deconvolution4.m tightens bounds from each preceding fit."
+julia_treatment = "Fit each named experiment independently with deterministic multistart optimization."
+reason = "Removes hidden workspace inputs and experiment-order dependence."
+
+[[intentional_deviation]]
+id = "LD09"
+area = "Peak accounting and interpretation"
+legacy_evidence = "deconvolve4.m omits peak 4 from denominators and assigns its fraction from peak 3."
+julia_treatment = "Integrate every selected peak and keep peaks ordered but chemically unnamed."
+reason = "Corrects area fractions without inventing component identity."
+
+[[intentional_deviation]]
+id = "LD10"
+area = "Kinetic regression"
+legacy_evidence = "kineticanalysis.m duplicates the constant column and solves least squares through normal equations."
+julia_treatment = "Fit one ln(A/min^-1) intercept using QR and retain rank, conditioning, and predictive diagnostics."
+reason = "Restores parameter identifiability and numerical stability."
+
+[[intentional_deviation]]
+id = "LD11"
+area = "Reaction-model intervals"
+legacy_evidence = "sblin.m retains amplitude/prefactor confounding; sbrlin.m reports observation-sized prediction widths as coefficient intervals."
+julia_treatment = "Separate coefficient intervals, residual diagnostics, model criteria, and cross-rate prediction."
+reason = "Avoids overstating parameter certainty from densely sampled derivative points."
+
+[[intentional_deviation]]
+id = "LD12"
+area = "Compensation and simulation"
+legacy_evidence = "compeffects.m includes a wrong Ginstling-Brounshtein expression; the simulation path uses globals and hard-coded St16."
+julia_treatment = "Keep compensation diagnostic and simulate only frozen, provenance-carrying, bounded formulations."
+reason = "Prevents circular parameter substitution and nonphysical hidden-state propagation."
+
+[[intentional_deviation]]
+id = "LD13"
+area = "Mixture interaction"
+legacy_evidence = "synergy.m uses observed-minus-additive differences after legacy preprocessing."
+julia_treatment = "Preserve the sign convention while reporting mass, conversion, rate, signed areas, and preprocessing scenarios."
+reason = "Retains the scientific comparison without claiming a named chemical synergy mechanism."
+
+[[artifact]]
+path = "code/000_nuevo.mat"
+tier = "saved_result_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 5351454
+sha256 = "b34e76c5bf096917aeb3c2dac08241f8cfd33949111934e110bff64edb8ac5e1"
+
+[[artifact]]
+path = "code/025_nuevo.mat"
+tier = "saved_result_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 5681673
+sha256 = "851ffc864ed9770b13f1f68df38ccbacb088eb9d4f0ddb6db7c89260a59e6370"
+
+[[artifact]]
+path = "code/050_nuevo.mat"
+tier = "saved_result_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 7454939
+sha256 = "b788cca029b035f8ad152b311e25ce5dcf582f5095b586d102666cd92935db87"
+
+[[artifact]]
+path = "code/075_nuevo.mat"
+tier = "saved_result_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 5502909
+sha256 = "e1e502d345a04fdccfd8307317f62b18c8fa527597d8b02f2aa0c8b55e622c0d"
+
+[[artifact]]
+path = "code/100_nuevo.mat"
+tier = "saved_result_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 5186276
+sha256 = "e3e28c49c8211a729b1187fdd676e7c45d8c33bcb8b309e762f2612697dece3d"
+
+[[artifact]]
+path = "code/2021corridas/2021corridas.mat"
+tier = "canonical_raw"
+comparison_use = "exact named-variable comparison"
+bytes = 4424864
+sha256 = "78180b021e8b220fb1b8fede20a41467701f3dfd759991c01ecbaed92aac0c82"
+
+[[artifact]]
+path = "code/2021mar.mat"
+tier = "raw_alias"
+comparison_use = "exact named-variable comparison"
+bytes = 4424291
+sha256 = "aea7fdcd8bde7289a3a552de1dc07235ef2befab27b9e82bd96a46eb23dc619e"
+
+[[artifact]]
+path = "code/2021marcorrected.mat"
+tier = "cropped_raw_reference"
+comparison_use = "exact contiguous-subset comparison"
+bytes = 2848403
+sha256 = "3722ed096a5592e15fbec58b4f0518c6ac348d09127b4d05c3596b4e9723fd26"
+
+[[artifact]]
+path = "code/a00neum.mat"
+tier = "saved_result_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 4687211
+sha256 = "6222ea4799ba7deee1695313b4504b856499996d6ea33d1d4acdc2e18c401817"
+
+[[artifact]]
+path = "code/a100neum.mat"
+tier = "saved_result_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 5187354
+sha256 = "479d38966a41f98f93434f82486efb0d7571e7bd87b3a2c4432f3d4d88a99b79"
+
+[[artifact]]
+path = "code/a25neum.mat"
+tier = "saved_result_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 5234174
+sha256 = "b69027d75158bd93c5cafd40de924761acc2ddb7d405cd0ca39e55f0a6826b9d"
+
+[[artifact]]
+path = "code/a50neum.mat"
+tier = "saved_result_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 5115119
+sha256 = "a2ca45572827a5e10b3f67f6c3bf7bfce57eaa7aa86346eee8383536ca818da5"
+
+[[artifact]]
+path = "code/a75neum.mat"
+tier = "saved_result_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 5245653
+sha256 = "80d84d7995012ea888fa58c66bc3f3121b8f6404fed81f0dbeabc7be9df2b7a9"
+
+[[artifact]]
+path = "code/analisisarticuloneumatics.mat"
+tier = "publication_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 5305351
+sha256 = "20b50b9c535ad71c69d0820753fc0a2bd4eb3a1c3573e0c623f183f28a578d12"
+
+[[artifact]]
+path = "code/articulo/articuloneumaticos.mat"
+tier = "publication_workspace"
+comparison_use = "snapshot context only; producing command is not recorded"
+bytes = 5208558
+sha256 = "73b293c3259591e1e446861ccdeca9f0c00a6e8119bc7910a93b6f0f958e55c6"
+
+[[artifact]]
+path = "code/corridasjulio.mat"
+tier = "derived_workspace"
+comparison_use = "schema and workflow context only"
+bytes = 2711360
+sha256 = "8b666bb8c6d8fc218a8bf8f9ffc3bfa7102fa3f8cc1ad84cebf6d1e8ed4db821"
+
+[[artifact]]
+path = "code/isotherm.mat"
+tier = "held_out_raw"
+comparison_use = "Julia validation source; no separate legacy output oracle"
+bytes = 2165739
+sha256 = "08c0eb9c82691514743061fb44dbbd477e233c36b61e2febddd6a16170032ca8"
+
+[[artifact]]
+path = "code/julio2.mat"
+tier = "derived_workspace"
+comparison_use = "schema and workflow context only"
+bytes = 2711035
+sha256 = "cb9b9eb152bcaae70c135521447824c46bca73ec96ad5622695460bebd2036be"

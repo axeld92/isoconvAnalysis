@@ -19,6 +19,7 @@ makedocs(;
         "Isoconversional analysis" => "isoconversional.md",
         "Fraser–Suzuki deconvolution" => "deconvolution.md",
         "Kinetic triplets and reaction models" => "reaction_models.md",
+        "Legacy comparison" => "legacy_comparison.md",
         "Development" => "development.md",
     ],
 )

@@ -3,7 +3,7 @@
 Last updated: 2026-08-17  
 Project status: M6 complete — M7 ready to start  
 Target language: Julia 1.11  
-Legacy implementation: `code/` (read-only reference)
+Legacy MATLAB implementation: archived outside the project
 
 ## 1. Purpose
 
@@ -74,7 +74,8 @@ The rewrite is successful when:
 
 ## 5. Repository strategy
 
-The existing `code/` directory remains untouched as a legacy archive. The Julia implementation will live at the repository root.
+The original layout retained the entire MATLAB archive under `code/`. That directory now
+holds thesis data and historical outputs. The Julia implementation lives at the repository root.
 
 ```text
 ISOCONVERSIONAL_ANALYSIS/
@@ -122,7 +123,7 @@ ISOCONVERSIONAL_ANALYSIS/
 │   ├── methods.md
 │   ├── validation.md
 │   └── legacy_mapping.md
-└── code/                    # existing MATLAB archive; never imported implicitly
+└── code/                    # thesis data and historical outputs
 ```
 
 Large raw MAT files may remain in `code/` initially. `config/datasets.toml` will map stable experiment identifiers to source files and MAT variables without copying or modifying the originals.
@@ -587,7 +588,7 @@ Package selection must consider maintenance status, reproducibility, numerical b
 | ID | Decision | Status | Rationale |
 |---|---|---|---|
 | D001 | Use Julia 1.11 as the primary runtime | Accepted | Julia 1.11.6 is available in the working environment |
-| D002 | Preserve `code/` unchanged as the legacy archive | Accepted | Prevent accidental loss and keep historical traceability |
+| D002 | Preserve the legacy archive and keep thesis data and outputs byte-for-byte | Updated | MATLAB source is stored separately. Retained files still support the Julia case study and raw-data comparison |
 | D003 | Build a Julia package, not a collection of workspace scripts | Accepted | Enables testing, reuse, documentation, and deterministic execution |
 | D004 | Use canonical internal units with unit-bearing field names and boundary validation | Accepted | Prevents Celsius/Kelvin and `dalpha/dt`/`dalpha/dT` drift without complicating every solver |
 | D005 | Treat saved MATLAB results as comparison artifacts | Accepted | The audit found calculation and uncertainty defects |

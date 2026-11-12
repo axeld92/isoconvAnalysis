@@ -1,1 +1,0 @@
-%Script general para el análisis de datos

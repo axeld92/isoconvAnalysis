@@ -12,9 +12,9 @@ thermogravimetric experiments for waste tire, *Acrocomia aculeata* endocarp, and
 mixtures. The rewrite prioritizes traceability, explicit units, typed results, visible failure
 modes, synthetic validation, and prediction on experiments excluded from parameter fitting.
 
-The original `code/` directory remains an immutable historical archive. Legacy results are
-comparison evidence, not numerical ground truth, and known implementation defects are not
-reproduced in the Julia package.
+The original MATLAB implementation is archived outside the project. The `code/` directory
+holds thesis measurements and historical outputs. The Julia audit reproduces the exact
+raw-data comparisons and preserves the findings from the original script review.
 
 ## Experimental and scientific contract
 
@@ -74,7 +74,7 @@ test/      synthetic, failure-mode, and real-source integration tests
 config/    dataset catalog and frozen analysis defaults
 scripts/   deterministic audit and development commands
 docs/      methods, reports, machine-readable evidence, figures, and manual sources
-code/      immutable legacy MATLAB scripts, data, and historical outputs
+code/      immutable thesis data and historical outputs
 ```
 
 The detailed scientific plan, decision log, risks, and milestone acceptance criteria remain in

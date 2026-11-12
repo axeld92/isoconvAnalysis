@@ -27,5 +27,14 @@ julia --startup-file=no --project=docs scripts/audit_deconvolution.jl
 julia --startup-file=no --project=docs scripts/audit_reaction_models.jl
 ```
 
+Reproduce the [historical data comparison](legacy_comparison.md) with:
+
+```sh
+julia --startup-file=no --project=. scripts/audit_legacy_comparison.jl
+```
+
+Preserve the bytes of the thesis evidence in `code/`. Select input workspaces explicitly.
+The original MATLAB source is stored separately.
+
 Run `scripts/format.jl` without `--check` to apply formatting. Dependency rationale and
 license information are recorded in the repository file `docs/dependencies.md`.

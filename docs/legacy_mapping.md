@@ -3,6 +3,9 @@
 Last updated: 2026-08-17  
 M0 status: Complete; exploratory files remain archive-only
 
+The filenames below describe the original archive. The project retains the data and
+results used by the Julia case study. The MATLAB source is stored separately.
+
 ## 1. End-to-end workflow recovered from the MATLAB archive
 
 ```text

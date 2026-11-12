@@ -3,6 +3,8 @@ using Logging
 using Statistics
 using Test
 
+include(joinpath(@__DIR__, "..", "scripts", "audit_legacy_comparison.jl"))
+
 @testset "IsoconversionalAnalysis" begin
     include("test_configuration.jl")
     include("test_logging.jl")
@@ -13,5 +15,6 @@ using Test
     include("test_deconvolution.jl")
     include("test_reaction_models.jl")
     include("test_legacy_integration.jl")
+    include("test_legacy_comparison.jl")
     include("test_quality.jl")
 end
